@@ -86,6 +86,40 @@
 	}
 }
 
+.scene__stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px 34px;
+	border-top: 1px solid var(--rule);
+	padding-top: 14px;
+	max-width: 34rem;
+}
+
+.scene__stats dd {
+	font-family: var(--font-display);
+	font-style: italic;
+	font-size: 1.45rem;
+	line-height: 1.15;
+	margin-top: 2px;
+}
+
+/* Decorative halo behind the call object: two oversized hairline rings and a
+ * lilac wash, so a tall stage never reads as empty space. */
+.journey__object {
+	position: relative;
+}
+
+.journey__object::before {
+	content: '';
+	position: absolute;
+	width: 104%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: radial-gradient(circle, color-mix(in srgb, var(--c-lilac) 13%, transparent), transparent 68%);
+	border: 1px solid color-mix(in srgb, var(--c-aubergine) 10%, transparent);
+	pointer-events: none;
+}
+
 .scene__ctas {
 	margin-top: 6px;
 }

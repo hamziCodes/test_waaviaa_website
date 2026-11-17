@@ -68,6 +68,20 @@ function SceneCopy({ scene, index }: { scene: Scene; index: number }) {
 						<span className="visually-hidden">Languages configured in the engine: </span>
 						English · Urdu · Arabic · Malay
 					</p>
+					<dl className="scene__stats">
+						<div>
+							<dt className="label">Turn latency</dt>
+							<dd>under 283 ms</dd>
+						</div>
+						<div>
+							<dt className="label">Interruption</dt>
+							<dd>barge-in, mid-sentence</dd>
+						</div>
+						<div>
+							<dt className="label">Failover</dt>
+							<dd>2 routes, every stage</dd>
+						</div>
+					</dl>
 				</>
 			) : null}
 		</>
