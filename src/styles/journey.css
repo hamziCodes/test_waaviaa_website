@@ -3,7 +3,7 @@
 /* ---------- Scroller + sticky stage ---------- */
 .journey {
 	position: relative;
-	height: 760vh;
+	height: 620vh;
 }
 
 .journey__anchor {
@@ -72,6 +72,22 @@
 	font-size: var(--fs-lead);
 	line-height: 1.3;
 	max-width: 24rem;
+}
+
+@media (min-width: 1600px) {
+	.call {
+		width: min(680px, 100%);
+		height: min(640px, 100%);
+		--d: min(370px, 62cqmin);
+	}
+
+	.scene {
+		padding-bottom: 7vh;
+	}
+}
+
+.scene__ctas {
+	margin-top: 6px;
 }
 
 .scene__langs {
@@ -166,7 +182,10 @@
 	inset: 0;
 	display: flex;
 	flex-direction: column;
-	background: var(--ground);
+	background: linear-gradient(168deg, var(--c-studio-paper), var(--ground) 55%);
+	border-inline: 1px solid color-mix(in srgb, var(--c-aubergine) 35%, transparent);
+	box-shadow: 0 30px 50px -26px color-mix(in srgb, var(--c-aubergine) 40%, transparent);
+	padding-inline: 18px;
 	border-top: var(--rule-mast) solid var(--c-aubergine);
 	border-bottom: var(--rule-hair) solid var(--c-aubergine);
 	opacity: 0;
@@ -250,6 +269,9 @@
 	min-height: 0;
 	overflow: hidden;
 	margin-top: 6px;
+	/* Lines fade at the edges instead of being hard-clipped mid-scroll. */
+	-webkit-mask-image: linear-gradient(to bottom, transparent, black 26px, black calc(100% - 18px), transparent);
+	mask-image: linear-gradient(to bottom, transparent, black 26px, black calc(100% - 18px), transparent);
 }
 
 .call__lines {
@@ -281,10 +303,11 @@
 }
 
 .call__turn--agent .call__text {
-	background: var(--c-lilac);
+	background: linear-gradient(150deg, #cbbcff, var(--c-lilac));
 	padding: 10px 14px;
 	font-style: italic;
 	margin-right: 10%;
+	box-shadow: 6px 6px 0 color-mix(in srgb, var(--c-aubergine) 14%, transparent);
 }
 
 .call__cut {
@@ -314,7 +337,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	overflow: hidden;
+	overflow-y: auto;
 }
 
 .call__record-title {
@@ -373,7 +396,11 @@
 	position: absolute;
 	inset: 13%;
 	border-radius: 50%;
-	background: var(--c-lilac);
+	background: radial-gradient(circle at 32% 28%, #ddd0ff, var(--c-lilac) 52%, var(--c-lilac-deep));
+	box-shadow:
+		0 30px 54px -18px color-mix(in srgb, var(--c-aubergine) 48%, transparent),
+		inset 0 -16px 30px color-mix(in srgb, var(--c-aubergine) 18%, transparent),
+		inset 0 12px 24px rgba(255, 255, 255, 0.35);
 }
 
 .call__rings {
@@ -588,7 +615,7 @@
 	margin: 0;
 	padding: 0;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 	border-bottom: 1px solid var(--c-bone);
 }
 

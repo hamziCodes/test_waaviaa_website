@@ -50,11 +50,11 @@ export const RECORD = {
 	summary:
 		'Caller asked for a Thursday morning appointment. She cut in while options were read out, chose 10:00 and gave her name.',
 	fields: [
-		{ key: 'intent', value: 'appointment' },
-		{ key: 'requested_slot', value: 'Thursday 10:00' },
-		{ key: 'caller_name', value: 'Sara Khan' },
-		{ key: 'language', value: 'English' },
-		{ key: 'interruptions', value: '1' },
+		{ key: 'Intent', value: 'appointment' },
+		{ key: 'Requested slot', value: 'Thursday 10:00' },
+		{ key: 'Caller name', value: 'Sara Khan' },
+		{ key: 'Language', value: 'English' },
+		{ key: 'Interruptions', value: '1' },
 	],
 };
 

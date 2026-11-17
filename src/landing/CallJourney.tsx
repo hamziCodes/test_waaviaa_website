@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Link } from 'react-router';
 import { CallObject, type CallHandle } from './CallObject';
 import { SCENES, SCRIPT, type Scene } from './script';
 import { clamp01, r3, seg } from './motion';
@@ -54,10 +55,20 @@ function SceneCopy({ scene, index }: { scene: Scene; index: number }) {
 			<Title scene={scene} as={index === 0 ? 'h1' : 'h2'} />
 			<p className="scene__body">{scene.body}</p>
 			{index === 0 ? (
-				<p className="label scene__langs">
-					<span className="visually-hidden">Languages configured in the engine: </span>
-					English · Urdu · Arabic · Malay
-				</p>
+				<>
+					<div className="btn-row scene__ctas">
+						<Link className="btn btn--lime" to="/demo">
+							See the demo dashboard
+						</Link>
+						<Link className="btn btn--ghost" to="/how-it-works">
+							How it works
+						</Link>
+					</div>
+					<p className="label scene__langs">
+						<span className="visually-hidden">Languages configured in the engine: </span>
+						English · Urdu · Arabic · Malay
+					</p>
+				</>
 			) : null}
 		</>
 	);

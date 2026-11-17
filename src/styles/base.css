@@ -15,7 +15,7 @@ body {
 	margin: 0;
 	background: var(--ground);
 	color: var(--ink);
-	font-family: var(--font-display);
+	font-family: var(--font-sans);
 	font-size: var(--fs-body);
 	line-height: 1.5;
 	font-weight: 400;
@@ -55,6 +55,7 @@ h1,
 h2,
 h3,
 h4 {
+	font-family: var(--font-display);
 	font-weight: 400;
 	letter-spacing: var(--tracking-display);
 	line-height: 1;
@@ -90,8 +91,7 @@ i {
 
 strong,
 b {
-	/* Instrument Serif has no bold. Emphasis is italic or a lime highlight. */
-	font-weight: 400;
+	font-weight: 700;
 }
 
 code,
@@ -172,4 +172,28 @@ button {
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
+}
+
+/* Root scaling on very wide screens — every rem on the site grows together. */
+@media (min-width: 2000px) {
+	html {
+		font-size: 17.5px;
+	}
+}
+
+@media (min-width: 2500px) {
+	html {
+		font-size: 19px;
+	}
+}
+
+/* Paper is not flat: a faint lilac wash top-right, a lime breath bottom-left,
+ * and a whisper of dot-grid over the bone ground. */
+body {
+	background-image:
+		radial-gradient(52rem 30rem at 88% -6%, color-mix(in srgb, var(--c-lilac) 17%, transparent), transparent 62%),
+		radial-gradient(44rem 28rem at -8% 104%, color-mix(in srgb, var(--c-lime) 13%, transparent), transparent 60%),
+		radial-gradient(color-mix(in srgb, var(--c-aubergine) 5%, transparent) 1px, transparent 1.4px);
+	background-size: auto, auto, 26px 26px;
+	background-attachment: fixed, fixed, fixed;
 }

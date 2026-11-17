@@ -22,19 +22,90 @@ export default function Pricing() {
 						Priced on <span className="hl">use</span>.
 					</>
 				}
-				lead="Wavia measures what each conversation actually uses. We have not published prices yet — tell us what you are building and we will quote it."
+				lead="Two flat monthly plans and one custom tier. Every plan is measured on the same five usage meters, live in your workspace — so a conversation's cost is never a surprise."
 				aside={
 					<div className="btn-row" style={{ marginTop: 28 }}>
-						<Link className="btn" to="/contact">
-							Ask for a quote
+						<a className="btn btn--lime" href={SIGN_UP_URL}>
+							Start with Studio
+						</a>
+						<Link className="btn btn--ghost" to="/contact">
+							Ask a question
 						</Link>
 					</div>
 				}
 			/>
 
+			<Section id="plans" label="01 · Plans" title="Pick a size. Change it when you grow.">
+				<div className="doors">
+					<div className="door">
+						<span className="label">Studio · self-serve</span>
+						<p className="plan__price">
+							$29<span> / month</span>
+						</p>
+						<p>
+							Start here. Build a voice agent yourself in the browser, test it by talking to it, and put it on the web —
+							no code, about five minutes to your first agent.
+						</p>
+						<ul className="plan__list">
+							<li>Agent builder with knowledge base</li>
+							<li>30 minutes of free test calls every month</li>
+							<li>Transcripts, summaries and extracted fields</li>
+							<li>Every meter visible in your workspace</li>
+						</ul>
+						<p>
+							<a className="arrow-link" href={SIGN_UP_URL}>
+								Start with Studio
+							</a>
+						</p>
+					</div>
+					<div className="door">
+						<span className="label">Core · live phone lines</span>
+						<p className="plan__price">
+							$149<span> / month</span>
+						</p>
+						<p>
+							For a real phone number your customers already call. Inbound and outbound agents on telephony, with a
+							backup provider at every stage so one failure never drops a call.
+						</p>
+						<ul className="plan__list">
+							<li>Everything in Studio</li>
+							<li>Phone agents via Telnyx (Twilio on request)</li>
+							<li>Two routes per stage — automatic failover</li>
+							<li>Retention controls, legal hold, audit log</li>
+						</ul>
+						<p>
+							<Link className="arrow-link" to="/contact">
+								Talk to us about Core
+							</Link>
+						</p>
+					</div>
+					<div className="door">
+						<span className="label">Shield · custom</span>
+						<p className="plan__price">
+							Custom<span> / quoted</span>
+						</p>
+						<p>
+							We scope, build and deploy the agent with your team — including self-hosted deployments and setups with
+							strict rules on where data lives and how long it is kept.
+						</p>
+						<ul className="plan__list">
+							<li>Everything in Core</li>
+							<li>Built and deployed with you, white-glove</li>
+							<li>Self-hostable container images</li>
+							<li>Custom retention and data-residency terms</li>
+						</ul>
+						<p>
+							<Link className="arrow-link" to="/custom">
+								About custom deployments
+							</Link>
+						</p>
+					</div>
+				</div>
+			</Section>
+
 			<Section
 				id="meters"
-				label="01 · What is metered"
+				label="02 · What is metered"
 				title="Five meters, all visible to you."
 				intro="These are the usage meters in the product. Studio shows your usage against your workspace limits."
 			>
@@ -59,7 +130,7 @@ export default function Pricing() {
 				</div>
 			</Section>
 
-			<Section id="ways" label="02 · Ways to work" title="Three doors, one engine.">
+			<Section id="ways" label="03 · Ways to work" title="Three doors, one engine.">
 				<div className="cols">
 					<div>
 						<span className="label">Custom</span>
@@ -74,7 +145,7 @@ export default function Pricing() {
 					<div>
 						<span className="label">Studio</span>
 						<h3>Self-serve</h3>
-						<p>Sign up, build agents and see usage in your workspace. There is no billing in Studio today.</p>
+						<p>Sign up, build agents and see usage in your workspace. $29/mo, with 30 minutes of free test calls every month.</p>
 						<p style={{ marginTop: 16 }}>
 							<a className="arrow-link" href={SIGN_UP_URL}>
 								Sign up
@@ -94,14 +165,24 @@ export default function Pricing() {
 				</div>
 			</Section>
 
-			<Section id="faq" label="03 · Questions" title="Straight answers.">
+			<Section id="faq" label="04 · Questions" title="Straight answers.">
 				<div className="faq">
 					<details>
-						<summary>Why are there no prices on this page?</summary>
+						<summary>What do the plans include beyond the monthly price?</summary>
 						<div>
 							<p>
-								Because they are not set yet, and we would rather show nothing than a number that changes. The meters above
-								are what pricing will be built on.
+								Usage on the five meters above. Your workspace shows every meter against your plan, live — so you see a
+								conversation's cost as it happens, not at the end of the month. Heavy or unusual usage is quoted with you
+								before it runs, never after.
+							</p>
+						</div>
+					</details>
+					<details>
+						<summary>Can I start free?</summary>
+						<div>
+							<p>
+								Studio includes 30 minutes of test calls every month, so you can build an agent and talk to it before
+								putting it in front of a single customer.
 							</p>
 						</div>
 					</details>

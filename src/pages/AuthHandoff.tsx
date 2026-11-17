@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router';
 import { Disc, useTitle } from '@/components/ui';
 import { Wordmark } from '@/components/Wordmark';
-import { SIGN_IN_URL, SIGN_UP_URL, STUDIO_URL } from '@/config';
+import { HAS_STUDIO, SIGN_IN_URL, SIGN_UP_URL, STUDIO_URL } from '@/config';
 
 /**
  * /signup and /login: the website has no auth of its own. These pages are pure
@@ -39,20 +39,22 @@ export default function AuthHandoff({ kind }: { kind: 'sign-up' | 'sign-in' }) {
 							)}
 						</h1>
 						<p>
-							{signUp
-								? 'Creating an account happens in the Wavia Studio app. You will build agents, test them in the browser and publish them from there.'
-								: 'Signing in happens in the Wavia Studio app, where your workspaces, agents and conversations are.'}
+							{!HAS_STUDIO
+								? 'Studio sign-up is not open on this preview yet. The demo dashboard shows exactly what a workspace looks like — agents, conversations, transcripts and usage — on sample data.'
+								: signUp
+									? 'Creating an account happens in the Wavia Studio app. You will build agents, test them in the browser and publish them from there.'
+									: 'Signing in happens in the Wavia Studio app, where your workspaces, agents and conversations are.'}
 						</p>
 						<div className="btn-row" style={{ marginTop: 28 }}>
 							<a className="btn btn--lime" href={target}>
-								{signUp ? 'Continue to sign up' : 'Continue to sign in'}
+								{HAS_STUDIO ? (signUp ? 'Continue to sign up' : 'Continue to sign in') : 'Open the demo dashboard'}
 							</a>
 							<a className="btn btn--ghost" href={signUp ? SIGN_IN_URL : SIGN_UP_URL}>
 								{signUp ? 'I already have an account' : 'Create an account'}
 							</a>
 						</div>
 						<p className="label" style={{ marginTop: 20 }}>
-							Studio · {STUDIO_URL.replace(/^https?:\/\//, '')}
+							{HAS_STUDIO ? `Studio · ${STUDIO_URL.replace(/^https?:\/\//, '')}` : 'Preview · demo dashboard'}
 						</p>
 					</div>
 					<Disc size="200px" />

@@ -61,9 +61,11 @@
 	flex: none;
 	background: transparent;
 	border: 0;
-	padding: 4px 10px;
-	min-height: 36px;
-	font-family: var(--font-mono);
+	padding: 8px 14px;
+	min-height: 44px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	font-family: var(--font-sans);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -82,7 +84,6 @@
 
 .dash__panel {
 	padding-top: 22px;
-	min-height: 520px;
 }
 
 .dash__panel:focus-visible {
@@ -96,8 +97,12 @@
 }
 
 .dash__kpi {
-	border-bottom: 1px solid var(--rule);
-	padding: 10px 0;
+	background: var(--panel);
+	border: 1px solid var(--rule);
+	border-top: 5px solid var(--c-lilac-deep);
+	padding: 14px 16px;
+	margin-bottom: 14px;
+	box-shadow: 7px 7px 0 color-mix(in srgb, var(--c-lilac) 45%, transparent);
 }
 
 .dash__num {
@@ -107,8 +112,56 @@
 }
 
 .dash__note {
-	opacity: 0.75;
 	margin-top: 10px;
+}
+
+.dash__intro {
+	padding-top: 26px;
+	max-width: 46rem;
+}
+
+.dash__h1 {
+	font-size: clamp(2rem, 4vw, 3.25rem);
+	line-height: 1.05;
+}
+
+.dash__intro p {
+	margin-top: 12px;
+	font-size: 1.125rem;
+	line-height: 1.55;
+}
+
+.dash__tab-intro {
+	font-size: 1.125rem;
+	line-height: 1.5;
+	max-width: 46rem;
+	margin-bottom: 20px;
+	padding-left: 14px;
+	border-left: 4px solid var(--c-lime);
+}
+
+.dash__bar-labels {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 8px;
+	margin-bottom: 6px;
+	font-size: 0.95rem;
+	line-height: 1.35;
+}
+
+.dash__bar-labels strong {
+	display: block;
+}
+
+.dash__ledger .dash__event {
+	font-weight: 700;
+}
+
+.dash__ledger .dash__gloss {
+	display: block;
+	font-family: var(--font-sans);
+	font-size: 0.95rem;
+	padding: 2px 0 4px;
 }
 
 .dash__centre {
@@ -131,7 +184,8 @@
 }
 
 .dash__reply {
-	background: var(--c-lilac);
+	background: linear-gradient(150deg, #cbbcff, var(--c-lilac));
+	box-shadow: 10px 10px 0 color-mix(in srgb, var(--c-aubergine) 15%, transparent);
 	padding: 20px 24px;
 	font-size: clamp(1.6rem, 2.6vw, 38px);
 	font-style: italic;
@@ -169,10 +223,23 @@
 
 .dash__ledger li {
 	font-family: var(--font-mono);
-	font-size: 0.75rem;
-	padding: 7px 0;
+	font-size: 0.875rem;
+	padding: 9px 0;
 	border-bottom: 1px solid var(--rule);
 	overflow-wrap: anywhere;
+}
+
+.table--pick tbody tr {
+	cursor: pointer;
+}
+
+.table--pick tbody tr:hover td {
+	background: color-mix(in srgb, var(--c-lime) 22%, transparent);
+}
+
+.table--pick tbody tr[data-selected='true'] td {
+	background: color-mix(in srgb, var(--c-lime) 38%, transparent);
+	font-weight: 600;
 }
 
 .dash__chip {
@@ -244,7 +311,7 @@
 .dash__meter span {
 	display: block;
 	height: 100%;
-	background: var(--c-aubergine);
+	background: linear-gradient(90deg, var(--c-lilac-deep), var(--c-aubergine));
 	transform-origin: 0 50%;
 }
 

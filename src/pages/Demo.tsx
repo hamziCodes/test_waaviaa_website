@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useTitle } from '@/components/ui';
 import { Wordmark } from '@/components/Wordmark';
 import { SIGN_UP_URL } from '@/config';
-import { AGENTS, AUDIT, CONVERSATIONS, KNOWLEDGE, KPIS, LEDGER, SELECTED, USAGE } from '@/demo/sample';
+import { AGENTS, AUDIT, CONVERSATIONS, DETAILS, KNOWLEDGE, KPIS, LEDGER, LEDGER_GLOSS, USAGE } from '@/demo/sample';
 
 /**
  * /demo — a preview of what Studio looks like, in pure C2 "Ripple Paper".
@@ -59,7 +59,13 @@ function Overview() {
 					<span style={{ background: 'var(--c-aubergine)' }} />
 					<span style={{ background: 'var(--c-lilac-deep)' }} />
 				</div>
-				<p className="label">VAD · STT · LLM · TTS — widths not to scale</p>
+				<div className="dash__bar-labels" aria-hidden="true">
+					<span><strong>VAD</strong> hears</span>
+					<span><strong>STT</strong> transcribes</span>
+					<span><strong>LLM</strong> decides</span>
+					<span><strong>TTS</strong> speaks</span>
+				</div>
+				<p className="label">One spoken turn, left to right — widths not to scale</p>
 
 				<p className="label" style={{ marginTop: 22 }}>
 					Event ledger · protocol v1
@@ -68,7 +74,8 @@ function Overview() {
 					{LEDGER.map((e, i) => (
 						<li key={e}>
 							<span className="dash__chip">#{String(i + 1).padStart(2, '0')}</span>
-							{e}
+							<span className="dash__event">{e}</span>
+							<span className="dash__gloss">{LEDGER_GLOSS[e]}</span>
 						</li>
 					))}
 				</ol>
@@ -121,24 +128,50 @@ function Agents() {
 				])}
 			/>
 			<p className="dash__aside">
-				Published versions are immutable. Each stage needs two routes before an agent can fail over.
+				<strong>How to read the routes column:</strong> the three numbers are the providers wired for speech-to-text,
+				the language model, and text-to-speech. An agent needs <strong>2 at every stage</strong> so a call survives one
+				provider failing — that is why the After-hours line (2 · 2 · 1) cannot publish yet. Published versions are
+				immutable; edits ship as a new version.
 			</p>
 		</>
 	);
 }
 
 function Conversations() {
+	const [selectedId, setSelectedId] = useState('C-1048');
+	const detail = DETAILS[selectedId];
 	return (
 		<div className="dash__split">
-			<Table
-				caption="Conversations · sample data"
-				head={['ID', 'Agent', 'Channel', 'Outcome', 'Length']}
-				rows={CONVERSATIONS.map((c) => [c.id, c.agent, c.channel, c.outcome, c.minutes])}
-			/>
+			<div>
+				<div className="table-wrap">
+					<table className="table table--pick">
+						<caption className="label">Conversations · sample data — select a call to read it</caption>
+						<thead>
+							<tr>
+								{['ID', 'Agent', 'Channel', 'Outcome', 'Length'].map((h) => (
+									<th scope="col" key={h}>{h}</th>
+								))}
+							</tr>
+						</thead>
+						<tbody>
+							{CONVERSATIONS.map((c) => (
+								<tr key={c.id} data-selected={c.id === selectedId} onClick={() => setSelectedId(c.id)}>
+									<td>{c.id}</td>
+									<td>{c.agent}</td>
+									<td>{c.channel}</td>
+									<td>{c.outcome}</td>
+									<td>{c.minutes}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+				<p className="dash__aside">Select any call — its transcript, summary and extracted fields appear on the right.</p>
+			</div>
 			<div className="dash__detail">
-				<p className="label">{SELECTED.id} · transcript</p>
+				<p className="label">{selectedId} · transcript</p>
 				<ol className="dash__transcript" role="list">
-					{SELECTED.transcript.map((t, i) => (
+					{detail.transcript.map((t, i) => (
 						<li key={i} data-who={t.who}>
 							<span className="label">{t.who}</span>
 							<p>
@@ -158,11 +191,11 @@ function Conversations() {
 				<p className="label" style={{ marginTop: 16 }}>
 					Post-call summary
 				</p>
-				<p className="dash__summary">{SELECTED.summary}</p>
+				<p className="dash__summary">{detail.summary}</p>
 				<dl className="facts">
-					{SELECTED.fields.map(([k, v]) => (
+					{detail.fields.map(([k, v]) => (
 						<div key={k} style={{ display: 'contents' }}>
-							<dt className="label">{k}</dt>
+							<dt className="label">{k.replace(/_/g, ' ')}</dt>
 							<dd>{v}</dd>
 						</div>
 					))}
@@ -205,7 +238,7 @@ function Usage() {
 								<span>
 									{u.used}
 									{u.unit ? ` ${u.unit}` : ''} of {u.limit}
-									{u.unit ? ` ${u.unit}` : ''}
+									{u.unit ? ` ${u.unit}` : ''} · <strong>{pct}%</strong> · {u.plain}
 								</span>
 							</div>
 							<div
@@ -229,9 +262,22 @@ function Usage() {
 
 function Audit() {
 	return (
-		<Table caption="Audit log · sample data" head={['#', 'Role', 'Action']} rows={AUDIT.map((a, i) => [String(i + 1).padStart(2, '0'), a.who, a.what])} />
+		<Table
+			caption="Audit log · sample data"
+			head={['When', 'Role', 'Action', 'Detail']}
+			rows={AUDIT.map((a) => [a.when, a.who, a.what, a.detail])}
+		/>
 	);
 }
+
+const TAB_INTRO: Record<Tab, string> = {
+	Overview: 'Today at a glance: how many conversations happened, what a live turn looks like, and the events the engine recorded.',
+	Agents: 'Every voice agent in this workspace — its version, languages, provider routes and whether it is live.',
+	Conversations: 'Every call and browser session, written down. Select one to read its transcript and the record it produced.',
+	Knowledge: 'The facts your agents answer from — FAQs and documents. Answers cite the source they used.',
+	Usage: 'What this workspace has used this period, meter by meter, against its limits.',
+	'Audit log': 'Who did what, and when. Every publish, invite, hold and key is written here.',
+};
 
 const PANELS: Record<Tab, () => ReactNode> = {
 	Overview,
@@ -304,8 +350,14 @@ export default function Demo() {
 						</button>
 					))}
 				</div>
+				<div className="dash__intro">
+					<h1 className="dash__h1">This is what a Wavia workspace looks like.</h1>
+					<p>
+						Studio is where you build a voice agent, watch its calls and read what it wrote down. This preview runs on
+						sample data — work through the tabs; start with <strong>Conversations</strong> and select a call.
+					</p>
+				</div>
 				<main id="main" tabIndex={-1}>
-					<h1 className="visually-hidden">Demo dashboard — sample data</h1>
 					<section
 						role="tabpanel"
 						id={`panel-${slug(tab)}`}
@@ -314,6 +366,7 @@ export default function Demo() {
 						className="dash__panel"
 					>
 						<h2 className="visually-hidden">{tab}</h2>
+						<p className="dash__tab-intro">{TAB_INTRO[tab]}</p>
 						<Panel />
 					</section>
 				</main>
