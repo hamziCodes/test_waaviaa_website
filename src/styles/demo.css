@@ -250,8 +250,8 @@
 }
 
 .report__section-head h2 {
-	font-family: var(--font-sans);
-	font-size: 1.5rem;
+	font-family: var(--font-display);
+	font-size: 1.75rem;
 	font-weight: 650;
 	letter-spacing: -0.01em;
 	line-height: 1.2;
@@ -273,8 +273,8 @@
 }
 
 .report__h3 {
-	font-family: var(--font-sans);
-	font-size: 1.0625rem;
+	font-family: var(--font-display);
+	font-size: 1.25rem;
 	font-weight: 650;
 	line-height: 1.3;
 }
@@ -285,7 +285,7 @@
 }
 
 .report__h4 {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: 0.9375rem;
 	font-weight: 650;
 	margin-bottom: 0.625rem;
@@ -803,8 +803,8 @@
 }
 
 .report__closing h2 {
-	font-family: var(--font-sans);
-	font-size: 1.5rem;
+	font-family: var(--font-display);
+	font-size: 1.75rem;
 	font-weight: 650;
 	letter-spacing: -0.01em;
 }

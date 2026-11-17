@@ -15,7 +15,7 @@ main {
 
 /* ---------- Mono label (.m in the C2 board) ---------- */
 .label {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	line-height: 1.5;
 	letter-spacing: var(--tracking-label);
@@ -119,7 +119,7 @@ h3 .hl {
 	align-items: center;
 	min-height: 40px;
 	padding: 4px 10px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -151,7 +151,7 @@ h3 .hl {
 	padding: 0 14px;
 	background: transparent;
 	border: 1px solid var(--rule);
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -221,7 +221,7 @@ h3 .hl {
 	border: 1px solid var(--c-aubergine);
 	background: var(--c-aubergine);
 	color: var(--c-bone);
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	font-weight: 700;
 	letter-spacing: var(--tracking-label);
@@ -293,7 +293,7 @@ h3 .hl {
 }
 
 .arrow-link {
-	font-family: var(--font-sans);
+	font-family: var(--font-display);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -556,7 +556,7 @@ h3 .hl {
 	color: var(--c-aubergine);
 	border-radius: 50px;
 	padding: 8px 18px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-weight: 700;
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
@@ -599,7 +599,7 @@ h3 .hl {
 
 .table th {
 	padding-left: 12px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -749,10 +749,7 @@ h3 .hl {
 
 /* ---------- Dark band (the one dark act) ---------- */
 .on-dark {
-	background:
-		radial-gradient(60% 90% at 88% 0%, color-mix(in srgb, var(--c-lilac) 26%, transparent), transparent 62%),
-		radial-gradient(40% 70% at 4% 100%, color-mix(in srgb, var(--c-lime) 10%, transparent), transparent 60%),
-		var(--ground-dark);
+	background: var(--ground-dark);
 	color: var(--ink-on-dark);
 	--rule: var(--c-bone);
 	--ink: var(--c-bone);
@@ -779,7 +776,7 @@ h3 .hl {
 }
 
 .footer__grid h2 {
-	font-family: var(--font-sans);
+	font-family: var(--font-display);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -944,7 +941,7 @@ h3 .hl {
 }
 
 .mini-row > :first-child {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -973,42 +970,6 @@ h3 .hl {
 	margin-bottom: 10px;
 }
 
-/* ---------- Ticker (aubergine strip under the hero) ---------- */
-.ticker {
-	background: var(--c-aubergine);
-	color: var(--c-bone);
-	overflow: hidden;
-	padding: 13px 0;
-	border-block: 3px solid var(--c-lime);
-}
-
-.ticker__track {
-	display: flex;
-	width: max-content;
-	white-space: nowrap;
-	animation: ticker 30s linear infinite;
-	font-family: var(--font-sans);
-	font-weight: 600;
-	font-size: 0.95rem;
-	letter-spacing: var(--tracking-label);
-	text-transform: uppercase;
-}
-
-.ticker__track span {
-	padding-inline: 22px;
-}
-
-.ticker__track i {
-	font-style: normal;
-	color: var(--c-lime);
-}
-
-@keyframes ticker {
-	to {
-		transform: translateX(-50%);
-	}
-}
-
 /* ---------- Plan cards (pricing) ---------- */
 .plan__price {
 	font-family: var(--font-display);
@@ -1018,7 +979,7 @@ h3 .hl {
 
 .plan__price span {
 	font-size: 1.05rem;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	letter-spacing: 0.02em;
 }
 

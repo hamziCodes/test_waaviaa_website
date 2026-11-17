@@ -216,9 +216,7 @@
 	inset: 0;
 	display: flex;
 	flex-direction: column;
-	background: linear-gradient(168deg, var(--c-studio-paper), var(--ground) 55%);
-	border-inline: 1px solid color-mix(in srgb, var(--c-aubergine) 35%, transparent);
-	box-shadow: 0 30px 50px -26px color-mix(in srgb, var(--c-aubergine) 40%, transparent);
+	background: var(--ground);
 	padding-inline: 18px;
 	border-top: var(--rule-mast) solid var(--c-aubergine);
 	border-bottom: var(--rule-hair) solid var(--c-aubergine);
@@ -303,9 +301,6 @@
 	min-height: 0;
 	overflow: hidden;
 	margin-top: 6px;
-	/* Lines fade at the edges instead of being hard-clipped mid-scroll. */
-	-webkit-mask-image: linear-gradient(to bottom, transparent, black 26px, black calc(100% - 18px), transparent);
-	mask-image: linear-gradient(to bottom, transparent, black 26px, black calc(100% - 18px), transparent);
 }
 
 .call__lines {
@@ -337,11 +332,10 @@
 }
 
 .call__turn--agent .call__text {
-	background: linear-gradient(150deg, #cbbcff, var(--c-lilac));
+	background: var(--c-lilac);
 	padding: 10px 14px;
 	font-style: italic;
 	margin-right: 10%;
-	box-shadow: 6px 6px 0 color-mix(in srgb, var(--c-aubergine) 14%, transparent);
 }
 
 .call__cut {
@@ -649,7 +643,7 @@
 	margin: 0;
 	padding: 0;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	border-bottom: 1px solid var(--c-bone);
 }
 
