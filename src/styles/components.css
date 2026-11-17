@@ -15,12 +15,12 @@ main {
 
 /* ---------- Mono label (.m in the C2 board) ---------- */
 .label {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	line-height: 1.5;
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 .label--bold {
@@ -119,7 +119,7 @@ h3 .hl {
 	align-items: center;
 	min-height: 40px;
 	padding: 4px 10px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -151,7 +151,7 @@ h3 .hl {
 	padding: 0 14px;
 	background: transparent;
 	border: 1px solid var(--rule);
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -221,7 +221,7 @@ h3 .hl {
 	border: 1px solid var(--c-aubergine);
 	background: var(--c-aubergine);
 	color: var(--c-bone);
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	font-weight: 700;
 	letter-spacing: var(--tracking-label);
@@ -242,22 +242,6 @@ h3 .hl {
 .btn--lime {
 	background: var(--c-lime);
 	color: var(--c-aubergine);
-	box-shadow: 5px 5px 0 var(--c-aubergine);
-	transition:
-		transform var(--dur-quick) var(--ease-out),
-		box-shadow var(--dur-quick) var(--ease-out),
-		background var(--dur-quick) var(--ease-out),
-		color var(--dur-quick) var(--ease-out);
-}
-
-.btn--lime:hover {
-	transform: translate(-1px, -1px);
-	box-shadow: 7px 7px 0 var(--c-aubergine);
-}
-
-.btn--lime:active {
-	transform: translate(2px, 2px);
-	box-shadow: 2px 2px 0 var(--c-aubergine);
 }
 
 .btn--ghost {
@@ -293,7 +277,7 @@ h3 .hl {
 }
 
 .arrow-link {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -515,24 +499,7 @@ h3 .hl {
 	position: absolute;
 	inset: 13%;
 	border-radius: 50%;
-	background: radial-gradient(circle at 32% 28%, #ddd0ff, var(--c-lilac) 52%, var(--c-lilac-deep));
-	box-shadow:
-		0 26px 44px -18px color-mix(in srgb, var(--c-aubergine) 45%, transparent),
-		inset 0 -14px 28px color-mix(in srgb, var(--c-aubergine) 18%, transparent),
-		inset 0 10px 22px rgba(255, 255, 255, 0.35);
-}
-
-.disc::after {
-	content: '';
-	position: absolute;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	background: var(--c-lime);
-	border: 2px solid var(--c-aubergine);
-	top: 4.5%;
-	left: 50%;
-	transform: translateX(-50%);
+	background: var(--c-lilac);
 }
 
 .disc__ring {
@@ -556,7 +523,7 @@ h3 .hl {
 	color: var(--c-aubergine);
 	border-radius: 50px;
 	padding: 8px 18px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-weight: 700;
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
@@ -575,7 +542,7 @@ h3 .hl {
 .table {
 	width: 100%;
 	border-collapse: collapse;
-	font-size: 1.0625rem;
+	font-size: var(--fs-small);
 }
 
 .table caption {
@@ -588,18 +555,12 @@ h3 .hl {
 .table td {
 	text-align: left;
 	vertical-align: top;
-	padding: 14px 16px 14px 12px;
+	padding: 14px 16px 14px 0;
 	border-bottom: 1px solid var(--rule);
 }
 
-.table thead th {
-	background: var(--c-aubergine);
-	color: var(--c-bone);
-}
-
 .table th {
-	padding-left: 12px;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -711,25 +672,20 @@ h3 .hl {
 .doors {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: var(--space-5);
+	border-top: var(--rule-mast) solid var(--rule);
 }
 
 .door {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-4);
-	padding: var(--space-5);
-	background: var(--panel);
-	border: 1px solid var(--rule);
-	box-shadow: 9px 9px 0 color-mix(in srgb, var(--c-lilac) 60%, transparent);
-	transition:
-		transform var(--dur-base) var(--ease-out),
-		box-shadow var(--dur-base) var(--ease-out);
+	padding: var(--space-5) var(--space-5) var(--space-6) 0;
+	border-bottom: 1px solid var(--rule);
 }
 
-.door:hover {
-	transform: translate(-2px, -2px);
-	box-shadow: 13px 13px 0 color-mix(in srgb, var(--c-lilac) 70%, transparent);
+.door + .door {
+	padding-left: var(--space-5);
+	border-left: 1px solid var(--rule);
 }
 
 .door h3 {
@@ -745,14 +701,16 @@ h3 .hl {
 	.doors {
 		grid-template-columns: 1fr;
 	}
+
+	.door + .door {
+		padding-left: 0;
+		border-left: 0;
+	}
 }
 
 /* ---------- Dark band (the one dark act) ---------- */
 .on-dark {
-	background:
-		radial-gradient(60% 90% at 88% 0%, color-mix(in srgb, var(--c-lilac) 26%, transparent), transparent 62%),
-		radial-gradient(40% 70% at 4% 100%, color-mix(in srgb, var(--c-lime) 10%, transparent), transparent 60%),
-		var(--ground-dark);
+	background: var(--ground-dark);
 	color: var(--ink-on-dark);
 	--rule: var(--c-bone);
 	--ink: var(--c-bone);
@@ -779,7 +737,7 @@ h3 .hl {
 }
 
 .footer__grid h2 {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
@@ -944,7 +902,7 @@ h3 .hl {
 }
 
 .mini-row > :first-child {
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	font-size: var(--fs-label);
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -972,43 +930,6 @@ h3 .hl {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-
-/* ---------- Ticker (aubergine strip under the hero) ---------- */
-.ticker {
-	background: var(--c-aubergine);
-	color: var(--c-bone);
-	overflow: hidden;
-	padding: 13px 0;
-	border-block: 3px solid var(--c-lime);
-}
-
-.ticker__track {
-	display: flex;
-	width: max-content;
-	white-space: nowrap;
-	animation: ticker 30s linear infinite;
-	font-family: var(--font-sans);
-	font-weight: 600;
-	font-size: 0.95rem;
-	letter-spacing: var(--tracking-label);
-	text-transform: uppercase;
-}
-
-.ticker__track span {
-	padding-inline: 22px;
-}
-
-.ticker__track i {
-	font-style: normal;
-	color: var(--c-lime);
-}
-
-@keyframes ticker {
-	to {
-		transform: translateX(-50%);
-	}
-}
-
 /* ---------- Plan cards (pricing) ---------- */
 .plan__price {
 	font-family: var(--font-display);
@@ -1018,7 +939,7 @@ h3 .hl {
 
 .plan__price span {
 	font-size: 1.05rem;
-	font-family: var(--font-sans);
+	font-family: var(--font-mono);
 	letter-spacing: 0.02em;
 }
 

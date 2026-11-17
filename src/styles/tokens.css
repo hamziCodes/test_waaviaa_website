@@ -39,7 +39,6 @@
 
 	/* Faces (DESIGN.md §2). One display face per surface: Instrument Serif. */
 	--font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-	--font-sans: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
 	/* Type scale — fluid, anchored to the dashboard scale (84 / 66 / 44 / 38 / 11) */
@@ -51,12 +50,12 @@
 	--fs-lead: clamp(1.32rem, 2.1vw, 1.65rem);
 	--fs-body: clamp(1.125rem, 1.2vw, 1.25rem);
 	--fs-small: 1.0625rem;
-	--fs-label: 0.875rem;
-	--fs-code: 0.875rem;
+	--fs-label: 0.8125rem;
+	--fs-code: 0.8125rem;
 
 	--tracking-display: -0.02em;
 	--tracking-tight: -0.035em;
-	--tracking-label: 0.09em;
+	--tracking-label: 0.14em;
 
 	/* Rules (border tokens) */
 	--rule-mast: 2px;
@@ -65,7 +64,7 @@
 	/* Space */
 	--gutter: clamp(16px, 4vw, 44px);
 	--page-max: 1280px;
-	--measure: 44rem;
+	--measure: 40rem;
 	--space-1: 4px;
 	--space-2: 8px;
 	--space-3: 12px;
@@ -90,7 +89,6 @@
 	--focus-offset: 2px;
 	--focus-color: var(--c-aubergine);
 }
-
 /* ---------- Large screens (Hamzi's Samsung-class monitors, 1440p and up) ----------
  * On a 27" QHD / 4K monitor a 1280px column floats in a sea of bone. Widen the
  * measure and scale the root size so type, spacing and panels grow together. */

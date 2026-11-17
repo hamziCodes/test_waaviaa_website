@@ -44,16 +44,6 @@ export default function Home() {
 	return (
 		<>
 			<CallJourney />
-			<div className="ticker" aria-hidden="true">
-				<div className="ticker__track">
-					{[0, 1].map((copy) => (
-						<span key={copy}>
-							Voice that listens while it talks <i>•</i> English <i>•</i> Urdu <i>•</i> Arabic <i>•</i> Malay <i>•</i>{' '}
-							Barge-in <i>•</i> Two routes at every stage <i>•</i> Post-call record <i>•</i> Phone + web <i>•</i>
-						</span>
-					))}
-				</div>
-			</div>
 
 			<section className="stack on-dark" aria-labelledby="stack-title">
 				<div className="wrap">
@@ -80,7 +70,7 @@ export default function Home() {
 						))}
 					</ol>
 					<p className="label" style={{ marginTop: 24 }}>
-						In order, top to bottom · each agent stage needs two routes, so a provider can fail over ·{' '}
+						Read bottom to top · each agent stage needs two routes, so a provider can fail over ·{' '}
 						<Link to="/how-it-works">How it works</Link>
 					</p>
 				</div>
