@@ -58,7 +58,7 @@ function SceneCopy({ scene, index }: { scene: Scene; index: number }) {
 				<>
 					<div className="btn-row scene__ctas">
 						<Link className="btn btn--lime" to="/demo">
-							See the workspace report
+							See the demo dashboard
 						</Link>
 						<Link className="btn btn--ghost" to="/how-it-works">
 							How it works

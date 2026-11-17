@@ -129,7 +129,7 @@
 }
 
 .field label {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: var(--fs-label);
 	letter-spacing: var(--tracking-label);
 	text-transform: uppercase;
