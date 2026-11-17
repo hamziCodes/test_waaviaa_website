@@ -1,50 +1,52 @@
 /*
- * Wavia · Ripple C2 "Ripple Paper" tokens.
+ * Wavia · Direction B "Sidetone Forward" tokens.
  *
- * Source of truth: docs/design/design-tokens.json ("wavia-ripple" v1.1.0) and
- * docs/DESIGN.md in the engine repo, restated in
- * website/docs/design/ripple-c2/RIPPLE-C2-MASTER.md §3. Every colour and face
- * used by the site is defined here; components reference the semantic layer,
- * never a hex value.
+ * Source: docs/design/ripple-c2/RIPPLE-C2-MASTER.md §1 — Soft blue
+ * #B6DFED ground, Midnight #002941 ink, Coral #FD6E6E signal. Kinetic
+ * editorial: flat colour, hard coral offset shadows, Barlow Condensed
+ * 800 italic uppercase display type, Inter Tight body, Space Mono
+ * labels. The primitive token names are kept from the C2 layer and
+ * remapped by role, so components never change: aubergine = midnight,
+ * lime = coral, lilac = the midnight block, bone = soft blue.
  *
- * Pairing law (DESIGN.md §1.3): aubergine-on-bone and bone-on-aubergine carry
- * all real text. Text may sit on lime (≈14:1) or lilac (≈8:1) only in
- * aubergine. Lime and lilac are never text or thin lines on bone.
+ * Pairing law: midnight on soft blue (or on white panels) carries all
+ * real text. Text may sit on coral only in midnight.
  */
 :root {
-	/* Brand palette — primitive layer */
-	--c-aubergine: #1a0b2e;
-	--c-lime: #c8f169;
-	--c-lilac: #b8a4ff;
-	--c-bone: #f4efe6;
-	--c-lilac-deep: #7a5bc4;
-	--c-aubergine-raised: #2a1647;
-	--c-aubergine-line: #3f2765;
-	--c-studio-paper: #fff6e5;
+	/* Brand palette — primitive layer (remapped by role) */
+	--c-aubergine: #002941;
+	--c-lime: #fd6e6e;
+	--c-lilac: #002941;
+	--c-bone: #b6dfed;
+	--c-lilac-deep: #e14e4e;
+	--c-aubergine-raised: #0b3d5c;
+	--c-aubergine-line: #1d5578;
+	--c-studio-paper: #ffffff;
 
-	/* Semantic layer — paper face (default surface) */
-	--ground: var(--c-bone);
-	--ink: var(--c-aubergine);
-	--rule: var(--c-aubergine);
+	/* Semantic layer — soft-blue face (default surface) */
+	--ground: #b6dfed;
+	--ink: #002941;
+	--rule: #002941;
 	--highlight: var(--c-lime);
 	--block: var(--c-lilac);
-	--panel: var(--c-studio-paper);
+	--panel: #ffffff;
 
-	/* Semantic layer — dark ground (footer, the one dark act) */
-	--ground-dark: var(--c-aubergine);
-	--ink-on-dark: var(--c-bone);
-	--label-on-dark: var(--c-lilac);
-	--accent-on-dark: var(--c-lime);
+	/* Semantic layer — midnight ground (footer, the one dark act) */
+	--ground-dark: #002941;
+	--ink-on-dark: #eaf6fb;
+	--label-on-dark: #8fc7e2;
+	--accent-on-dark: #fd6e6e;
 	--rule-on-dark: var(--c-aubergine-line);
 
-	/* Faces (DESIGN.md §2). One display face per surface: Instrument Serif. */
-	--font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+	/* Faces. Display: Barlow Condensed. Body: Inter Tight. */
+	--font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+	--font-body: 'Inter Tight Variable', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
 	--font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
 	/* Type scale — fluid, anchored to the dashboard scale (84 / 66 / 44 / 38 / 11) */
-	--fs-mega: clamp(3.4rem, 12vw, 10rem);
-	--fs-h1: clamp(2.9rem, 7.2vw, 6rem);
-	--fs-h2: clamp(2.1rem, 4.6vw, 4.125rem);
+	--fs-mega: clamp(3.9rem, 13.8vw, 11.5rem);
+	--fs-h1: clamp(3.35rem, 8.3vw, 6.9rem);
+	--fs-h2: clamp(2.4rem, 5.3vw, 4.75rem);
 	--fs-h3: clamp(1.55rem, 2.5vw, 2.375rem);
 	--fs-kpi: clamp(3.5rem, 6.5vw, 5.25rem);
 	--fs-lead: clamp(1.32rem, 2.1vw, 1.65rem);
@@ -53,7 +55,7 @@
 	--fs-label: 0.8125rem;
 	--fs-code: 0.875rem;
 
-	--tracking-display: -0.02em;
+	--tracking-display: -0.01em;
 	--tracking-tight: -0.035em;
 	--tracking-label: 0.09em;
 

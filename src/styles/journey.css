@@ -217,6 +217,7 @@
 	display: flex;
 	flex-direction: column;
 	background: var(--ground);
+	box-shadow: 14px 14px 0 var(--c-lime);
 	padding-inline: 18px;
 	border-top: var(--rule-mast) solid var(--c-aubergine);
 	border-bottom: var(--rule-hair) solid var(--c-aubergine);
@@ -333,6 +334,7 @@
 
 .call__turn--agent .call__text {
 	background: var(--c-lilac);
+	color: var(--ink-on-dark);
 	padding: 10px 14px;
 	font-style: italic;
 	margin-right: 10%;

@@ -15,7 +15,7 @@ body {
 	margin: 0;
 	background: var(--ground);
 	color: var(--ink);
-	font-family: var(--font-display);
+	font-family: var(--font-body);
 	font-size: var(--fs-body);
 	line-height: 1.5;
 	font-weight: 400;
@@ -56,10 +56,18 @@ h2,
 h3,
 h4 {
 	font-family: var(--font-display);
-	font-weight: 400;
+	font-weight: 700;
 	letter-spacing: var(--tracking-display);
 	line-height: 1;
 	text-wrap: balance;
+}
+
+/* Sidetone display voice: Barlow Condensed 800, italic, uppercase. */
+h1,
+h2 {
+	font-weight: 800;
+	font-style: italic;
+	text-transform: uppercase;
 }
 
 p,
