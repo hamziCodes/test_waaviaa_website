@@ -56,7 +56,7 @@ h2,
 h3,
 h4 {
 	font-family: var(--font-display);
-	font-weight: 400;
+	font-weight: 700;
 	letter-spacing: var(--tracking-display);
 	line-height: 1;
 	text-wrap: balance;
@@ -187,13 +187,13 @@ button {
 	}
 }
 
-/* Paper is not flat: a faint lilac wash top-right, a lime breath bottom-left,
- * and a whisper of dot-grid over the bone ground. */
+/* Raven is not flat: a poppy glow top-right, an ice breath bottom-left,
+ * and a whisper of dot-grid over the raven ground. */
 body {
 	background-image:
-		radial-gradient(52rem 30rem at 88% -6%, color-mix(in srgb, var(--c-lilac) 17%, transparent), transparent 62%),
-		radial-gradient(44rem 28rem at -8% 104%, color-mix(in srgb, var(--c-lime) 13%, transparent), transparent 60%),
-		radial-gradient(color-mix(in srgb, var(--c-aubergine) 5%, transparent) 1px, transparent 1.4px);
+		radial-gradient(52rem 30rem at 88% -6%, color-mix(in srgb, var(--c-lime) 17%, transparent), transparent 62%),
+		radial-gradient(44rem 28rem at -8% 104%, color-mix(in srgb, var(--c-lilac) 13%, transparent), transparent 60%),
+		radial-gradient(color-mix(in srgb, var(--c-bone) 5%, transparent) 1px, transparent 1.4px);
 	background-size: auto, auto, 26px 26px;
 	background-attachment: fixed, fixed, fixed;
 }

@@ -68,7 +68,7 @@
 	margin-top: 0.5rem;
 	font-size: 0.875rem;
 	font-weight: 600;
-	color: color-mix(in srgb, var(--c-aubergine) 72%, transparent);
+	color: color-mix(in srgb, var(--ink) 72%, transparent);
 }
 
 .report__rail-meta {
@@ -86,7 +86,7 @@
 }
 
 .report__rail-meta dt {
-	color: color-mix(in srgb, var(--c-aubergine) 62%, transparent);
+	color: color-mix(in srgb, var(--ink) 62%, transparent);
 }
 
 .report__rail-meta dd {
@@ -99,7 +99,7 @@
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	color: color-mix(in srgb, var(--c-aubergine) 62%, transparent);
+	color: color-mix(in srgb, var(--ink) 62%, transparent);
 	margin-bottom: 0.5rem;
 }
 
@@ -149,7 +149,7 @@
 .report__rail-note {
 	font-size: 0.875rem;
 	line-height: 1.5;
-	color: color-mix(in srgb, var(--c-aubergine) 68%, transparent);
+	color: color-mix(in srgb, var(--ink) 68%, transparent);
 }
 
 /* ---------- Main column ---------- */
@@ -187,7 +187,7 @@
 	font-size: 1.125rem;
 	line-height: 1.6;
 	max-width: 44rem;
-	color: color-mix(in srgb, var(--c-aubergine) 88%, transparent);
+	color: color-mix(in srgb, var(--ink) 88%, transparent);
 }
 
 .report__kpis {
@@ -224,7 +224,7 @@
 
 .report__kpi-detail {
 	font-size: 0.875rem;
-	color: color-mix(in srgb, var(--c-aubergine) 64%, transparent);
+	color: color-mix(in srgb, var(--ink) 64%, transparent);
 	line-height: 1.4;
 }
 
@@ -261,7 +261,7 @@
 	margin-top: 0.375rem;
 	font-size: 1rem;
 	line-height: 1.55;
-	color: color-mix(in srgb, var(--c-aubergine) 76%, transparent);
+	color: color-mix(in srgb, var(--ink) 76%, transparent);
 	max-width: 42rem;
 }
 
@@ -304,7 +304,7 @@
 	font-weight: 600;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
-	color: color-mix(in srgb, var(--c-aubergine) 52%, transparent);
+	color: color-mix(in srgb, var(--ink) 52%, transparent);
 }
 
 .report__cols {
@@ -368,7 +368,7 @@
 	gap: 0.5rem;
 	font-size: 0.875rem;
 	font-weight: 600;
-	color: color-mix(in srgb, var(--c-aubergine) 72%, transparent);
+	color: color-mix(in srgb, var(--ink) 72%, transparent);
 }
 
 .report__card-head-right {
@@ -390,7 +390,7 @@
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	color: color-mix(in srgb, var(--c-aubergine) 62%, transparent);
+	color: color-mix(in srgb, var(--ink) 62%, transparent);
 }
 
 .report__caller {
@@ -424,7 +424,7 @@
 	margin-top: 0.75rem;
 	font-size: 0.875rem;
 	font-weight: 600;
-	color: color-mix(in srgb, var(--c-aubergine) 66%, transparent);
+	color: color-mix(in srgb, var(--ink) 66%, transparent);
 }
 
 .report__wave {
@@ -451,7 +451,7 @@
 .report__meta dt {
 	font-size: 0.8125rem;
 	font-weight: 600;
-	color: color-mix(in srgb, var(--c-aubergine) 58%, transparent);
+	color: color-mix(in srgb, var(--ink) 58%, transparent);
 }
 
 .report__meta dd {
@@ -501,7 +501,7 @@
 .report__steps p {
 	font-size: 0.875rem;
 	line-height: 1.5;
-	color: color-mix(in srgb, var(--c-aubergine) 74%, transparent);
+	color: color-mix(in srgb, var(--ink) 74%, transparent);
 }
 
 /* ---------- Tables ---------- */
@@ -537,7 +537,7 @@
 	background: color-mix(in srgb, var(--c-aubergine) 4%, var(--panel));
 	font-size: 0.8125rem;
 	font-weight: 650;
-	color: color-mix(in srgb, var(--c-aubergine) 70%, transparent);
+	color: color-mix(in srgb, var(--ink) 70%, transparent);
 	white-space: nowrap;
 }
 
@@ -577,7 +577,7 @@
 	margin-top: 0.25rem;
 	font-size: 0.875rem;
 	font-weight: 400;
-	color: color-mix(in srgb, var(--c-aubergine) 68%, transparent);
+	color: color-mix(in srgb, var(--ink) 68%, transparent);
 	max-width: 22rem;
 }
 
@@ -646,7 +646,7 @@
 .report__record-meta {
 	font-size: 0.875rem;
 	font-weight: 500;
-	color: color-mix(in srgb, var(--c-aubergine) 66%, transparent);
+	color: color-mix(in srgb, var(--ink) 66%, transparent);
 }
 
 .report__record-grid {
@@ -672,7 +672,7 @@
 .report__who {
 	font-size: 0.8125rem;
 	font-weight: 700;
-	color: color-mix(in srgb, var(--c-aubergine) 58%, transparent);
+	color: color-mix(in srgb, var(--ink) 58%, transparent);
 }
 
 .report__transcript p {
@@ -713,7 +713,7 @@
 }
 
 .report__fields dt {
-	color: color-mix(in srgb, var(--c-aubergine) 62%, transparent);
+	color: color-mix(in srgb, var(--ink) 62%, transparent);
 	text-transform: capitalize;
 }
 
@@ -757,7 +757,7 @@
 
 .report__meter-plain {
 	font-size: 0.875rem;
-	color: color-mix(in srgb, var(--c-aubergine) 64%, transparent);
+	color: color-mix(in srgb, var(--ink) 64%, transparent);
 }
 
 .report__meter-side {
@@ -814,7 +814,7 @@
 	font-size: 1rem;
 	line-height: 1.6;
 	max-width: 42rem;
-	color: color-mix(in srgb, var(--c-aubergine) 80%, transparent);
+	color: color-mix(in srgb, var(--ink) 80%, transparent);
 }
 
 /* ---------- Responsive ---------- */

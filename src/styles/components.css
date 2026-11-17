@@ -45,6 +45,9 @@ h3 .hl {
 	line-height: 0.84;
 	padding: 0.06em 0.1em 0.1em;
 	font-style: italic;
+	/* Raven Signal: the marked word is poppy text, not a filled block. */
+	background: transparent;
+	color: var(--c-lime);
 }
 
 .lilac-block {
@@ -76,10 +79,12 @@ h3 .hl {
 	align-items: baseline;
 	gap: 0.08em;
 	font-family: var(--font-display);
-	font-style: italic;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
 	font-size: 2.5rem;
 	line-height: 1;
-	letter-spacing: -0.01em;
+	letter-spacing: 0.18em;
 	color: inherit;
 	text-decoration: none;
 }
@@ -88,9 +93,9 @@ h3 .hl {
 	display: inline-block;
 	width: 0.2em;
 	height: 0.2em;
-	border-radius: 50%;
-	background: var(--c-lilac);
-	/* Lilac is never a thin shape on bone alone: an aubergine hairline holds it. */
+	border-radius: 0;
+	background: var(--c-lime);
+	/* The signal square: poppy, squared off, held by an ice hairline. */
 	border: 1px solid var(--c-aubergine);
 	transform: translateY(-0.02em);
 }

@@ -333,6 +333,7 @@
 
 .call__turn--agent .call__text {
 	background: var(--c-lilac);
+	color: var(--c-aubergine);
 	padding: 10px 14px;
 	font-style: italic;
 	margin-right: 10%;
