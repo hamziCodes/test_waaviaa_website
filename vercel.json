@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    { "source": "/for-developers", "destination": "/core", "permanent": true },
+    { "source": "/enterprise", "destination": "/shield", "permanent": true },
+    { "source": "/get-started", "destination": "/studio", "permanent": true },
+    { "source": "/login", "destination": "/studio", "permanent": true }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}

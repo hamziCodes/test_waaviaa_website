@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WAVIA — three teaser identities</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700&family=Barlow+Condensed:ital,wght@1,800&family=Bricolage+Grotesque:wght@600;800&family=Space+Mono:wght@400;700&family=Unbounded:wght@700&family=Syne:wght@800&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{--bg:#F4F2EE;--fg:#16141A;--mut:#6B6672;--card:#fff;--line:#DDD8D0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121014;--fg:#F1EEF5;--mut:#9C95A6;--card:#1B1820;--line:#2E2A36}}
+:root[data-theme="dark"]{--bg:#121014;--fg:#F1EEF5;--mut:#9C95A6;--card:#1B1820;--line:#2E2A36}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 'Inter Tight',system-ui,sans-serif}
+main{max-width:1280px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:clamp(28px,5vw,44px);margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:22px;margin:0 0 4px}
+.lede{color:var(--mut);max-width:70ch;margin:0 0 28px}
+.mono{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+@media(max-width:860px){.row{grid-template-columns:1fr}}
+.stage{position:relative;width:100%;overflow:hidden;border-radius:6px;background:#000}
+.stage>.art{position:absolute;left:0;top:0;transform-origin:0 0;overflow:hidden}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.card p,.card li{font-size:14px;margin:6px 0}
+.card ul{padding-left:18px;margin:6px 0}
+.sw{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.sw div{width:84px;font:11px/1.3 'Space Mono',monospace;color:var(--mut)}
+.sw i{display:block;height:44px;border-radius:5px;border:1px solid var(--line);margin-bottom:4px}
+.pair{display:grid;grid-template-columns:1fr 1.25fr;gap:10px;margin-top:12px}
+.rec{border-left:4px solid #C8F169;padding:4px 0 4px 16px;margin:36px 0 0;max-width:75ch}
+/* ---------- Direction A: Raven ---------- */
+.a{background:#0A0A0C;color:#CFE6F5;font-family:'Inter Tight',sans-serif}
+.a .l{position:absolute;inset:0;background:radial-gradient(ellipse 900px 720px at 88% -6%,#E8352B 0,rgba(232,53,43,.5) 34%,transparent 72%),radial-gradient(ellipse 760px 520px at 0% 108%,rgba(207,230,245,.38),transparent 70%)}
+.a .x{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(207,230,245,.18) 0 1px,transparent 1px 7px);-webkit-mask-image:linear-gradient(180deg,#000,transparent 62%);mask-image:linear-gradient(180deg,#000,transparent 62%)}
+.bars{position:absolute;left:60px;right:60px;top:0;height:700px;display:flex;gap:7px;align-items:flex-start}
+.bars b{flex:1;background:linear-gradient(180deg,#CFE6F5,rgba(207,230,245,0));opacity:.9}
+.a .wm{position:absolute;left:60px;top:56px;font-weight:700;font-size:44px;letter-spacing:11px;color:#0A0A0C;display:flex;align-items:center;gap:16px}
+.a .wm s{width:20px;height:20px;background:#0A0A0C}
+.a .tr{position:absolute;right:60px;top:66px;font:400 20px 'Space Mono';letter-spacing:2px;color:#0A0A0C}
+.a h3{position:absolute;left:56px;bottom:150px;margin:0;font-weight:700;font-size:176px;line-height:.9;letter-spacing:-7px;color:#CFE6F5}
+.a h3 em{font-style:normal;color:#E8352B}
+.a .ft{position:absolute;left:60px;right:60px;bottom:56px;display:flex;justify-content:space-between;font:400 20px 'Space Mono';letter-spacing:2px;color:#CFE6F5;border-top:1px solid rgba(207,230,245,.4);padding-top:18px}
+/* ---------- Direction B: Sidetone ---------- */
+.b{background:#B6DFED;color:#002941;font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800}
+.b h3{position:absolute;left:60px;top:150px;margin:0;font-size:236px;line-height:.82;text-transform:uppercase;letter-spacing:-3px;text-shadow:12px 12px 0 #FD6E6E}
+.b svg{position:absolute;inset:0}
+.b .tl{position:absolute;left:60px;top:60px;font:700 22px 'Space Mono';font-style:normal;letter-spacing:3px}
+.b .wm{position:absolute;left:52px;bottom:40px;font-size:230px;line-height:.8;color:#B6DFED;letter-spacing:-4px;text-shadow:10px 10px 0 #FD6E6E;text-transform:uppercase}
+.b .tr{position:absolute;right:60px;bottom:64px;font:700 20px 'Space Mono';font-style:normal;letter-spacing:2px;color:#B6DFED;text-align:right}
+/* ---------- Direction C: Ripple ---------- */
+.c{background:#1A0B2E;color:#F4EFE6;font-family:'Bricolage Grotesque',sans-serif}
+.c .d{position:absolute;inset:0;background:radial-gradient(circle,#C8F169 4px,transparent 4.6px) 0 0/28px 28px;-webkit-mask-image:repeating-radial-gradient(circle at 50% 38%,#000 0 54px,transparent 54px 108px);mask-image:repeating-radial-gradient(circle at 50% 38%,#000 0 54px,transparent 54px 108px)}
+.c .v{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(26,11,46,0) 0,rgba(26,11,46,0) 18%,#1A0B2E 74%)}
+.c .o{position:absolute;left:390px;top:370px;width:300px;height:300px;border-radius:50%;background:#B8A4FF;box-shadow:0 0 0 18px #1A0B2E,0 0 0 22px #C8F169}
+.c .wm{position:absolute;left:60px;top:54px;font-weight:800;font-size:60px;letter-spacing:-2px;display:flex;gap:10px;align-items:center}
+.c .wm s{width:16px;height:16px;border-radius:50%;background:#B8A4FF}
+.c .tr{position:absolute;right:60px;top:72px;font:400 20px 'Space Mono';letter-spacing:2px;color:#B8A4FF}
+.c h3{position:absolute;left:60px;right:60px;bottom:120px;margin:0;font-weight:800;font-size:128px;line-height:.98;letter-spacing:-4px}
+.c h3 u{text-decoration:none;background:#C8F169;color:#1A0B2E;padding:0 18px;border-radius:70px;display:inline-block;line-height:1.05}
+.c .ft{position:absolute;left:60px;bottom:54px;font:400 20px 'Space Mono';letter-spacing:2px;color:#B8A4FF}
+/* ---------- carry-over tiles ---------- */
+.t{font-family:var(--f);background:var(--b);color:var(--k);position:relative;width:100%;height:100%}
+.t .big{position:absolute;left:44px;bottom:150px;font-size:var(--s);font-weight:800;line-height:.9;letter-spacing:-3px;text-transform:var(--u);font-style:var(--i)}
+.t .sm{position:absolute;left:44px;top:44px;font:700 22px 'Space Mono';letter-spacing:3px;color:var(--a)}
+.t .wv{position:absolute;left:44px;right:44px;bottom:60px;height:70px;display:flex;gap:5px;align-items:center}
+.t .wv b{flex:1;background:var(--a);border-radius:3px}
+.t .pn{position:absolute;left:60px;right:60px;top:170px;height:640px;background:var(--p);border:3px solid var(--a);border-radius:18px;padding:34px;font:700 24px 'Space Mono';color:var(--k)}
+.t .pn i{display:block;height:84px;margin-top:20px;border-radius:10px;background:var(--a);opacity:.28}
+.t .cap{position:absolute;left:60px;right:60px;top:860px;font-size:110px;font-weight:800;line-height:.92;letter-spacing:-3px;text-transform:var(--u);font-style:var(--i)}
+.t .lb{position:absolute;left:60px;bottom:50px;font:400 18px 'Space Mono';color:var(--a);letter-spacing:1px}
+.a2{background:#0A0A0C;color:#CFE6F5;font-family:'Unbounded',sans-serif;font-weight:700}
+.a2 .gr{position:absolute;inset:0;background:linear-gradient(rgba(207,230,245,.14) 1px,transparent 1px) 0 0/90px 90px,linear-gradient(90deg,rgba(207,230,245,.14) 1px,transparent 1px) 0 0/90px 90px}
+.a2 .sun{position:absolute;right:-250px;top:-170px;width:900px;height:900px;border-radius:50%;background:#E8352B}
+.a2 .wm{position:absolute;left:60px;top:60px;font-size:40px;letter-spacing:6px}
+.a2 .tr{position:absolute;right:60px;top:66px;font:700 20px 'Space Mono';letter-spacing:2px;color:#0A0A0C}
+.a2 h3{position:absolute;left:60px;bottom:170px;margin:0;font-size:94px;line-height:1.04;letter-spacing:-4px}
+.a2 h3 i{font-style:normal;color:transparent;-webkit-text-stroke:3px #CFE6F5}
+.a2 .ft{position:absolute;left:60px;right:60px;bottom:60px;display:flex;justify-content:space-between;font:400 20px 'Space Mono';letter-spacing:2px}
+.b2{background:#002941;color:#B6DFED;font-family:'Syne',sans-serif;font-weight:800}
+.b2 .bb{position:absolute;padding:34px 60px 42px;border-radius:72px;font-size:146px;line-height:1;letter-spacing:-5px;white-space:nowrap}
+.b2 .bb:after{content:'';position:absolute;bottom:-26px;width:56px;height:56px;background:inherit;transform:rotate(45deg);border-radius:0 0 0 14px;z-index:-1}
+.b2 .x1{left:60px;top:240px;background:#B6DFED;color:#002941}.b2 .x1:after{left:90px}
+.b2 .x2{right:60px;top:540px;background:#FD6E6E;color:#002941}.b2 .x2:after{right:90px;border-radius:0 14px 0 0}
+.b2 .x3{left:100px;top:850px;border:6px solid #B6DFED;padding:28px 54px 36px}
+.b2 .wm{position:absolute;left:60px;top:60px;font-size:48px;letter-spacing:-1px}
+.b2 .tr{position:absolute;right:60px;top:70px;font:700 20px 'Space Mono';letter-spacing:2px;color:#FD6E6E}
+.b2 .ty{position:absolute;right:60px;bottom:70px;background:#B6DFED;border-radius:50px;padding:26px 40px;display:flex;gap:14px}.b2 .ty s{width:22px;height:22px;border-radius:50%;background:#002941}
+.b2 .ft{position:absolute;left:60px;bottom:78px;font:700 20px 'Space Mono';letter-spacing:2px}
+.c2{background:#F4EFE6;color:#1A0B2E;font-family:'Instrument Serif',serif}
+.c2 .rg{position:absolute;border:2px solid #1A0B2E;border-radius:50%}
+.c2 .o{position:absolute;left:230px;top:210px;width:620px;height:620px;border-radius:50%;background:#B8A4FF}
+.c2 .tp{position:absolute;left:60px;right:60px;top:50px;border-top:3px solid #1A0B2E;padding-top:14px;display:flex;justify-content:space-between;align-items:baseline}
+.c2 .tp b{font-size:60px;font-weight:400;font-style:italic}.c2 .tp span,.c2 .ft{font:700 20px 'Space Mono';letter-spacing:2px}
+.c2 .st{position:absolute;left:640px;top:170px;transform:rotate(-8deg);background:#C8F169;border-radius:50px;padding:14px 34px;font:700 24px 'Space Mono';letter-spacing:2px}
+.c2 h3{position:absolute;left:60px;bottom:116px;margin:0;font-weight:400;font-size:176px;line-height:.86;letter-spacing:-6px}
+.c2 h3 i{background:#C8F169;padding:0 16px}
+.c2 .ft{position:absolute;left:60px;right:60px;bottom:56px;border-top:1px solid #1A0B2E;padding-top:14px;display:flex;justify-content:space-between}
+</style></head><body><main>
+<h1>WAVIA — three ways to say “A first listen is coming.”</h1>
+<p class="lede">Three portrait teasers (1080 × 1350), each with a reusable mini design system. The posts make no product claims; the carry-over tiles below use illustrative waveforms and UI blocks, clearly labelled, until real captures replace them. Scroll to the right-hand column of each system for the reel cover and Studio post.</p>
+
+<div class="row">
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art a" style="width:1080px;height:1350px">
+  <div class="l"></div><div class="x"></div><div class="bars" id="bA"></div>
+  <div class="wm"><s></s>WAVIA</div><div class="tr">01 / 09</div>
+  <h3>A first<br><em>listen</em> is<br>coming.</h3>
+  <div class="ft"><span>VOICE AI ENGINE</span><span>SIGNAL — SOON</span></div></div></div>
+  <p class="mono">A · Raven Signal</p></div>
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art b" style="width:1080px;height:1350px">
+  <svg viewBox="0 0 1080 1350"><path d="M-80 1350V1010C300 960 700 760 1160 600V1350Z" fill="#002941"/><path d="M-80 1010C300 960 700 760 1160 600V672C700 832 300 1032-80 1082Z" fill="#FD6E6E"/><path d="M-80 1178C120 1130 200 1230 380 1170S640 1010 820 1040 1000 960 1160 880" fill="none" stroke="#B6DFED" stroke-width="6"/></svg>
+  <div class="tl">WAVIA ▸ 01 SIGNAL</div>
+  <h3>A first<br>listen<br>is coming.</h3>
+  <div class="wm">Wavia</div><div class="tr">VOICE AI ENGINE<br>SOON</div></div></div>
+  <p class="mono">B · Sidetone Forward</p></div>
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art c" style="width:1080px;height:1350px">
+  <div class="d"></div><div class="v"></div><div class="o"></div>
+  <div class="wm"><s></s>wavia</div><div class="tr">01 — SIGNAL</div>
+  <h3>a first <u>listen</u> is coming.</h3>
+  <div class="ft">VOICE AI ENGINE · SOON</div></div></div>
+  <p class="mono">C · Ripple (original)</p></div>
+</div>
+
+<div class="cols" id="sys"></div>
+
+<h2 style="margin:48px 0 6px;font-size:30px">Round 2 — same palettes, new style and type</h2>
+<p class="lede">The colours are identical to round 1; the visual language and fonts change. Same teaser line, same 1080 × 1350 format, no product claims.</p>
+<div class="row">
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art a2" style="width:1080px;height:1350px"><div class="gr"></div><div class="sun"></div><div class="wm">WAVIA</div><div class="tr">SIGNAL 01</div><h3>A first<br><i>listen</i><br>is coming.</h3><div class="ft"><span>VOICE AI ENGINE</span><span>SOON</span></div></div></div><p class="mono">A2 · Raven Dial</p></div>
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art b2" style="width:1080px;height:1350px"><div class="wm">wavia</div><div class="tr">01 / SIGNAL</div><div class="bb x1">A first</div><div class="bb x2">listen</div><div class="bb x3">is coming.</div><div class="ft">VOICE AI ENGINE</div><div class="ty"><s></s><s></s><s></s></div></div></div><p class="mono">B2 · Sidetone Chat</p></div>
+ <div><div class="stage" data-w="1080" data-h="1350"><div class="art c2" style="width:1080px;height:1350px"><div class="rg" style="left:70px;top:50px;width:940px;height:940px"></div><div class="rg" style="left:150px;top:130px;width:780px;height:780px"></div><div class="o"></div><div class="tp"><b>wavia</b><span>01 — SIGNAL</span></div><div class="st">FIRST LISTEN · SOON</div><h3>A first<br><i>listen</i> is<br>coming.</h3><div class="ft"><span>VOICE AI ENGINE</span><span>ISSUE 01</span></div></div></div><p class="mono">C2 · Ripple Paper</p></div>
+</div>
+<div class="cols">
+ <div class="card"><h2>A2 · Raven Dial</h2><p>Same swatches: Raven #0A0A0C, Ice #CFE6F5, Poppy #E8352B.</p><ul><li>Type: Unbounded 700, tight tracking, sentence case; “listen” as an ice outline. Labels in Space Mono.</li><li>Device: a flat poppy disc cropped off the corner, like a signal dial, over a 90px ice grid at 14% opacity.</li><li>Flat colour, no glow; the black reads as a technical instrument.</li></ul></div>
+ <div class="card"><h2>B2 · Sidetone Chat</h2><p>Same swatches: Midnight #002941, Soft blue #B6DFED, Coral #FD6E6E.</p><ul><li>Type: Syne 800, lowercase wordmark, −3% tracking.</li><li>Device: the headline set across three speech bubbles (filled blue, filled coral, outlined), ending with a typing-dots bubble.</li><li>Navy ground inverted from round 1; the conversation motif makes the voice idea literal.</li></ul></div>
+ <div class="card"><h2>C2 · Ripple Paper</h2><p>Same swatches: Aubergine #1A0B2E, Lime #C8F169, Lilac #B8A4FF, Bone #F4EFE6.</p><ul><li>Type: Instrument Serif, large with italic wordmark; “listen” highlighted in lime. Labels in Space Mono.</li><li>Device: a solid lilac disc with two aubergine hairline rings, a tilted lime sticker, and magazine rules top and bottom.</li><li>Bone paper ground gives a printed, issue-style feel that suits a series of numbered sections.</li></ul></div>
+</div>
+
+<div class="rec"><h2>Which I’d carry forward: C, Ripple</h2>
+<p>A is the most striking single image, but black-with-red-light is the default look for AI tooling and it would blur into the feed. B has great momentum, but its athletic energy suits sport more than speech. C is the only one that visualises what WAVIA does (a voice radiating outward), it reads clearly at thumbnail size, and the cream Studio paper UI (<code>#FFF6E5</code>) sits naturally on aubergine, so the Studio carousels will pop. If you want a safer, more premium-tech mood, A is the fallback; its red light also gives you a strong reel-cover device.</p></div>
+</main>
+<script>
+const rnd=s=>{let x=Math.sin(s*12.9898)*43758.5453;return x-Math.floor(x)};
+document.getElementById('bA').innerHTML=Array.from({length:62},(_,i)=>`<b style="height:${120+Math.abs(Math.sin(i*.31))*340*(.4+rnd(i))+ (i%9==0?120:0)}px"></b>`).join('');
+const wv=n=>Array.from({length:n},(_,i)=>`<b style="height:${10+Math.abs(Math.sin(i*.5))*50*(.4+rnd(i+3))}px"></b>`).join('');
+const T=[
+{n:'A · Raven Signal',sub:'High-contrast, light falling into darkness.',
+ sw:[['Raven','#0A0A0C'],['Ice','#CFE6F5'],['Poppy','#E8352B'],['White','#FFFFFF']],
+ notes:['Light: poppy radial from top-right (#E8352B → 50% → clear at 72%), ice glow bottom-left at 38%.','Type: Inter Tight 700, −4% tracking, sentence case, one word in poppy. Labels: Space Mono 20px, +2px tracking.','Wordmark: WAVIA caps, +11px tracking, preceded by a solid square.','Texture: 1px ice vertical lines at 7px pitch, masked to fade out by 62% height; hanging waveform bars.','Spacing: 60px margins, text bottom-left, hairline footer rule.'],
+ v:{'--f':"'Inter Tight'",'--b':'#0A0A0C','--k':'#CFE6F5','--a':'#E8352B','--p':'#15151A','--s':'150px','--u':'none','--i':'normal'}},
+{n:'B · Sidetone Forward',sub:'Kinetic editorial, hard shadows, cropped movement.',
+ sw:[['Soft blue','#B6DFED'],['Midnight','#002941'],['Coral','#FD6E6E']],
+ notes:['Lighting: none, flat colour with a hard 12px coral offset shadow on type.','Type: Barlow Condensed 800 italic, uppercase, −3px tracking. Mono labels in Space Mono 700.','Wordmark: “Wavia” in soft blue on the navy field, coral hard shadow.','Graphic devices: a diagonal navy sweep cropped off both edges, coral edge band, one thin blue sine line.','Spacing: 60px margins, headline top-left, sweep rises to the right.'],
+ v:{'--f':"'Barlow Condensed'",'--b':'#B6DFED','--k':'#002941','--a':'#FD6E6E','--p':'#DDF0F7','--s':'220px','--u':'uppercase','--i':'italic'}},
+{n:'C · Ripple',sub:'A voice radiating outward, in dots. Warm and ownable.',
+ sw:[['Aubergine','#1A0B2E'],['Lime','#C8F169'],['Lilac','#B8A4FF'],['Bone','#F4EFE6']],
+ notes:['Lighting: none; depth comes from the vignette that fades the dot rings into aubergine.','Type: Bricolage Grotesque 800 lowercase, −3% tracking; key word in a lime pill. Mono: Space Mono 20px.','Wordmark: lowercase “wavia” with a lilac dot (the voice).','Texture: 28px lime dot grid masked into concentric rings (54px on, 54px off) around a lilac core.','Spacing: 60px margins, source of sound at upper-centre, headline anchored low.'],
+ v:{'--f':"'Bricolage Grotesque'",'--b':'#1A0B2E','--k':'#F4EFE6','--a':'#C8F169','--p':'#FFF6E5','--s':'150px','--u':'none','--i':'normal'}}];
+const vs=o=>Object.entries(o).map(([k,v])=>`${k}:${v}`).join(';');
+document.getElementById('sys').innerHTML=T.map((t,i)=>`<div class="card"><h2>${t.n}</h2><p>${t.sub}</p>
+<div class="sw">${t.sw.map(s=>`<div><i style="background:${s[1]}"></i>${s[0]}<br>${s[1]}</div>`).join('')}</div>
+<ul>${t.notes.map(n=>`<li>${n}</li>`).join('')}</ul>
+<div class="pair"><div><div class="stage" data-w="540" data-h="960"><div class="art" style="width:540px;height:960px"><div class="t" style="${vs(t.v)}"><div class="sm">02 · ON MIC</div><div class="big">On<br>mic.</div><div class="wv">${wv(40)}</div></div></div></div><p class="mono">Reel cover, illustrative waveform</p></div>
+<div><div class="stage" data-w="1080" data-h="1350"><div class="art" style="width:1080px;height:1350px"><div class="t" style="${vs(t.v)}"><div class="sm">03 · INSIDE STUDIO</div><div class="pn">AGENT DIRECTORY<i></i><i></i><i></i></div><div class="cap">Inside<br>Studio.</div><div class="lb">ILLUSTRATIVE UI — SWAP FOR REAL CAPTURE</div></div></div></div><p class="mono">Studio post, placeholder panel</p></div></div></div>`).join('');
+function fit(){document.querySelectorAll('.stage').forEach(s=>{const w=+s.dataset.w,h=+s.dataset.h,k=s.clientWidth/w;s.style.height=(h*k)+'px';s.firstElementChild.style.transform=`scale(${k})`})}
+addEventListener('resize',fit);fit();document.fonts&&document.fonts.ready.then(fit);
+</script></body></html>

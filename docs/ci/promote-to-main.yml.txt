@@ -1,0 +1,83 @@
+name: Promote to main
+
+# Manual only. This workflow NEVER runs on push, on a schedule, or on a PR.
+# It runs when someone clicks "Run workflow" in the Actions tab (or dispatches
+# it through the API). It merges a chosen branch into main with a merge commit
+# authored as hamziCodes <hamza05sultan@gmail.com> and pushes main using
+# Hamzi's own PAT (repo secret HAMZI_PAT), so Vercel accepts the deployment
+# exactly as if Hamzi had merged and pushed from his own machine.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch to merge into main"
+        required: true
+        default: "Kai"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-to-main
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Guard the inputs
+        run: |
+          SRC="${{ inputs.source_branch }}"
+          if [ "$SRC" = "main" ]; then
+            echo "::error::source_branch cannot be main."
+            exit 1
+          fi
+          echo "Promoting '$SRC' into main."
+
+      - name: Check out main with Hamzi's PAT
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.HAMZI_PAT }}
+          fetch-depth: 0
+
+      - name: Configure the merge author as Hamzi
+        run: |
+          git config user.name "hamziCodes"
+          git config user.email "hamza05sultan@gmail.com"
+
+      - name: Fetch the source branch
+        run: |
+          git fetch origin "${{ inputs.source_branch }}"
+          if ! git rev-parse --verify "origin/${{ inputs.source_branch }}" >/dev/null 2>&1; then
+            echo "::error::Branch '${{ inputs.source_branch }}' does not exist on origin."
+            exit 1
+          fi
+
+      - name: Stop cleanly if there is nothing to promote
+        id: check
+        run: |
+          AHEAD=$(git rev-list --count "main..origin/${{ inputs.source_branch }}")
+          echo "Commits ahead of main: $AHEAD"
+          if [ "$AHEAD" -eq 0 ]; then
+            echo "nothing=true" >> "$GITHUB_OUTPUT"
+            echo "Nothing to promote — main already contains '${{ inputs.source_branch }}'."
+          else
+            echo "nothing=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge into main (always a Hamzi-authored merge commit)
+        if: steps.check.outputs.nothing == 'false'
+        run: |
+          if ! git merge --no-ff --no-edit "origin/${{ inputs.source_branch }}"; then
+            git merge --abort || true
+            echo "::error::Merge conflict — main was left untouched. Resolve the conflict manually, then run this workflow again."
+            exit 1
+          fi
+          git log -1 --format="Merge commit: %h by %an <%ae>"
+
+      - name: Push main
+        if: steps.check.outputs.nothing == 'false'
+        run: git push origin main

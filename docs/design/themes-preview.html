@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wavia — Theme A / Theme B comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..600;1,400&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=Space+Mono:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --doc-bg: #101010;
+    --doc-fg: #EDE7DA;
+    --doc-muted: #9C9382;
+    --doc-line: #2A2723;
+  }
+  html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--doc-bg);
+    color: var(--doc-fg);
+    font-family: 'Instrument Sans', Inter, system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .docbar {
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+    padding: 18px 24px; border-bottom: 1px solid var(--doc-line);
+    position: sticky; top: 0; z-index: 99; background: rgba(16,16,16,.92); backdrop-filter: blur(12px);
+  }
+  .docbar strong { font-weight: 600; letter-spacing: -.01em; }
+  .docbar span { color: var(--doc-muted); font-size: 14px; }
+  .docbar a { color: var(--doc-fg); text-decoration: none; font-size: 13px; padding: 6px 12px; border: 1px solid var(--doc-line); border-radius: 999px; }
+  .docbar a:hover { border-color: #6C6353; }
+
+  .specbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; padding: 14px 24px; background: #161513; border-top: 1px solid var(--doc-line); border-bottom: 1px solid var(--doc-line); }
+  .specbar h2 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; margin: 0; font-weight: 600; }
+  .specbar p { margin: 0; font-size: 13px; color: var(--doc-muted); }
+  .specbar b { color: var(--doc-fg); font-weight: 500; }
+
+  /* ---------- shared mini-page shell ---------- */
+  .stage {
+    padding: 0 20px 84px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    position: relative;
+    overflow: hidden;
+  }
+  .stage[data-theme="a"] {
+    --bg: #0B0A08;
+    --bg2: #151210;
+    --surface: #131110;
+    --surface2: #1B1815;
+    --card-bg: rgba(255, 243, 228, 0.045);
+    --card-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 40px 120px -32px rgba(0,0,0,.9);
+    --border: rgba(255, 240, 222, 0.10);
+    --border-strong: rgba(255, 240, 222, 0.22);
+    --bw: 1px;
+    --text: #F6EFE3;
+    --muted: #A79C8B;
+    --faint: #6E6557;
+    --accent: #FF8A1F;
+    --accent-hover: #FFA044;
+    --soft: rgba(255, 138, 31, 0.14);
+    --verify: #37D7C4;
+    --brass: #C6A15B;
+    --rose: #FF5C8A;
+    --violet: #7B6BFF;
+    --btn-bg: #FF8A1F;
+    --btn-fg: #0B0A08;
+    --radius: 28px;
+    --radius-lg: 36px;
+    --radius-sm: 16px;
+    --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --display-weight: 800;
+    --display-stretch: 82%;
+    --display-case: uppercase;
+    --display-tracking: -0.02em;
+    --display-leading: 0.88;
+    --body: 'Instrument Sans', Inter, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  .stage[data-theme="b"] {
+    --bg: #FFF6E5;
+    --bg2: #FBEACD;
+    --surface: #FFFBF2;
+    --surface2: #F6E6C8;
+    --card-bg: #FFFBF2;
+    --card-shadow: 0 24px 60px -30px rgba(80, 52, 12, 0.35);
+    --border: #E8D8BA;
+    --border-strong: #1C1408;
+    --bw: 1.5px;
+    --text: #1C1408;
+    --muted: #6B5B45;
+    --faint: #A08B6A;
+    --accent: #B45309;
+    --accent-hover: #93430A;
+    --soft: rgba(180, 83, 9, 0.10);
+    --verify: #1E6B4F;
+    --brass: #A8862B;
+    --rose: #B45309;
+    --violet: #1E6B4F;
+    --btn-bg: #1C1408;
+    --btn-fg: #FFF6E5;
+    --radius: 24px;
+    --radius-lg: 32px;
+    --radius-sm: 999px;
+    --display: 'Bricolage Grotesque', 'Archivo', Arial, sans-serif;
+    --display-weight: 700;
+    --display-stretch: 100%;
+    --display-case: none;
+    --display-tracking: -0.045em;
+    --display-leading: 0.92;
+    --body: 'Instrument Sans', Inter, system-ui, sans-serif;
+    --mono: 'Space Mono', ui-monospace, monospace;
+  }
+  .stage .wrap { max-width: 1180px; margin: 0 auto; }
+  .stage .display,
+  .stage h1, .stage h2, .stage h3 {
+    font-family: var(--display);
+    font-weight: var(--display-weight);
+    font-stretch: var(--display-stretch);
+    text-transform: var(--display-case);
+    letter-spacing: var(--display-tracking);
+    line-height: var(--display-leading);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .stage p { margin: 0; }
+  .mono { font-family: var(--mono); }
+  .kicker {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  }
+  .urdu {
+    font-family: 'Noto Nastaliq Urdu', 'Baloo Bhaijaan 2', serif;
+    direction: rtl; line-height: 2.1; letter-spacing: 0;
+  }
+
+  /* nav */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 18px 22px; margin: 0 auto; max-width: 1180px;
+  }
+  .stage[data-theme="a"] .nav {
+    margin-top: 22px; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 999px; backdrop-filter: blur(18px);
+  }
+  .stage[data-theme="b"] .nav { border-bottom: var(--bw) solid var(--text); border-radius: 0; padding: 16px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo svg { width: 44px; height: 22px; display: block; }
+  .wordmark {
+    font-family: var(--display); font-weight: var(--display-weight); font-stretch: var(--display-stretch);
+    font-size: 23px; letter-spacing: -.045em; text-transform: lowercase; color: var(--text);
+    display: inline-flex; align-items: baseline; gap: 3px;
+  }
+  .wordmark i { width: .19em; height: .19em; border-radius: 50%; background: var(--accent); display: inline-block; animation: dotpulse 3s ease-in-out infinite; }
+  .navlinks { display: flex; gap: 26px; font-size: 14.5px; color: var(--muted); }
+  .stage[data-theme="b"] .navlinks { color: var(--text); }
+  .navlinks span { cursor: default; }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    height: 56px; padding: 0 28px; border-radius: 999px; border: 1px solid transparent;
+    font-family: var(--body); font-size: 15.5px; font-weight: 500; letter-spacing: -.01em;
+    cursor: pointer; text-decoration: none; white-space: nowrap;
+  }
+  .btn-sm { height: 44px; padding: 0 20px; font-size: 14px; }
+  .btn-primary { background: var(--btn-bg); color: var(--btn-fg); }
+  .stage[data-theme="a"] .btn-primary { box-shadow: 0 0 0 0 rgba(255,138,31,.4); }
+  .btn-ghost { background: transparent; color: var(--text); border: var(--bw) solid var(--border-strong); }
+  .stage[data-theme="a"] .btn-ghost { background: rgba(255,243,228,.03); }
+  .btn-round { width: 56px; height: 56px; padding: 0; border-radius: 50%; }
+
+  /* hero */
+  .hero { position: relative; padding: 74px 0 8px; }
+  .stage[data-theme="a"] .hero::before {
+    content: ""; position: absolute; z-index: 0; pointer-events: none;
+    top: -220px; left: 50%; transform: translateX(-50%);
+    width: 1200px; height: 900px;
+    background:
+      radial-gradient(closest-side, rgba(255,138,31,.30), transparent 70%) 46% 38%/640px 520px no-repeat,
+      radial-gradient(closest-side, rgba(255,92,138,.20), transparent 70%) 62% 26%/520px 460px no-repeat,
+      radial-gradient(closest-side, rgba(123,107,255,.18), transparent 70%) 34% 22%/480px 420px no-repeat;
+    filter: blur(20px);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  .stage[data-theme="b"] .hero::before {
+    content: ""; position: absolute; inset: 40px -120px auto; height: 560px; z-index: 0;
+    background: var(--bg2); border-radius: 48px; transform: rotate(-1.2deg);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(52px, 9.4vw, 138px);
+    max-width: 15ch;
+    margin: 26px 0 0;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .lede { color: var(--muted); font-size: clamp(16px, 1.5vw, 19px); max-width: 46ch; margin-top: 26px; }
+  .urdu-line { margin-top: 18px; font-size: clamp(17px, 1.8vw, 22px); color: var(--text); }
+
+  .heroGrid { display: grid; grid-template-columns: 1.06fr .94fr; gap: 46px; align-items: end; margin-top: 8px; }
+  @media (max-width: 900px) { .heroGrid { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* demo card */
+  .demo {
+    background: var(--card-bg); border: var(--bw) solid var(--border); border-radius: var(--radius-lg);
+    padding: 26px; box-shadow: var(--card-shadow); position: relative;
+  }
+  .stage[data-theme="a"] .demo { backdrop-filter: blur(18px); }
+  .stage[data-theme="a"] .demo::after {
+    content: ""; position: absolute; inset: auto -10% -30% -10%; height: 220px; z-index: -1;
+    background: radial-gradient(closest-side, rgba(255,138,31,.28), transparent 70%); filter: blur(30px);
+  }
+  .demo-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .live { width: 7px; height: 7px; border-radius: 50%; background: var(--verify); display: inline-block; margin-right: 7px; animation: dotpulse 2.2s infinite; }
+  .wave { display: flex; align-items: center; gap: 5px; height: 92px; margin: 20px 0 22px; }
+  .wave i { flex: 1; border-radius: 999px; background: linear-gradient(180deg, var(--accent-hover), var(--accent)); display: block; animation: breathe 2.4s ease-in-out infinite; }
+  .stage[data-theme="b"] .wave i { background: var(--accent); border-radius: 2px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chip {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--muted);
+    background: transparent; border: var(--bw) solid var(--border); border-radius: 999px;
+    padding: 8px 13px; cursor: default;
+  }
+  .stage[data-theme="b"] .chip { background: var(--surface); }
+  .chip.on { background: var(--soft); border-color: var(--accent); color: var(--text); }
+  .chip.urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 14px; line-height: 1.9; padding: 4px 14px 9px; direction: rtl; }
+  .transcript { margin-top: 18px; padding-top: 16px; border-top: var(--bw) solid var(--border); font-size: 16px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+  .transcript .who { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); padding-top: 14px; white-space: nowrap; }
+
+  /* bands */
+  .band { position: relative; z-index: 1; margin-top: 72px; }
+  .band .wrap { border-top: var(--bw) solid var(--border); padding-top: 26px; }
+  .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .proof { grid-template-columns: repeat(2, 1fr); } }
+  .proof div { display: flex; flex-direction: column; gap: 4px; }
+  .proof b { font-family: var(--display); font-weight: var(--display-weight); font-stretch: var(--display-stretch); font-size: clamp(26px, 3.2vw, 40px); letter-spacing: -.03em; line-height: 1; }
+  .proof span { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .sectitle { font-size: clamp(30px, 4.4vw, 58px); margin-top: 18px; max-width: 22ch; }
+
+  /* one stack */
+  .act-dark { background: #151210; border-radius: var(--radius-lg); padding: 40px 32px; margin-top: 26px; position: relative; overflow: hidden; }
+  .stage[data-theme="a"] .act-dark { background: #1B1815; border: var(--bw) solid var(--border); }
+  .stage[data-theme="b"] .act-dark { background: #16120B; color: #FFF6E5; --text: #FFF6E5; --muted: #B9A88B; --border: rgba(255,246,229,.14); --accent: #E9A23B; }
+  .stack { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+  .tile { flex: 1 1 120px; border: var(--bw) solid var(--border); border-radius: 18px; padding: 18px 16px; background: rgba(255,255,255,.02); }
+  .tile b { display: block; font-family: var(--mono); font-size: 13px; letter-spacing: .1em; }
+  .tile span { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: .06em; }
+  .arrow { color: var(--accent); font-family: var(--mono); opacity: .8; }
+  .stacknote { color: var(--muted); font-family: var(--mono); font-size: 11.5px; margin-top: 18px; letter-spacing: .06em; }
+
+  /* cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+  @media (max-width: 800px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--card-bg); border: var(--bw) solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--card-shadow); }
+  .stage[data-theme="a"] .card { backdrop-filter: blur(14px); }
+  .card h3 { font-size: 21px; text-transform: none; letter-spacing: -.02em; font-family: var(--display); }
+  .stage[data-theme="a"] .card h3 { text-transform: none; font-stretch: 100%; }
+  .card p { color: var(--muted); font-size: 14.5px; margin-top: 8px; }
+  .card .mini-wave { display: flex; gap: 3px; align-items: flex-end; height: 34px; margin: 18px 0 14px; }
+  .card .mini-wave i { width: 3px; border-radius: 2px; background: var(--accent); opacity: .75; }
+  .tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border: var(--bw) solid var(--border); border-radius: 999px; padding: 4px 10px; }
+
+  /* specimen */
+  .specimen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 26px; }
+  @media (max-width: 800px) { .specimen { grid-template-columns: repeat(2, 1fr); } }
+  .specimen div { border-top: var(--bw) solid var(--border); padding-top: 12px; }
+  .specimen .lab { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
+  .spec-display { font-family: var(--display); font-weight: var(--display-weight); font-stretch: var(--display-stretch); text-transform: var(--display-case); font-size: 42px; letter-spacing: var(--display-tracking); line-height: .95; }
+  .spec-body { font-size: 17px; color: var(--text); }
+  .spec-mono { font-family: var(--mono); font-size: 13px; color: var(--text); }
+  .spec-urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; font-size: 22px; line-height: 2; }
+
+  /* footer */
+  .footer { margin-top: 72px; padding: 40px 0 0; border-top: var(--bw) solid var(--border); }
+  .stage[data-theme="b"] .footer { background: var(--accent); color: #FFF6E5; border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 44px 32px 20px; border-top: none; }
+  .giant { font-family: var(--display); font-weight: var(--display-weight); font-stretch: var(--display-stretch); text-transform: uppercase; font-size: clamp(72px, 19vw, 230px); line-height: .76; letter-spacing: -.045em; margin-top: 18px; }
+  .stage[data-theme="b"] .giant { color: #FFF6E5; }
+  .footrow { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .stage[data-theme="b"] .footrow { color: rgba(255,246,229,.8); }
+
+  /* compare table */
+  .compare { padding: 72px 24px 96px; max-width: 1180px; margin: 0 auto; }
+  .compare h2 { font-family: 'Archivo', sans-serif; font-size: 30px; letter-spacing: -.02em; margin: 0 0 6px; }
+  .compare p.intro { color: var(--doc-muted); margin: 0 0 28px; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--doc-line); vertical-align: top; }
+  th { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--doc-muted); font-weight: 400; }
+  td:first-child { color: var(--doc-muted); width: 24%; }
+  .sw { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; }
+  .sw i { width: 13px; height: 13px; border-radius: 3px; display: inline-block; border: 1px solid rgba(255,255,255,.15); }
+  .docfoot { color: var(--doc-muted); font-size: 13px; padding: 24px; border-top: 1px solid var(--doc-line); }
+
+  @keyframes dotpulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
+  @keyframes breathe { 0%,100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
+  @keyframes drift { from { transform: translateX(-50%) translateY(0) scale(1); } to { transform: translateX(-52%) translateY(18px) scale(1.05); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="docbar">
+  <div><strong>Wavia — two theme directions</strong> <span>· Step 2 comparison · nothing built yet</span></div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <a href="#theme-a">Theme A</a>
+    <a href="#theme-b">Theme B</a>
+    <a href="#compare">Tokens</a>
+  </div>
+</div>
+
+<!-- ============================= THEME A ============================= -->
+<div class="specbar" id="theme-a">
+  <h2>Theme A — Night Signal</h2>
+  <p><b>Dark</b> · Archivo / Instrument Sans / JetBrains Mono · warm near-black stage, one amber light, amber–rose–violet aurora · glass cards</p>
+</div>
+
+<section class="stage" data-theme="a">
+  <nav class="nav wrap">
+    <div class="logo">
+      <svg viewBox="0 0 64 24" fill="none" aria-hidden="true">
+        <circle cx="5" cy="12" r="2.6" fill="#FF8A1F"/>
+        <path d="M8 12C11 12 11.5 5 16 5S20.5 19 25 19 30 4 35 4 40 12 45 12 50 7 53 7" stroke="url(#ga)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="56.5" cy="8.5" r="3" fill="#37D7C4"/>
+        <defs><linearGradient id="ga" x1="8" y1="12" x2="53" y2="8" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FF8A1F"/><stop offset=".55" stop-color="#FF5C8A"/><stop offset="1" stop-color="#37D7C4"/>
+        </linearGradient></defs>
+      </svg>
+      <span class="wordmark">wavia<i></i></span>
+    </div>
+    <div class="navlinks"><span>Product</span><span>Developers</span><span>Pricing</span></div>
+    <a class="btn btn-primary btn-sm">Start free</a>
+  </nav>
+
+  <div class="hero wrap">
+    <div class="heroGrid">
+      <div>
+        <div class="kicker"><span class="live"></span> Voice agent · English · اردو · العربية · Melayu</div>
+        <h1>It picks up.<br><em>In Urdu.</em></h1>
+        <p class="lede">Wavia answers your business line, books the appointment and writes it into your CRM — in English, Urdu, Arabic or Malay. Interruptible, ~450ms to first audio.</p>
+        <p class="urdu-line urdu">اردو، انگلش، عربی یا مالے میں — ایک ہی نمبر پر۔</p>
+        <div style="display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;">
+          <a class="btn btn-primary">Talk to Wavia</a>
+          <a class="btn btn-ghost">Book a demo</a>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="demo-head"><span><span class="live"></span>Live demo</span><span class="ms">~450ms</span></div>
+        <div class="wave" aria-hidden="true">
+          <i style="animation-delay:0s"></i><i style="animation-delay:.12s"></i><i style="animation-delay:.24s"></i><i style="animation-delay:.36s"></i><i style="animation-delay:.48s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.72s"></i><i style="animation-delay:.84s"></i><i style="animation-delay:.96s"></i><i style="animation-delay:1.08s"></i><i style="animation-delay:1.2s"></i><i style="animation-delay:1.32s"></i>
+        </div>
+        <div class="chips">
+          <span class="chip on urdu">ریسیپشنسٹ</span>
+          <span class="chip urdu">اپائنٹمنٹ بکنگ</span>
+          <span class="chip urdu">آرڈر اسٹیٹس</span>
+          <span class="chip">English</span>
+        </div>
+        <div class="transcript">
+          <span class="who">Urdu</span>
+          <span class="urdu">السلام علیکم، کلینک میں کل کے لیے اپائنٹمنٹ بک کرنی ہے۔</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="proof">
+          <div><b>4</b><span>Languages</span></div>
+          <div><b>~450ms</b><span>To first audio</span></div>
+          <div><b>30 min</b><span>Free test calls / mo</span></div>
+          <div><b>$29</b><span>From, per month</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">04 — The engine</div>
+        <h2 class="sectitle">One engine. Not stitched vendors.</h2>
+        <div class="act-dark">
+          <div class="stack">
+            <div class="tile"><b>VAD</b><span>turn detection</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>STT</b><span>streaming</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>LLM</b><span>reasoning</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>TTS</b><span>neural voice</span></div>
+          </div>
+          <p class="stacknote">One interruptible pipeline · barge-in · language switching mid-sentence · provider failover</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">05 — Use cases</div>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:9px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:28px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:30px"></i><i style="height:12px"></i><i style="height:20px"></i><i style="height:8px"></i><i style="height:18px"></i></div>
+            <h3>Receptionist</h3>
+            <p>Answers every call, greets in Urdu or English, routes the ones that need a human.</p>
+          </article>
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:18px"></i><i style="height:26px"></i><i style="height:10px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:13px"></i><i style="height:24px"></i><i style="height:9px"></i><i style="height:19px"></i><i style="height:27px"></i><i style="height:14px"></i><i style="height:21px"></i></div>
+            <h3>Appointment booking</h3>
+            <p>Checks the calendar, offers two slots, confirms — then writes it where your team already looks.</p>
+          </article>
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:12px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:15px"></i><i style="height:23px"></i><i style="height:10px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:29px"></i><i style="height:11px"></i><i style="height:22px"></i><i style="height:14px"></i></div>
+            <h3>Lead qualification</h3>
+            <p>Asks the four questions that matter and drops a scored lead into the CRM before the call ends.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">Type + components</div>
+        <div class="specimen">
+          <div><span class="lab">Display — Archivo 800 / 82%</span><span class="spec-display">Aa Wavia</span></div>
+          <div><span class="lab">Body — Instrument Sans</span><span class="spec-body">Answers, books, files it. One engine.</span></div>
+          <div><span class="lab">Mono — JetBrains</span><span class="spec-mono">first_audio 450ms</span></div>
+          <div><span class="lab">Urdu — Noto Nastaliq</span><span class="spec-urdu">آپ کی کیا مدد کر سکتا ہوں؟</span></div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; align-items:center;">
+          <a class="btn btn-primary">Talk to Wavia</a>
+          <a class="btn btn-ghost">Read the docs</a>
+          <span class="tag">30 min free</span>
+          <span class="tag" style="color:var(--verify)">connected</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footrow"><span>Wavia — voice agent</span><span>English · اردو · العربية · Melayu</span></div>
+      <div class="giant">Wavia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= THEME B ============================= -->
+<div class="specbar" id="theme-b">
+  <h2>Theme B — Marigold Market</h2>
+  <p><b>Light</b> · Bricolage Grotesque / Instrument Sans / Space Mono · warm cream field, burnt-marigold ink, one dark act · flat printed blocks</p>
+</div>
+
+<section class="stage" data-theme="b">
+  <nav class="nav wrap">
+    <div class="logo">
+      <svg viewBox="0 0 64 24" fill="none" aria-hidden="true">
+        <circle cx="5" cy="14" r="2.8" fill="#B45309"/>
+        <path d="M8 14C12 14 12 6 17 6s4 12 9 12 4-13 9-13 4 9 8 9" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="46.5" cy="14" r="2.6" fill="#B45309"/>
+      </svg>
+      <span class="wordmark">wavia<i></i></span>
+    </div>
+    <div class="navlinks"><span>Product</span><span>Developers</span><span>Pricing</span></div>
+    <a class="btn btn-primary btn-sm">Start free</a>
+  </nav>
+
+  <div class="hero wrap">
+    <div class="heroGrid">
+      <div>
+        <div class="kicker">01 — The demo</div>
+        <h1>It picks up.<br><em>In Urdu.</em></h1>
+        <p class="lede">Wavia answers your business line, books the appointment and writes it into your CRM — in English, Urdu, Arabic or Malay. Interruptible, ~450ms to first audio.</p>
+        <p class="urdu-line urdu">اردو، انگلش، عربی یا مالے میں — ایک ہی نمبر پر۔</p>
+        <div style="display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;">
+          <a class="btn btn-primary">Talk to Wavia</a>
+          <a class="btn btn-ghost">Book a demo</a>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="demo-head"><span><span class="live"></span>Live demo</span><span class="ms">~450ms</span></div>
+        <div class="wave" aria-hidden="true">
+          <i style="animation-delay:0s"></i><i style="animation-delay:.12s"></i><i style="animation-delay:.24s"></i><i style="animation-delay:.36s"></i><i style="animation-delay:.48s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.72s"></i><i style="animation-delay:.84s"></i><i style="animation-delay:.96s"></i><i style="animation-delay:1.08s"></i><i style="animation-delay:1.2s"></i><i style="animation-delay:1.32s"></i>
+        </div>
+        <div class="chips">
+          <span class="chip on urdu">ریسیپشنسٹ</span>
+          <span class="chip urdu">اپائنٹمنٹ بکنگ</span>
+          <span class="chip urdu">آرڈر اسٹیٹس</span>
+          <span class="chip">English</span>
+        </div>
+        <div class="transcript">
+          <span class="who">Urdu</span>
+          <span class="urdu">السلام علیکم، کلینک میں کل کے لیے اپائنٹمنٹ بک کرنی ہے۔</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="proof">
+          <div><b>4</b><span>Languages</span></div>
+          <div><b>~450ms</b><span>To first audio</span></div>
+          <div><b>30 min</b><span>Free test calls / mo</span></div>
+          <div><b>$29</b><span>From, per month</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">04 — The engine</div>
+        <h2 class="sectitle">One engine. Not stitched vendors.</h2>
+        <div class="act-dark">
+          <div class="stack">
+            <div class="tile"><b>VAD</b><span>turn detection</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>STT</b><span>streaming</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>LLM</b><span>reasoning</span></div>
+            <span class="arrow">→</span>
+            <div class="tile"><b>TTS</b><span>neural voice</span></div>
+          </div>
+          <p class="stacknote">One interruptible pipeline · barge-in · language switching mid-sentence · provider failover</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">05 — Use cases</div>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:9px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:28px"></i><i style="height:11px"></i><i style="height:24px"></i><i style="height:16px"></i><i style="height:30px"></i><i style="height:12px"></i><i style="height:20px"></i><i style="height:8px"></i><i style="height:18px"></i></div>
+            <h3>Receptionist</h3>
+            <p>Answers every call, greets in Urdu or English, routes the ones that need a human.</p>
+          </article>
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:18px"></i><i style="height:26px"></i><i style="height:10px"></i><i style="height:22px"></i><i style="height:30px"></i><i style="height:13px"></i><i style="height:24px"></i><i style="height:9px"></i><i style="height:19px"></i><i style="height:27px"></i><i style="height:14px"></i><i style="height:21px"></i></div>
+            <h3>Appointment booking</h3>
+            <p>Checks the calendar, offers two slots, confirms — then writes it where your team already looks.</p>
+          </article>
+          <article class="card">
+            <span class="tag">اردو first</span>
+            <div class="mini-wave"><i style="height:12px"></i><i style="height:20px"></i><i style="height:28px"></i><i style="height:15px"></i><i style="height:23px"></i><i style="height:10px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:29px"></i><i style="height:11px"></i><i style="height:22px"></i><i style="height:14px"></i></div>
+            <h3>Lead qualification</h3>
+            <p>Asks the four questions that matter and drops a scored lead into the CRM before the call ends.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="kicker">Type + components</div>
+        <div class="specimen">
+          <div><span class="lab">Display — Bricolage 700</span><span class="spec-display">Aa Wavia</span></div>
+          <div><span class="lab">Body — Instrument Sans</span><span class="spec-body">Answers, books, files it. One engine.</span></div>
+          <div><span class="lab">Mono — Space Mono</span><span class="spec-mono">first_audio 450ms</span></div>
+          <div><span class="lab">Urdu — Noto Nastaliq</span><span class="spec-urdu">آپ کی کیا مدد کر سکتا ہوں؟</span></div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; align-items:center;">
+          <a class="btn btn-primary">Talk to Wavia</a>
+          <a class="btn btn-ghost">Read the docs</a>
+          <span class="tag">30 min free</span>
+          <span class="tag" style="color:var(--verify)">connected</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footrow"><span>Wavia — voice agent</span><span>English · اردو · العربية · Melayu</span></div>
+      <div class="giant">Wavia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TOKENS ============================= -->
+<main class="compare" id="compare">
+  <h2>Token comparison</h2>
+  <p class="intro">Same content, same architecture, different polarity — this is the only variable group that changes between the two.</p>
+  <table>
+    <thead>
+      <tr><th></th><th>A — Night Signal</th><th>B — Marigold Market</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Canvas</td><td><span class="sw"><i style="background:#0B0A08"></i>#0B0A08</span></td><td><span class="sw"><i style="background:#FFF6E5"></i>#FFF6E5</span></td></tr>
+      <tr><td>Surface</td><td><span class="sw"><i style="background:#131110"></i>#131110 / 4.5% cream glass</span></td><td><span class="sw"><i style="background:#FFFBF2"></i>#FFFBF2</span></td></tr>
+      <tr><td>Surface 2</td><td><span class="sw"><i style="background:#1B1815"></i>#1B1815</span></td><td><span class="sw"><i style="background:#F6E6C8"></i>#F6E6C8</span></td></tr>
+      <tr><td>Text</td><td><span class="sw"><i style="background:#F6EFE3"></i>#F6EFE3</span></td><td><span class="sw"><i style="background:#1C1408"></i>#1C1408</span></td></tr>
+      <tr><td>Muted text</td><td><span class="sw"><i style="background:#A79C8B"></i>#A79C8B</span></td><td><span class="sw"><i style="background:#6B5B45"></i>#6B5B45</span></td></tr>
+      <tr><td>Primary accent</td><td><span class="sw"><i style="background:#FF8A1F"></i>#FF8A1F</span></td><td><span class="sw"><i style="background:#B45309"></i>#B45309</span></td></tr>
+      <tr><td>Secondary accent</td><td><span class="sw"><i style="background:#37D7C4"></i>#37D7C4 verify</span></td><td><span class="sw"><i style="background:#1E6B4F"></i>#1E6B4F palm</span></td></tr>
+      <tr><td>Aurora / signature</td><td>#FF8A1F → #FF5C8A → #7B6BFF at 18–30%</td><td>Single dark act #16120B, brass #A8862B</td></tr>
+      <tr><td>Border</td><td><span class="sw"><i style="background:#3A342C"></i>cream 10%</span></td><td><span class="sw"><i style="background:#E8D8BA"></i>#E8D8BA 1.5px</span></td></tr>
+      <tr><td>Display</td><td>Archivo 800, width 82%, uppercase</td><td>Bricolage Grotesque 700, mixed case</td></tr>
+      <tr><td>Body / mono</td><td>Instrument Sans / JetBrains Mono</td><td>Instrument Sans / Space Mono</td></tr>
+      <tr><td>Radii</td><td>28 / 36 / 999</td><td>24 / 32 / 40 / 999</td></tr>
+      <tr><td>Primary button</td><td>Amber fill, ink label</td><td>Ink fill, cream label</td></tr>
+      <tr><td>Motion flavour</td><td>Light: aurora drift, glow pulse, glass highlights</td><td>Draw + press: ink lines drawing, block wipes, stamp</td></tr>
+      <tr><td>One-line risk</td><td>Looks like every other voice-AI site</td><td>Looks friendly rather than infrastructural</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="docfoot">
+  Static comparison artifact — not the site. Motion specs, logo drawings and component rules live in <code>docs/design/theme-proposal.md</code>. No claim here is final.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wavia — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  /* ============================================
+     TOKENS — warm cream light / warm deep dark.
+     Text color in each theme is the OTHER theme's
+     background family (cream text on dark, ink text
+     on cream) — a deliberate mirrored detail that ties
+     the two modes together as one system.
+  ============================================ */
+  :root {
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-pill: 999px;
+    --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+    --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+    --space-24: 96px; --space-32: 128px;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --max-width: 1120px;
+  }
+
+  html[data-theme="dark"] {
+    --bg: #15120D;
+    --surface: #1E1A14;
+    --surface-2: #28221A;
+    --accent: #FF7A1A;
+    --accent-hover: #FF8F3D;
+    --accent-soft: rgba(255,122,26,0.14);
+    --verify: #2DD4BF;
+    --verify-soft: rgba(45,212,191,0.14);
+    --shield: #C6A15B;
+    --shield-soft: rgba(198,161,91,0.14);
+    --alert: #F5484B;
+    --text: #F3EDE1;
+    --text-muted: #A79D89;
+    --border: #302A20;
+    --shadow: 0 12px 40px rgba(0,0,0,0.45);
+    --glow-alpha: 0.16;
+    --grain-opacity: 0.05;
+  }
+
+  html[data-theme="light"] {
+    --bg: #F5F0E3;
+    --surface: #FBF8EF;
+    --surface-2: #ECE4CE;
+    --accent: #E8630A;
+    --accent-hover: #D6570A;
+    --accent-soft: rgba(232,99,10,0.10);
+    --verify: #12897B;
+    --verify-soft: rgba(18,137,123,0.10);
+    --shield: #8C6A2C;
+    --shield-soft: rgba(140,106,44,0.10);
+    --alert: #C93338;
+    --text: #221C12;
+    --text-muted: #6E6553;
+    --border: #E2D8BF;
+    --shadow: 0 12px 40px rgba(60,45,15,0.10);
+    --glow-alpha: 0.08;
+    --grain-opacity: 0.035;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
+  code, .mono { font-family: var(--font-mono); }
+  a { color: inherit; }
+  section { padding: var(--space-24) var(--space-6); border-bottom: 1px solid var(--border); position: relative; }
+  .wrap { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--space-3); }
+  .section-title { font-size: 2rem; font-weight: 600; margin-bottom: var(--space-2); }
+  .section-sub { color: var(--text-muted); max-width: 60ch; margin-bottom: var(--space-12); font-size: 1.05rem; }
+
+  /* ============ GRAIN — fixed noise layer over the whole page ============ */
+  .grain {
+    position: fixed; inset: 0; z-index: 200; pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  /* ============ AMBIENT DEPTH GLOW — one soft light source, hero only ============ */
+  .hero { position: relative; overflow: hidden; }
+  .hero::before {
+    content: '';
+    position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 700px;
+    background: radial-gradient(circle, rgba(255,122,26,var(--glow-alpha)) 0%, transparent 65%);
+    z-index: 0; pointer-events: none;
+  }
+  html[data-theme="light"] .hero::before {
+    background: radial-gradient(circle, rgba(232,99,10,var(--glow-alpha)) 0%, transparent 65%);
+  }
+
+  /* ============ TOP BAR / THEME TOGGLE ============ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    background: var(--surface); border-bottom: 1px solid var(--border);
+  }
+  .theme-switch {
+    display: flex; align-items: center; gap: var(--space-3);
+    font-size: 0.9rem; color: var(--text-muted);
+  }
+  .switch {
+    width: 44px; height: 24px; border-radius: var(--radius-pill);
+    background: var(--surface-2); border: 1px solid var(--border);
+    position: relative; cursor: pointer;
+  }
+  .switch::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); transition: transform 0.25s ease;
+    box-shadow: 0 0 8px var(--accent-soft);
+  }
+  html[data-theme="light"] .switch::after { transform: translateX(20px); }
+
+  /* ============ WAVE MARK (shared component, now with depth) ============ */
+  .wave-mark { display: inline-flex; align-items: flex-end; gap: 3px; height: 22px; }
+  .wave-mark span {
+    display: block; width: 4px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent-hover), var(--accent));
+    filter: drop-shadow(0 0 3px var(--accent-soft));
+    animation: idle-breathe 3s ease-in-out infinite;
+  }
+  .wave-mark span:nth-child(1){height:30%;animation-delay:0s;}
+  .wave-mark span:nth-child(2){height:55%;animation-delay:.1s;}
+  .wave-mark span:nth-child(3){height:80%;animation-delay:.2s;}
+  .wave-mark span:nth-child(4){height:45%;animation-delay:.3s;}
+  .wave-mark span:nth-child(5){height:65%;animation-delay:.4s;}
+  @keyframes idle-breathe { 0%,100%{transform:scaleY(0.9);} 50%{transform:scaleY(1.15);} }
+
+  /* ============ ANIMATED WORDMARK LOGOTYPE ============ */
+  .wordmark-anim {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.4rem;
+    line-height: 1;
+    display: inline-flex; align-items: baseline; position: relative; cursor: default;
+  }
+  .wordmark-anim .ltr {
+    display: inline-block; position: relative; line-height: 1;
+    animation: letter-rise .6s cubic-bezier(.2,.8,.2,1) both;
+    animation-delay: calc(var(--i) * 0.06s);
+    transition: transform 0.3s ease;
+  }
+  @keyframes letter-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .wordmark-anim:hover .ltr { transform: translateY(-3px); }
+  .wordmark-anim:hover .ltr:nth-child(1){ transition-delay: 0s; }
+  .wordmark-anim:hover .ltr:nth-child(2){ transition-delay: .04s; }
+  .wordmark-anim:hover .ltr:nth-child(3){ transition-delay: .08s; }
+  .wordmark-anim:hover .ltr:nth-child(4){ transition-delay: .12s; }
+  .wordmark-anim:hover .ltr:nth-child(5){ transition-delay: .16s; }
+  .signal-dot {
+    width: 0.16em; height: 0.16em; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0.35em var(--accent-soft);
+    margin-left: 0.18em; margin-top: 0.06em; align-self: flex-start;
+    flex-shrink: 0; animation: dot-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes dot-pulse { 0%,100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.5); opacity: 1; } }
+
+  .logo-big .wave-mark { height: 44px; }
+  .logo-big .wave-mark span { width: 7px; }
+  .logo-big .wordmark-anim { font-size: 2.6rem; }
+  .logo-big .signal-dot { box-shadow: 0 0 0.5em var(--accent-soft); }
+
+  /* ============ HERO ============ */
+  .hero-inner { padding: var(--space-32) var(--space-6); text-align: center; }
+  .hero-inner h1 { font-size: 3.4rem; font-weight: 700; }
+  .hero-inner .sub { color: var(--text-muted); font-size: 1.15rem; max-width: 52ch; margin: var(--space-4) auto 0; }
+  .hero-logo { margin-bottom: var(--space-8); display: flex; justify-content: center; }
+  .logo-lockup { display: flex; align-items: center; gap: var(--space-3); }
+
+  /* ============ GRID / CARD UTILITIES ============ */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  @media (max-width: 800px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: var(--space-6);
+  }
+
+  /* ============ LOGO SHOWCASE ============ */
+  .logo-showcase {
+    display: flex; align-items: center; justify-content: center;
+    padding: var(--space-16); border-radius: var(--radius-md);
+    border: 1px solid var(--border); margin-bottom: var(--space-8);
+    position: relative; overflow: hidden;
+  }
+  .logo-showcase.on-dark { background: radial-gradient(circle at 50% 30%, #1E1A14, #15120D 70%); }
+  .logo-showcase.on-dark .wave-mark span { background: linear-gradient(180deg, #FF8F3D, #FF7A1A); }
+  .logo-showcase.on-dark .wordmark-anim { color: #F3EDE1; }
+  .logo-showcase.on-dark .signal-dot { background: #FF7A1A; }
+  .logo-showcase.on-light { background: radial-gradient(circle at 50% 30%, #FBF8EF, #F5F0E3 70%); }
+  .logo-showcase.on-light .wave-mark span { background: linear-gradient(180deg, #D6570A, #E8630A); }
+  .logo-showcase.on-light .wordmark-anim { color: #221C12; }
+  .logo-showcase.on-light .signal-dot { background: #E8630A; }
+
+  .clearspace-note { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: var(--space-3); }
+  .favicon-row { display: flex; gap: var(--space-6); align-items: center; flex-wrap: wrap; }
+  .favicon-demo { display: flex; align-items: center; justify-content: center; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .favicon-demo .dot { width: 30%; height: 30%; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-soft); }
+
+  /* ============ COLOR SWATCHES ============ */
+  .swatch-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-bottom: var(--space-4); }
+  @media (max-width: 800px) { .swatch-row { grid-template-columns: repeat(2, 1fr); } }
+  .swatch { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .swatch-fill { height: 84px; }
+  .swatch-meta { padding: var(--space-3); background: var(--surface); }
+  .swatch-meta .name { font-weight: 600; font-size: 0.95rem; }
+  .swatch-meta .hex { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+  .swatch-meta .use { font-size: 0.82rem; color: var(--text-muted); margin-top: var(--space-1); }
+
+  .dual-table { width: 100%; border-collapse: collapse; margin-top: var(--space-8); }
+  .dual-table th, .dual-table td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+  .dual-table th { color: var(--text-muted); font-weight: 500; font-family: var(--font-mono); font-size: 0.78rem; }
+  .swatch-chip { display: inline-flex; align-items: center; gap: var(--space-2); }
+  .chip-dot { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border); display: inline-block; }
+
+  /* ============ DEPTH & TEXTURE spec block ============ */
+  .spec-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-6); margin-top: var(--space-6); }
+  .spec-block .k { color: var(--accent); font-family: var(--font-mono); font-size: 0.82rem; }
+  .spec-block p { margin: var(--space-2) 0 0; color: var(--text-muted); font-size: 0.92rem; }
+
+  /* ============ TYPE SPECIMENS ============ */
+  .type-row { display: flex; align-items: baseline; justify-content: space-between; padding: var(--space-6) 0; border-bottom: 1px solid var(--border); gap: var(--space-6); }
+  .type-row:last-child { border-bottom: none; }
+  .type-sample { flex: 1; }
+  .type-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; text-align: right; }
+  .t-h1 { font-family: var(--font-display); font-weight: 700; font-size: 3rem; line-height: 1.1; }
+  .t-h2 { font-family: var(--font-display); font-weight: 600; font-size: 2.1rem; line-height: 1.2; }
+  .t-h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; line-height: 1.3; }
+  .t-body-lg { font-size: 1.2rem; max-width: 46ch; }
+  .t-body { font-size: 1rem; max-width: 46ch; color: var(--text-muted); }
+  .t-mono { font-family: var(--font-mono); font-size: 0.95rem; background: var(--surface-2); padding: var(--space-1) var(--space-2); border-radius: 4px; }
+
+  /* ============ VOICE TABLE ============ */
+  .voice-table { width: 100%; border-collapse: collapse; }
+  .voice-table th, .voice-table td { text-align: left; padding: var(--space-4); border-bottom: 1px solid var(--border); vertical-align: top; font-size: 0.95rem; }
+  .voice-table th { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+  .say { color: var(--verify); }
+  .not, .not strong { color: var(--text-muted) !important; text-decoration: line-through; text-decoration-color: var(--alert); }
+
+  /* ============ BUTTONS ============ */
+  .btn-row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; margin-bottom: var(--space-4); }
+  .btn { font-family: var(--font-body); font-weight: 600; font-size: 0.98rem; padding: var(--space-3) var(--space-6); border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; transition: all 0.2s ease; }
+  .btn-primary { background: var(--accent); color: #15120D; }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-soft); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); }
+  .btn-ghost { background: transparent; color: var(--text-muted); border: none; }
+  .btn-ghost:hover { color: var(--text); }
+  .btn-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); border: 1px solid var(--border); color: var(--text-muted); }
+
+  /* ============ SUB-BRAND CARDS ============ */
+  .subbrand-card { border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--surface); padding: var(--space-6); }
+  .subbrand-card .tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 2px var(--space-2); border-radius: var(--radius-pill); display: inline-block; margin-bottom: var(--space-3); }
+  .subbrand-card h3 { font-size: 1.3rem; margin-bottom: var(--space-1); }
+  .subbrand-card .tagline { font-style: italic; font-size: 0.92rem; margin-bottom: var(--space-3); }
+  .subbrand-card p.desc { color: var(--text-muted); font-size: 0.92rem; }
+  .core-card .tag { background: var(--accent-soft); color: var(--accent); }
+  .core-card .tagline { color: var(--accent); }
+  .studio-card .tag { background: var(--verify-soft); color: var(--verify); }
+  .studio-card .tagline { color: var(--verify); }
+  .shield-card .tag { background: var(--shield-soft); color: var(--shield); }
+  .shield-card .tagline { color: var(--shield); }
+
+  /* ============ WAVEFORM STATE DEMO ============ */
+  .state-demo { display: flex; align-items: flex-end; justify-content: center; gap: 5px; height: 90px; margin-bottom: var(--space-4); }
+  .state-demo .bar { width: 8px; border-radius: 4px; background: linear-gradient(180deg, var(--accent-hover), var(--accent)); }
+  .state-idle .bar { animation: idle-breathe 3s ease-in-out infinite; height: 18%; }
+  .state-listening .bar { animation: listen-bounce 0.6s ease-in-out infinite alternate; }
+  .state-listening .bar:nth-child(odd) { animation-duration: 0.5s; }
+  .state-listening .bar:nth-child(even) { animation-duration: 0.7s; }
+  @keyframes listen-bounce { 0%{height:20%;} 100%{height:80%;} }
+  .state-thinking { justify-content: center; align-items: center; }
+  .state-thinking .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--verify); box-shadow: 0 0 10px var(--verify-soft); animation: think-pulse 0.8s ease-in-out infinite; }
+  @keyframes think-pulse { 0%,100%{transform:scale(1);opacity:.7;} 50%{transform:scale(1.35);opacity:1;} }
+  .state-speaking .bar { animation: speak-wave 1.2s ease-in-out infinite; }
+  .state-speaking .bar:nth-child(1){animation-delay:0s;height:30%;}
+  .state-speaking .bar:nth-child(2){animation-delay:.1s;height:60%;}
+  .state-speaking .bar:nth-child(3){animation-delay:.2s;height:90%;}
+  .state-speaking .bar:nth-child(4){animation-delay:.3s;height:50%;}
+  .state-speaking .bar:nth-child(5){animation-delay:.4s;height:75%;}
+  .state-speaking .bar:nth-child(6){animation-delay:.5s;height:40%;}
+  .state-speaking .bar:nth-child(7){animation-delay:.6s;height:65%;}
+  @keyframes speak-wave { 0%,100%{transform:scaleY(0.4);} 50%{transform:scaleY(1);} }
+  .state-label { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+  .state-card { border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-6); background: var(--surface); }
+
+  /* ============ LOADING SCREEN ============ */
+  .loader-overlay {
+    position: fixed; inset: 0; z-index: 150;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    transition: opacity 0.45s ease;
+  }
+  .loader-overlay::before {
+    content: '';
+    position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(circle, rgba(255,122,26,var(--glow-alpha)) 0%, transparent 65%);
+  }
+  .loader-overlay.hide { opacity: 0; pointer-events: none; }
+  .loader-wave { height: 40px; position: relative; z-index: 1; }
+  .loader-wave span { width: 6px; }
+  .loader-wave.booting span { animation: listen-bounce 0.45s ease-in-out infinite alternate; background: linear-gradient(180deg, var(--accent-hover), var(--accent)); }
+  .loader-wordmark { margin-top: var(--space-4); opacity: 0; transform: translateY(6px); transition: all 0.5s ease; position: relative; z-index: 1; }
+  .loader-wordmark.show { opacity: 1; transform: translateY(0); }
+  .loader-caption { margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); opacity: 0; transition: opacity 0.4s ease; position: relative; z-index: 1; }
+  .loader-caption.show { opacity: 1; }
+
+  .loader-preview-frame {
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    height: 260px; display: flex; align-items: center; justify-content: center; flex-direction: column;
+    background: radial-gradient(circle at 50% 35%, var(--surface-2), var(--bg) 75%);
+    position: relative; overflow: hidden;
+  }
+
+  /* ============ SPACING ============ */
+  .space-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3); }
+  .space-bar { background: linear-gradient(90deg, var(--accent-hover), var(--accent)); height: 14px; border-radius: 3px; }
+  .space-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); width: 90px; }
+
+  /* ============ DO / DON'T ============ */
+  .dodont { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  @media (max-width: 800px) { .dodont { grid-template-columns: 1fr; } }
+  .dodont .card h3 { font-size: 1.05rem; margin-bottom: var(--space-4); }
+  .dodont ul { margin: 0; padding-left: var(--space-6); color: var(--text-muted); font-size: 0.92rem; }
+  .dodont li { margin-bottom: var(--space-2); }
+  .do-card { border-color: var(--verify); }
+  .do-card h3 { color: var(--verify); }
+  .dont-card { border-color: var(--alert); }
+  .dont-card h3 { color: var(--alert); }
+
+  footer { padding: var(--space-12) var(--space-6); text-align: center; color: var(--text-muted); font-size: 0.85rem; position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="loader-overlay" id="loader">
+  <div class="wave-mark loader-wave" id="loaderWave">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="loader-wordmark" id="loaderWordmark">
+    <span class="wordmark-anim" style="animation:none;">
+      <span class="ltr" style="animation:none;">w</span><span class="ltr" style="animation:none;">a</span><span class="ltr" style="animation:none;">v</span><span class="ltr" style="animation:none;">i</span><span class="ltr" style="animation:none;">a</span><span class="signal-dot"></span>
+    </span>
+  </div>
+  <div class="loader-caption" id="loaderCaption">always listening</div>
+</div>
+
+<div class="topbar">
+  <div class="logo-lockup">
+    <span class="wave-mark"><span></span><span></span><span></span><span></span><span></span></span>
+    <span class="wordmark-anim">
+      <span class="ltr" style="--i:0">w</span><span class="ltr" style="--i:1">a</span><span class="ltr" style="--i:2">v</span><span class="ltr" style="--i:3">i</span><span class="ltr" style="--i:4">a</span><span class="signal-dot"></span>
+    </span>
+  </div>
+  <div class="theme-switch">
+    <span id="theme-label">Dark theme</span>
+    <div class="switch" id="theme-toggle" role="button" aria-label="Toggle theme"></div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="border-bottom:1px solid var(--border); padding:0;">
+  <div class="hero-inner wrap">
+    <div class="hero-logo">
+      <div class="logo-lockup logo-big">
+        <span class="wave-mark"><span></span><span></span><span></span><span></span><span></span></span>
+        <span class="wordmark-anim">
+          <span class="ltr" style="--i:0">w</span><span class="ltr" style="--i:1">a</span><span class="ltr" style="--i:2">v</span><span class="ltr" style="--i:3">i</span><span class="ltr" style="--i:4">a</span><span class="signal-dot"></span>
+        </span>
+      </div>
+    </div>
+    <h1>Brand Kit</h1>
+    <p class="sub">One system, two lightings — a warm cream and a warm dark, both grainy, both with a little depth. Flip the switch above; hover the logo to see it ripple.</p>
+  </div>
+</section>
+
+<!-- ============ LOGO ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Logo</div>
+    <h2 class="section-title">The wave mark + the wordmark, animated</h2>
+    <p class="section-sub">Five bars breathing beside a hand-tuned wordmark. The letters rise in on load, ripple on hover, and a small pulsing signal dot sits after the name — not decoration, the same live "listening" cue as the waveform, just distilled to a single point.</p>
+
+    <div class="logo-showcase on-dark">
+      <div class="logo-lockup logo-big">
+        <span class="wave-mark"><span></span><span></span><span></span><span></span><span></span></span>
+        <span class="wordmark-anim">
+          <span class="ltr" style="--i:0">w</span><span class="ltr" style="--i:1">a</span><span class="ltr" style="--i:2">v</span><span class="ltr" style="--i:3">i</span><span class="ltr" style="--i:4">a</span><span class="signal-dot"></span>
+        </span>
+      </div>
+    </div>
+    <div class="logo-showcase on-light">
+      <div class="logo-lockup logo-big">
+        <span class="wave-mark"><span></span><span></span><span></span><span></span><span></span></span>
+        <span class="wordmark-anim">
+          <span class="ltr" style="--i:0">w</span><span class="ltr" style="--i:1">a</span><span class="ltr" style="--i:2">v</span><span class="ltr" style="--i:3">i</span><span class="ltr" style="--i:4">a</span><span class="signal-dot"></span>
+        </span>
+      </div>
+    </div>
+    <p class="clearspace-note">Clear space: a margin equal to the wave mark's height on all sides. The trailing signal dot always pulses — in a static export, freeze it mid-pulse, never fully hidden.</p>
+
+    <div style="margin-top: var(--space-12);">
+      <h3 style="font-size:1.1rem; margin-bottom: var(--space-4);">Mark only (favicon / app icon)</h3>
+      <div class="favicon-row">
+        <div class="favicon-demo" style="width:64px;height:64px;"><div class="dot"></div></div>
+        <div class="favicon-demo" style="width:48px;height:48px;"><div class="dot"></div></div>
+        <div class="favicon-demo" style="width:32px;height:32px;"><div class="dot"></div></div>
+        <div class="favicon-demo" style="width:16px;height:16px;"><div class="dot"></div></div>
+        <span class="type-meta">Below 24px, the mark simplifies to a single glowing dot — the bars stop being legible, don't force them.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLOR ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Color</div>
+    <h2 class="section-title">Warm cream. Warm dark. Never a void, never a glare.</h2>
+    <p class="section-sub">Both modes share the same warm undertone instead of running cool-gray in one and cool-black in the other. Text mirrors the pairing: cream text sits on the dark surface, ink text sits on the cream surface — same two colors, swapped roles.</p>
+
+    <h3 style="font-size:1rem; color:var(--text-muted); font-family: var(--font-mono); margin-bottom: var(--space-4);">CURRENT THEME</h3>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--bg);"></div>
+        <div class="swatch-meta"><div class="name">Canvas</div><div class="hex" id="hex-bg"></div><div class="use">Page background</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--surface);"></div>
+        <div class="swatch-meta"><div class="name">Surface</div><div class="hex" id="hex-surface"></div><div class="use">Cards, nav, panels</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--accent);"></div>
+        <div class="swatch-meta"><div class="name">Signal (accent)</div><div class="hex" id="hex-accent"></div><div class="use">Primary buttons, active waveform, Core</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--verify);"></div>
+        <div class="swatch-meta"><div class="name">Verify</div><div class="hex" id="hex-verify"></div><div class="use">Success/connected states, Studio</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--shield);"></div>
+        <div class="swatch-meta"><div class="name">Shield</div><div class="hex" id="hex-shield"></div><div class="use">Enterprise/compliance, Shield</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--alert);"></div>
+        <div class="swatch-meta"><div class="name">Alert</div><div class="hex" id="hex-alert"></div><div class="use">Errors, latency-warn only</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--text);"></div>
+        <div class="swatch-meta"><div class="name">Text</div><div class="hex" id="hex-text"></div><div class="use">Headlines, body copy</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--border);"></div>
+        <div class="swatch-meta"><div class="name">Border</div><div class="hex" id="hex-border"></div><div class="use">1px hairlines only</div></div>
+      </div>
+    </div>
+
+    <table class="dual-table">
+      <thead><tr><th>Role</th><th>Dark value</th><th>Light value</th><th>Rule</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Canvas</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#15120D;"></span>#15120D</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#F5F0E3;"></span>#F5F0E3</span></td>
+          <td>Warm dark taupe, warm cream — never a cool void or a clinical white.</td>
+        </tr>
+        <tr>
+          <td>Surface</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#1E1A14;"></span>#1E1A14</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#FBF8EF;"></span>#FBF8EF</span></td>
+          <td>One flat step up from canvas, plus grain — no blur, no glass.</td>
+        </tr>
+        <tr>
+          <td>Signal (accent)</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#FF7A1A;"></span>#FF7A1A</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#E8630A;"></span>#E8630A</span></td>
+          <td>Same hue, light mode deepened for AA contrast on cream.</td>
+        </tr>
+        <tr>
+          <td>Verify</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#2DD4BF;"></span>#2DD4BF</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#12897B;"></span>#12897B</span></td>
+          <td>Reserved for system feedback in both themes — never decorative.</td>
+        </tr>
+        <tr>
+          <td>Shield</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#C6A15B;"></span>#C6A15B</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#8C6A2C;"></span>#8C6A2C</span></td>
+          <td>Brass tone, used only on Enterprise/Shield surfaces.</td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#F3EDE1;"></span>#F3EDE1</span></td>
+          <td class="mono"><span class="swatch-chip"><span class="chip-dot" style="background:#221C12;"></span>#221C12</span></td>
+          <td>Cream-on-dark, ink-on-cream — the same pairing, mirrored.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="spec-block">
+      <span class="k">DEPTH &amp; TEXTURE — implementation spec</span>
+      <p><strong style="color:var(--text)">Grain:</strong> a fixed, full-viewport SVG fractalNoise layer, <code class="mono">mix-blend-mode: overlay</code>, opacity 0.035 (light) / 0.05 (dark), tiled at 180px. Applied once, globally — never regenerated per component.</p>
+      <p><strong style="color:var(--text)">Ambient glow:</strong> one soft radial gradient in the accent color, ~8% opacity (light) / ~16% opacity (dark), positioned above the hero only. This is the one place the brand spends a gradient — it never repeats lower on the page.</p>
+      <p><strong style="color:var(--text)">Card depth:</strong> earned only on hover (a soft accent-tinted shadow), not applied statically to every card at rest — a shadow under everything is the one thing that makes a page look templated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPOGRAPHY ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Typography</div>
+    <h2 class="section-title">Three faces, one job each</h2>
+    <p class="section-sub">Space Grotesk carries the brand's personality in headlines. Inter stays invisible and does the reading work in body copy. JetBrains Mono appears only where a value is real — an API key, a latency number, a config field — never as a stylistic label.</p>
+
+    <div class="type-row"><div class="type-sample t-h1">Talk over it.</div><div class="type-meta">H1 — Space Grotesk 700<br>54px / 1.1</div></div>
+    <div class="type-row"><div class="type-sample t-h2">Three sub-products, one engine.</div><div class="type-meta">H2 — Space Grotesk 600<br>34px / 1.2</div></div>
+    <div class="type-row"><div class="type-sample t-h3">Built for the calls you can't get wrong.</div><div class="type-meta">H3 — Space Grotesk 600<br>22px / 1.3</div></div>
+    <div class="type-row"><div class="type-sample t-body-lg">Interrupt it, ask something different, change your mind mid-sentence — it keeps up.</div><div class="type-meta">Body large — Inter 400<br>19px / 1.6</div></div>
+    <div class="type-row"><div class="type-sample t-body">Most people are up and running in about five minutes, no coding needed.</div><div class="type-meta">Body — Inter 400<br>16px / 1.6</div></div>
+    <div class="type-row"><div class="type-sample"><span class="t-mono">WAVIA_API_KEY</span> &nbsp; <span class="t-mono">142ms</span> &nbsp; <span class="t-mono">ws://api.wavia.ai/v1/stream</span></div><div class="type-meta">Mono — JetBrains Mono 400<br>real values only</div></div>
+  </div>
+</section>
+
+<!-- ============ VOICE & TONE ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Voice &amp; tone</div>
+    <h2 class="section-title">Precisely confident, not breathless</h2>
+    <p class="section-sub">Four attributes, always in this order of priority: precisely confident, calmly capable, plainly technical, quietly honest. When a real number exists, say the number — never an adjective standing in for it.</p>
+    <table class="voice-table">
+      <thead><tr><th style="width:50%">Say this</th><th>Not that</th></tr></thead>
+      <tbody>
+        <tr><td class="say">"Responds in under half a second on average, under 850ms even at the tail end."</td><td class="not">"Blazing-fast, human-like AI!"</td></tr>
+        <tr><td class="say">"If one provider slows down or fails, we switch to a backup mid-call automatically."</td><td class="not">"Never-fail bulletproof infrastructure."</td></tr>
+        <tr><td class="say">"English, Urdu, Arabic, and Malay, each with their own pacing — not one voice translated four ways."</td><td class="not">"Speaks every language fluently!"</td></tr>
+        <tr><td class="say">"Outbound dialing is available today as a custom Enterprise build."</td><td class="not">"Full outbound suite, included." (when it isn't yet)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ WAVEFORM STATES ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Signature motion</div>
+    <h2 class="section-title">The waveform has four moods</h2>
+    <p class="section-sub">This is the one animated element the brand is allowed to be loud about. It appears at three sizes across the product — tiny in the nav, large in the hero, interactive in the demo — always cycling through the same four states, always identical in both themes.</p>
+    <div class="grid-3" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="state-card"><div class="state-demo state-idle"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="state-label">IDLE</div></div>
+      <div class="state-card"><div class="state-demo state-listening"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="state-label">LISTENING</div></div>
+      <div class="state-card"><div class="state-demo state-thinking"><div class="dot"></div></div><div class="state-label">THINKING</div></div>
+      <div class="state-card"><div class="state-demo state-speaking"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="state-label">SPEAKING</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOADING SCREEN ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Loading screen</div>
+    <h2 class="section-title">Booting looks like listening</h2>
+    <p class="section-sub">The load screen isn't a spinner — it's the wave mark doing its "listening" bounce for ~700ms, settling into idle rhythm as the wordmark fades in beneath it, then the whole thing dissolves. It already played once when this page opened. Replay it below.</p>
+    <div class="loader-preview-frame">
+      <div style="text-align:center;">
+        <button class="btn btn-primary" id="replayLoader">Replay loading animation →</button>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top: var(--space-4);">Sequence: 0–700ms bars "boot" · 700–900ms wordmark fades in · 1500ms overlay dissolves</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUTTONS ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Components</div>
+    <h2 class="section-title">Buttons &amp; tags</h2>
+    <p class="section-sub">8px radius on every button — never a full pill. The pill shape is earned by exactly one thing: the small category tags below, nothing else.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary">Get Started →</button>
+      <button class="btn btn-secondary">See How It Works</button>
+      <button class="btn btn-ghost">Talk to Sales</button>
+    </div>
+    <div class="btn-row">
+      <span class="btn-tag" style="color:var(--verify); border-color: var(--verify);">NO-CODE DASHBOARD</span>
+      <span class="btn-tag" style="color:var(--accent); border-color: var(--accent);">DEVELOPER ENGINE</span>
+      <span class="btn-tag" style="color:var(--shield); border-color: var(--shield);">B2B CUSTOM BUILDS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUB-BRANDS ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Sub-brands</div>
+    <h2 class="section-title">Core, Studio, Shield</h2>
+    <p class="section-sub">Same base surface, same typography, same logo — each sub-brand is told apart only by which single accent color is switched on.</p>
+    <div class="grid-3">
+      <div class="subbrand-card core-card"><span class="tag">DEVELOPER ENGINE</span><h3>Wavia Core</h3><div class="tagline">"The engine underneath."</div><p class="desc">Full SDK access, WebSocket streaming, client barge-in, live observability.</p></div>
+      <div class="subbrand-card studio-card"><span class="tag">NO-CODE DASHBOARD</span><h3>Wavia Studio</h3><div class="tagline">"Build it like a slide, not a script."</div><p class="desc">Visual prompt design, voice picker, one-click number connection.</p></div>
+      <div class="subbrand-card shield-card"><span class="tag">B2B CUSTOM BUILDS</span><h3>Wavia Shield</h3><div class="tagline">"Built for the calls you can't get wrong."</div><p class="desc">HIPAA/GDPR compliance, on-prem deployment, dedicated SLAs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPACING ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Spacing</div>
+    <h2 class="section-title">4px grid, no exceptions</h2>
+    <p class="section-sub">Every margin, padding, and gap on the site is one of these values. No arbitrary numbers like 15px or 22px — this alone is why the layout feels engineered rather than eyeballed.</p>
+    <div id="space-scale"></div>
+  </div>
+</section>
+
+<!-- ============ DO / DON'T ============ -->
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Guardrails</div>
+    <h2 class="section-title">Keep it out of AI-slop territory</h2>
+    <p class="section-sub">The fastest way to lose the brand is to let a builder tool apply its own defaults. These are the defaults to block, every time.</p>
+    <div class="dodont">
+      <div class="card do-card">
+        <h3>Do</h3>
+        <ul>
+          <li>Warm cream / warm dark, both grained, both mirrored in text color</li>
+          <li>One soft ambient glow, hero only — never repeated as a page-wide wash</li>
+          <li>Flat surfaces, 1px borders, 8–12px radius, shadow earned on hover only</li>
+          <li>Real numbers instead of adjectives</li>
+          <li>The waveform + animated wordmark as the one loud, alive element</li>
+        </ul>
+      </div>
+      <div class="card dont-card">
+        <h3>Don't</h3>
+        <ul>
+          <li>Pure white glare or a flat black void</li>
+          <li>Purple-to-blue gradients, glassmorphism, blurred blobs</li>
+          <li>Full-pill buttons, or a shadow under every single card</li>
+          <li>Sparkle icons, stock headset photography, robot heads</li>
+          <li>Two different visual systems for light vs. dark</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Wavia Labs — brand system v1.1</footer>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  const label = document.getElementById('theme-label');
+
+  function updateHexLabels() {
+    const cs = getComputedStyle(root);
+    const map = {
+      'hex-bg': '--bg', 'hex-surface': '--surface', 'hex-accent': '--accent',
+      'hex-verify': '--verify', 'hex-shield': '--shield', 'hex-alert': '--alert',
+      'hex-text': '--text', 'hex-border': '--border'
+    };
+    for (const id in map) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = cs.getPropertyValue(map[id]).trim().toUpperCase();
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    label.textContent = next === 'dark' ? 'Dark theme' : 'Light theme';
+    updateHexLabels();
+  });
+
+  const scale = [
+    ['4px', 4], ['8px', 8], ['12px', 12], ['16px', 16],
+    ['24px', 24], ['32px', 32], ['48px', 48], ['64px', 64], ['96px', 96]
+  ];
+  const container = document.getElementById('space-scale');
+  scale.forEach(([lbl, px]) => {
+    const row = document.createElement('div');
+    row.className = 'space-row';
+    row.innerHTML = '<span class="space-label">' + lbl + '</span><div class="space-bar" style="width:' + (px * 3) + 'px;"></div>';
+    container.appendChild(row);
+  });
+
+  updateHexLabels();
+
+  /* ============ LOADING SCREEN SEQUENCE ============ */
+  const loader = document.getElementById('loader');
+  const loaderWave = document.getElementById('loaderWave');
+  const loaderWordmark = document.getElementById('loaderWordmark');
+  const loaderCaption = document.getElementById('loaderCaption');
+
+  function playLoader() {
+    loader.classList.remove('hide');
+    loaderWave.classList.add('booting');
+    loaderWordmark.classList.remove('show');
+    loaderCaption.classList.remove('show');
+    setTimeout(() => {
+      loaderWave.classList.remove('booting');
+      loaderWordmark.classList.add('show');
+      loaderCaption.classList.add('show');
+    }, 700);
+    setTimeout(() => { loader.classList.add('hide'); }, 1600);
+  }
+
+  window.addEventListener('load', () => { setTimeout(playLoader, 150); });
+  document.getElementById('replayLoader').addEventListener('click', playLoader);
+</script>
+
+</body>
+</html>

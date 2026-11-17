@@ -1,0 +1,660 @@
+/* Landing scroll story: the pinned stage and the one persistent call object. */
+
+/* ---------- Scroller + sticky stage ---------- */
+.journey {
+	position: relative;
+	height: 760vh;
+}
+
+.journey__anchor {
+	position: absolute;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	top: calc((100% - 100vh) * var(--at));
+}
+
+.journey__stage {
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	height: 100svh;
+	max-width: var(--page-max);
+	margin-inline: auto;
+	padding: clamp(16px, 3vh, 32px) var(--gutter) clamp(12px, 2vh, 20px);
+	display: grid;
+	grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+	grid-template-rows: minmax(0, 1fr) auto;
+	column-gap: clamp(24px, 4vw, 64px);
+	row-gap: clamp(10px, 2vh, 20px);
+	overflow: hidden;
+}
+
+.journey__copy {
+	position: relative;
+	min-height: 0;
+}
+
+.scene {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: clamp(10px, 2vh, 20px);
+	will-change: opacity, transform;
+}
+
+.scene[data-active='false'] {
+	pointer-events: none;
+}
+
+.scene__label {
+	border-top: var(--rule-mast) solid var(--rule);
+	padding-top: 8px;
+	max-width: 28rem;
+}
+
+.scene__title {
+	font-size: clamp(2.4rem, 5.6vw, 5.4rem);
+	line-height: 0.95;
+	letter-spacing: var(--tracking-tight);
+	max-width: 11ch;
+}
+
+.scene__title--hero {
+	font-size: clamp(3rem, 8.2vw, 7.75rem);
+	line-height: 0.9;
+	max-width: 8ch;
+}
+
+.scene__body {
+	font-size: var(--fs-lead);
+	line-height: 1.3;
+	max-width: 24rem;
+}
+
+.scene__langs {
+	border-top: 1px solid var(--rule);
+	padding-top: 8px;
+	max-width: 28rem;
+}
+
+.journey__object {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 0;
+}
+
+/* Route bar: the thread the call travels along. */
+.journey__route {
+	grid-column: 1 / -1;
+	position: relative;
+	padding-top: 10px;
+}
+
+.journey__track {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2px;
+	background: color-mix(in srgb, var(--c-aubergine) 18%, transparent);
+	overflow: hidden;
+}
+
+.journey__fill {
+	position: absolute;
+	inset: 0;
+	background: var(--c-aubergine);
+	transform-origin: 0 50%;
+	transform: scaleX(0);
+}
+
+.journey__stations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.journey__stations a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 32px;
+	text-decoration: none;
+	padding-right: 4px;
+}
+
+.journey__dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1.5px solid var(--c-aubergine);
+	background: var(--ground);
+	flex: none;
+}
+
+.journey__stations a[data-state='done'] .journey__dot {
+	background: var(--c-aubergine);
+}
+
+.journey__stations a[data-state='active'] .journey__dot {
+	background: var(--c-lilac);
+}
+
+.journey__stations a[data-state='active'] .label {
+	background: var(--c-lime);
+	padding: 0 4px;
+}
+
+/* ---------- The call object ---------- */
+.call {
+	position: relative;
+	width: min(540px, 100%);
+	height: min(520px, 100%);
+	container-type: size;
+	--d: min(300px, 62cqmin);
+}
+
+.call__card {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--ground);
+	border-top: var(--rule-mast) solid var(--c-aubergine);
+	border-bottom: var(--rule-hair) solid var(--c-aubergine);
+	opacity: 0;
+	will-change: opacity;
+}
+
+.call__mast {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--c-aubergine);
+}
+
+.call__anchor {
+	width: 16px;
+	height: 16px;
+	flex: none;
+}
+
+.call__line-name {
+	flex: 1;
+	min-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.call__status {
+	background: var(--c-aubergine);
+	color: var(--c-bone);
+	padding: 3px 8px;
+	white-space: nowrap;
+}
+
+.call[data-phase='barge'] .call__status {
+	background: var(--c-lime);
+	color: var(--c-aubergine);
+}
+
+/* Voice bars: the agent's audio. Flat the instant the caller speaks. */
+.call__wave {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	height: 30px;
+	margin-block: 8px 4px;
+}
+
+.call__wave span {
+	flex: 1;
+	height: 100%;
+	max-width: 8px;
+	background: var(--c-aubergine);
+	transform: scaleY(0.08);
+	transform-origin: 50% 50%;
+	transition: transform 120ms linear;
+}
+
+.call[data-voice='agent'] .call__wave span {
+	transform: scaleY(var(--h));
+}
+
+[data-live='true'] .call[data-voice='agent'][data-still='false'] .call__wave span {
+	animation: voice 900ms ease-in-out infinite alternate;
+	animation-delay: calc(var(--i) * -97ms);
+}
+
+@keyframes voice {
+	from {
+		transform: scaleY(calc(var(--h) * 0.3));
+	}
+	to {
+		transform: scaleY(var(--h));
+	}
+}
+
+.call__viewport {
+	position: relative;
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+	margin-top: 6px;
+}
+
+.call__lines {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	will-change: transform, opacity;
+}
+
+.call__turn {
+	opacity: 0;
+	display: grid;
+	gap: 4px;
+	will-change: transform, opacity;
+}
+
+.call__turn--caller {
+	padding-left: 18%;
+	text-align: right;
+	justify-items: end;
+}
+
+.call__text {
+	font-size: clamp(1.1rem, 4.6cqmin, 1.6rem);
+	line-height: 1.18;
+}
+
+.call__turn--agent .call__text {
+	background: var(--c-lilac);
+	padding: 10px 14px;
+	font-style: italic;
+	margin-right: 10%;
+}
+
+.call__cut {
+	display: inline;
+	opacity: 0;
+}
+
+.call__cut[data-struck='true'] {
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
+}
+
+.call__barge {
+	opacity: 0;
+	margin-top: 4px;
+}
+
+.call__barge .hl {
+	padding: 1px 5px;
+	margin-right: 6px;
+}
+
+.call__record {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow: hidden;
+}
+
+.call__record-title {
+	border-bottom: 1px solid var(--c-aubergine);
+	padding-bottom: 6px;
+}
+
+.call__summary {
+	font-style: italic;
+	font-size: clamp(1.05rem, 4.2cqmin, 1.45rem);
+	line-height: 1.2;
+}
+
+.call__fields {
+	border-top: 1px solid var(--c-aubergine);
+}
+
+.call__field {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+	padding: 5px 0;
+	border-bottom: 1px solid var(--c-aubergine);
+	font-size: clamp(1rem, 3.6cqmin, 1.2rem);
+	opacity: 0;
+}
+
+.call__field .label {
+	background: var(--c-lime);
+	padding: 0 5px;
+}
+
+.call__foot {
+	padding-top: 8px;
+	margin-top: 8px;
+	border-top: 1px solid var(--c-aubergine);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* The disc: home is the centre of the object; it folds into the voice dot. */
+.call__disc {
+	position: absolute;
+	width: var(--d);
+	height: var(--d);
+	left: calc(50% - var(--d) / 2);
+	top: calc(50% - var(--d) / 2);
+	transform-origin: 50% 50%;
+	will-change: transform;
+	pointer-events: none;
+}
+
+.call__core {
+	position: absolute;
+	inset: 13%;
+	border-radius: 50%;
+	background: var(--c-lilac);
+}
+
+.call__rings {
+	position: absolute;
+	inset: 0;
+}
+
+.call__ring,
+.call__pulse {
+	position: absolute;
+	border-radius: 50%;
+	border: 1.5px solid var(--c-aubergine);
+}
+
+.call__ring--outer {
+	inset: 0;
+}
+
+.call__ring--inner {
+	inset: 6%;
+}
+
+.call__pulse {
+	inset: 13%;
+	opacity: 0;
+}
+
+[data-live='true'] .call[data-phase='ring'][data-still='false'] .call__pulse {
+	animation: ripple 1.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+}
+
+[data-live='true'] .call[data-phase='ring'][data-still='false'] .call__pulse--late {
+	animation-delay: 0.8s;
+}
+
+@keyframes ripple {
+	from {
+		opacity: 0.9;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(1.75);
+	}
+}
+
+/* In the still sequence the ring frame shows one frozen ripple. */
+.call[data-still='true'][data-phase='ring'] .call__pulse {
+	opacity: 0.6;
+	transform: scale(1.3);
+}
+
+.call[data-still='true'][data-phase='ring'] .call__pulse--late {
+	opacity: 0.3;
+	transform: scale(1.6);
+}
+
+.call__ticker {
+	position: absolute;
+	left: 50%;
+	top: calc(50% - var(--d) / 2 - 8px);
+	opacity: 0;
+}
+
+.call__stamp {
+	position: absolute;
+	right: -6px;
+	top: 46px;
+	opacity: 0;
+	transform-origin: 50% 50%;
+	font-size: 0.8125rem;
+	padding: 8px 16px;
+}
+
+/* ---------- Narrow screens: copy over object, route as dots ---------- */
+@media (max-width: 899px) {
+	.journey {
+		height: 680vh;
+	}
+
+	.journey__stage {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: auto minmax(0, 1fr) auto;
+	}
+
+	.journey__copy {
+		min-height: clamp(168px, 30svh, 260px);
+	}
+
+	.scene {
+		justify-content: flex-end;
+		gap: 8px;
+	}
+
+	.scene__title {
+		font-size: clamp(2rem, 9vw, 3.25rem);
+		max-width: 14ch;
+	}
+
+	.scene__title--hero {
+		font-size: clamp(2.6rem, 13vw, 4.5rem);
+	}
+
+	.scene__body {
+		font-size: 1.125rem;
+		line-height: 1.28;
+	}
+
+	.call {
+		width: 100%;
+	}
+
+	.journey__stations .label {
+		display: none;
+	}
+
+	.journey__stations a[data-state='active'] .label {
+		display: inline;
+	}
+}
+
+@media (max-width: 899px) and (max-height: 700px) {
+	.scene__label,
+	.scene__langs {
+		display: none;
+	}
+}
+
+/* ---------- Static sequence (reduced motion, short screens) ---------- */
+.journey-static {
+	padding-block: clamp(24px, 4vw, 48px);
+	overflow-x: clip;
+}
+
+.journey-static__scene {
+	display: grid;
+	grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+	gap: clamp(20px, 4vw, 64px);
+	align-items: center;
+	padding-block: clamp(28px, 5vw, 64px);
+}
+
+.journey-static__copy {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.journey-static__object {
+	height: clamp(340px, 46vw, 480px);
+	display: flex;
+	justify-content: center;
+}
+
+.journey-static__transcript {
+	padding-block: 24px 48px;
+}
+
+.journey-static__transcript h2 {
+	border-top: var(--rule-mast) solid var(--rule);
+	padding-top: 8px;
+	margin-bottom: 12px;
+}
+
+.journey-static__transcript ol {
+	padding-left: 1.4em;
+	display: grid;
+	gap: 8px;
+	max-width: 46rem;
+}
+
+@media (max-width: 899px) {
+	.journey-static__scene {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.journey-static__object {
+		height: 360px;
+	}
+}
+
+/* ---------- Landing sections after the journey ---------- */
+.stack {
+	padding-block: clamp(56px, 9vw, 120px);
+}
+
+.stack__head {
+	display: grid;
+	grid-template-columns: minmax(140px, 0.32fr) minmax(0, 1fr);
+	gap: var(--space-6);
+	border-top: var(--rule-mast) solid var(--c-bone);
+	padding-top: var(--space-4);
+	margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.stack__head h2 {
+	font-size: var(--fs-h1);
+	line-height: 0.94;
+	letter-spacing: var(--tracking-tight);
+	max-width: 13ch;
+}
+
+.stack__head p {
+	margin-top: var(--space-4);
+	font-size: var(--fs-lead);
+	line-height: 1.35;
+	max-width: 34rem;
+}
+
+.floors {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column-reverse;
+	border-bottom: 1px solid var(--c-bone);
+}
+
+.floor {
+	display: grid;
+	grid-template-columns: 96px minmax(0, 1fr) minmax(0, 0.8fr);
+	gap: var(--space-5);
+	align-items: baseline;
+	padding-block: var(--space-5);
+	border-top: 1px solid var(--c-bone);
+}
+
+.floor__tag {
+	display: inline-block;
+	font-family: var(--font-mono);
+	font-weight: 700;
+	font-size: 0.875rem;
+	letter-spacing: var(--tracking-label);
+	background: var(--c-lime);
+	color: var(--c-aubergine);
+	padding: 2px 8px;
+	justify-self: start;
+}
+
+.floor h3 {
+	font-size: var(--fs-h3);
+	line-height: 1.05;
+}
+
+.floor p {
+	margin-top: 6px;
+	max-width: 32rem;
+}
+
+.floor .label {
+	color: var(--c-lilac);
+}
+
+@media (max-width: 760px) {
+	.stack__head {
+		grid-template-columns: 1fr;
+		gap: var(--space-3);
+	}
+
+	.floor {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+}
+
+.reveal {
+	opacity: 1;
+	transform: none;
+	transition:
+		opacity 600ms var(--ease-out),
+		transform 600ms var(--ease-out);
+}
+
+.reveal[data-shown='false'] {
+	opacity: 0;
+	transform: translate3d(0, 24px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal[data-shown='false'] {
+		opacity: 1;
+		transform: none;
+	}
+}

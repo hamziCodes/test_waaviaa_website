@@ -1,0 +1,61 @@
+Entity structure
+
+Wavia Labs = the company (what's on your incorporation papers, About page, copyright line, careers page)
+Wavia = the product/brand name people actually say and see everywhere else (site, SDK, dashboard, sales calls)
+
+This is the same split as Stripe (Stripe, Inc. → "Stripe"), OpenAI, Anthropic → "Claude." Nobody says "Wavia Labs SDK" in conversation — they say "the Wavia SDK." Keep "Labs" reserved for the legal/about-page layer only.
+
+Sub-brand naming — three schemes, pick one and use it consistently
+
+Scheme A — Plain descriptor (safest, fastest to build, zero explaining)
+
+Wavia SDK — the developer toolkit
+Wavia Dashboard — the no-code app
+Wavia Enterprise — the custom/bespoke track
+
+Scheme B — Named sub-products (more premium, more work to build recognition for)
+
+Wavia Core — the SDK/engine (developers)
+Wavia Studio — the no-code dashboard (business owners build/design their agent here — "studio" implies creation)
+Wavia Shield — enterprise/compliance track (implies protection, HIPAA/GDPR, dedicated infra)
+
+Scheme C — Wave-metaphor consistent (ties every sub-brand back to the core visual identity)
+
+Wavia Core — SDK/engine
+Wavia Flow — no-code dashboard (the "flow" of setting something up simply)
+Wavia Shore — enterprise (where the wave lands safely — compliance/stability framing)
+
+My call: Scheme B. Scheme A is forgettable and reads like internal doc naming, not product naming. Scheme C is cute but "Shore" strains the metaphor and won't test well with enterprise buyers who want to hear "compliance," not "poetry." Scheme B gets you real naming (memorable, ownable) without sacrificing clarity — Core/Studio/Shield each independently signal exactly what they are even out of context.
+
+Final Brand Kit — Wavia
+
+Master wordmark: wavia — all lowercase, no logotype flourishes on the letters themselves; the wave lives in the mark, not the type.
+
+Tagline (master brand): "Where the conversation actually happens."
+
+Sub-brand taglines:
+
+Wavia Core — "The engine underneath."
+Wavia Studio — "Build it like a slide, not a script."
+Wavia Shield — "Built for the calls you can't get wrong."
+
+Color system:
+
+--wavia-ink:      #0A0B0D   /* base canvas, all products */
+--wavia-surface:  #14161A   /* cards/panels */
+--wavia-signal:   #FF7A1A   /* master brand accent — Core + marketing site */
+--wavia-verify:   #2DD4BF   /* Studio accent — calm, "it's working" */
+--wavia-shield:   #C6A15B   /* Shield/Enterprise accent — brass, trust, gravity */
+--wavia-text:     #F4F3EF
+--wavia-border:   #232529
+
+Each sub-brand keeps the same ink/surface base but swaps its one accent color — this is how you visually tell Core, Studio, and Shield apart at a glance without breaking the family resemblance (same trick Google Workspace or Notion's sub-tools use).
+
+Typography: Space Grotesk (headlines), Inter (body), JetBrains Mono (anything technical — API keys, code, latency numbers) — same as the build spec already written, no change needed.
+
+Logomark: A single continuous sine-wave stroke, one unbroken line, terminating in a small solid dot (the "signal" endpoint). This is literally your homepage waveform animation reduced to a static mark — same object, two contexts. At 16px (favicon) it reduces to just the dot with a small arc — still legible.
+
+Voice/tone: Precisely confident, plainly technical, quietly honest — unchanged from the build spec. "Wavia" as a name is soft, so the copy is where the engineering authority has to come through — don't let the name's softness leak into vague/breathy marketing language.
+
+Naming in a sentence, for reference:
+"Wavia Labs builds Wavia — Wavia Core for developers, Wavia Studio for no-code setup, and Wavia Shield for enterprise and compliance-heavy deployments."

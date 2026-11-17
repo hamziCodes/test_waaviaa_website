@@ -1,0 +1,2639 @@
+src
+	asses
+		react.svg: <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+
+	components: 	
+		footer.tsx: import { Link } from 'react-router';
+import { Waveform } from '@/components/Waveform';
+import { Container } from '@/components/ui';
+
+const COLUMNS = [
+{
+  title: 'Product',
+  links: [
+  { to: '/how-it-works', label: 'How It Works' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/get-started', label: 'Get Started' },
+  { to: '/for-developers', label: 'For Developers' }]
+
+},
+{
+  title: 'Company',
+  links: [
+  { to: '/about', label: 'About' },
+  { to: '/enterprise', label: 'Enterprise' },
+  { to: '/contact', label: 'Contact' }]
+
+},
+{
+  title: 'Legal',
+  links: [
+  { to: '/privacy', label: 'Privacy Policy' },
+  { to: '/terms', label: 'Terms of Service' }]
+
+}];
+
+
+export function Footer() {
+  return (
+    <footer data-ev-id="ev_85b6bfc669"
+    style={{
+      background: 'var(--theme-surface)',
+      borderTop: '1px solid var(--theme-border)'
+    }}>
+
+			<Container className="py-20">
+				<div data-ev-id="ev_2ad335751a" className="grid gap-12 lg:grid-cols-4">
+					<div data-ev-id="ev_63fe1a7ec3" className="flex flex-col gap-6">
+						<Link data-ev-id="ev_44b8b28ac1" to="/" className="flex items-center gap-3">
+							<Waveform state="idle" height={24} barCount={5} barWidth={3} gap={3} label="VoiceAI" />
+							<span data-ev-id="ev_09e6810901"
+              className="font-display text-xl font-bold"
+              style={{ color: 'var(--theme-fg)' }}>
+
+								VoiceAI
+							</span>
+						</Link>
+						<p data-ev-id="ev_d4ccc09ec8"
+            className="max-w-xs text-sm"
+            style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+
+							A voice assistant for your business phone line that you can actually talk to.
+						</p>
+					</div>
+
+					{COLUMNS.map((col) =>
+          <div data-ev-id="ev_486b9cb4a4" key={col.title} className="flex flex-col gap-5">
+							<p data-ev-id="ev_f843715dde" className="text-sm font-semibold" style={{ color: 'var(--theme-fg)' }}>
+								{col.title}
+							</p>
+							<ul data-ev-id="ev_302955eb45" className="flex flex-col gap-3">
+								{col.links.map((l) =>
+              <li data-ev-id="ev_7ceeae8048" key={l.to}>
+										<Link data-ev-id="ev_a5043d0965"
+                to={l.to}
+                className="text-sm transition-colors duration-300 hover:text-[var(--theme-accent)]"
+                style={{ color: 'var(--theme-fg-muted)' }}>
+
+											{l.label}
+										</Link>
+									</li>
+              )}
+							</ul>
+						</div>
+          )}
+				</div>
+
+				<div data-ev-id="ev_6cc1ff7c9d"
+        className="mt-16 pt-8"
+        style={{ borderTop: '1px solid var(--theme-border)' }}>
+
+					<p data-ev-id="ev_7a600d58f6" className="text-sm" style={{ color: 'var(--theme-fg-muted)' }}>
+						© VoiceAI. Built to actually listen.
+					</p>
+				</div>
+			</Container>
+		</footer>);
+
+}
+
+		InteractiveDemo.tsx: import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Check, Mic, RotateCcw } from 'lucide-react';
+import { Waveform, type WaveState } from '@/components/Waveform';
+import { Btn } from '@/components/ui';
+
+type Phase = 'idle' | 'listening' | 'thinking' | 'speaking' | 'interrupted' | 'done';
+
+const REPLY =
+'Hi! I can help you book an appointment, answer questions, or transfer you to a person. Try cutting me off mid-sent—';
+
+const WAVE: Record<Phase, WaveState> = {
+  idle: 'idle',
+  listening: 'listening',
+  thinking: 'thinking',
+  speaking: 'speaking',
+  interrupted: 'idle',
+  done: 'idle'
+};
+
+const STATUS: Record<Phase, string> = {
+  idle: 'Click the button and try interrupting me mid-sentence',
+  listening: 'Listening — it picks up your voice as you speak',
+  thinking: 'Thinking — working out what to say back',
+  speaking: 'Speaking — go ahead, cut it off',
+  interrupted: '',
+  done: 'It finished on its own that time. Try again and interrupt it.'
+};
+
+export function InteractiveDemo() {
+  const [phase, setPhase] = useState<Phase>('idle');
+  const [typed, setTyped] = useState(0);
+
+  useEffect(() => {
+    if (phase === 'listening') {
+      const t = window.setTimeout(() => setPhase('thinking'), 2000);
+      return () => window.clearTimeout(t);
+    }
+
+    if (phase === 'thinking') {
+      const t = window.setTimeout(() => setPhase('speaking'), 800);
+      return () => window.clearTimeout(t);
+    }
+
+    if (phase === 'speaking') {
+      let i = 0;
+      setTyped(0);
+      const id = window.setInterval(() => {
+        i += 1;
+        setTyped(i);
+        if (i >= REPLY.length) {
+          window.clearInterval(id);
+          setPhase('done');
+        }
+      }, 30);
+      return () => window.clearInterval(id);
+    }
+
+    return undefined;
+  }, [phase]);
+
+  const start = () => {
+    setTyped(0);
+    setPhase('listening');
+  };
+
+  const interrupt = () => setPhase('interrupted');
+
+  const reset = () => {
+    setTyped(0);
+    setPhase('idle');
+  };
+
+  const busy = phase === 'listening' || phase === 'thinking' || phase === 'speaking';
+  const showBubble = phase === 'speaking' || phase === 'interrupted' || phase === 'done';
+  const buttonLabel =
+  phase === 'listening' ?
+  'Listening...' :
+  phase === 'thinking' ?
+  'Thinking...' :
+  phase === 'speaking' ?
+  'Speaking...' :
+  'Tap to talk';
+
+  return (
+    <motion.div data-ev-id="ev_a3d9e4e376"
+    className="mx-auto w-full max-w-[600px] rounded-[32px] p-8 lg:p-10"
+    style={{
+      background: 'var(--theme-surface)',
+      boxShadow: 'var(--theme-shadow-lg)',
+      border: '1px solid var(--theme-border)'
+    }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, ease: 'easeOut' }}>
+
+			<div data-ev-id="ev_de90eca87b" className="flex flex-col items-center gap-8">
+				<p data-ev-id="ev_dfdf0703d0" className="text-sm font-medium" style={{ color: 'var(--theme-fg-muted)' }}>
+					Try it right now — no sign-up needed
+				</p>
+
+				<div data-ev-id="ev_3a012d1876"
+        className="flex items-center justify-center rounded-full p-6"
+        style={{
+          background: 'var(--theme-accent-soft)',
+          boxShadow: 'var(--theme-glow)'
+        }}>
+
+					<Waveform state={WAVE[phase]} height={80} barWidth={6} gap={6} />
+				</div>
+
+				<div data-ev-id="ev_53cbece8a6" className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center">
+					<Btn onClick={start} disabled={busy} className="w-full px-8 sm:w-auto">
+						<Mic size={18} aria-hidden="true" />
+						{buttonLabel}
+					</Btn>
+
+					<AnimatePresence>
+						{phase === 'speaking' &&
+            <motion.div data-ev-id="ev_ecd435cfa7"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.25 }}
+            className="w-full sm:w-auto">
+
+								<Btn variant="outline" onClick={interrupt} className="w-full px-8 sm:w-auto">
+									Interrupt it
+								</Btn>
+							</motion.div>
+            }
+					</AnimatePresence>
+				</div>
+
+				<div data-ev-id="ev_f4d1c3a97d" aria-live="polite" className="min-h-6 text-center">
+					{phase === 'interrupted' ?
+          <p data-ev-id="ev_a6c7d7b806" className="flex items-center justify-center gap-2 text-sm font-medium" style={{ color: 'var(--theme-success)' }}>
+							<Check size={16} aria-hidden="true" />
+							Stopped instantly — just like a real person would.
+						</p> :
+
+          <p data-ev-id="ev_ffa3b70466" className="text-sm" style={{ color: 'var(--theme-fg-muted)' }}>{STATUS[phase]}</p>
+          }
+				</div>
+			</div>
+
+			<AnimatePresence>
+				{showBubble &&
+        <motion.div data-ev-id="ev_50e0171f03"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="mt-6 rounded-[20px] p-6"
+        style={{
+          background: 'var(--theme-surface-2)',
+          border: '1px solid var(--theme-border)'
+        }}>
+
+						<p data-ev-id="ev_4a469fe9ce" className="text-base" style={{ color: 'var(--theme-fg)' }}>
+							{REPLY.slice(0, typed)}
+							{phase === 'speaking' &&
+            <span data-ev-id="ev_abba8fe8a1"
+            aria-hidden="true"
+            className="ml-0.5 inline-block h-4 w-[2px] translate-y-0.5"
+            style={{
+              backgroundColor: 'var(--theme-accent)',
+              animation: 'caret-blink 1s steps(1) infinite'
+            }} />
+
+            }
+						</p>
+					</motion.div>
+        }
+			</AnimatePresence>
+
+			{(phase === 'interrupted' || phase === 'done') &&
+      <div data-ev-id="ev_e520fb6981" className="mt-6 flex justify-center">
+					<button data-ev-id="ev_452cb91971"
+        type="button"
+        onClick={reset}
+        className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300"
+        style={{ color: 'var(--theme-accent)' }}>
+
+						<RotateCcw size={14} aria-hidden="true" />
+						Try again
+					</button>
+				</div>
+      }
+		</motion.div>);
+
+}
+		layout.tsx: import { useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useLocation } from 'react-router';
+import { Nav } from '@/components/Nav';
+import { Footer } from '@/components/Footer';
+
+export function Layout({ children }: {children: ReactNode;}) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <div data-ev-id="ev_e8504a1730" className="min-h-screen" style={{ background: 'var(--theme-bg)' }}>
+			<Nav />
+			<main data-ev-id="ev_6d5aab0595" className="pt-20">{children}</main>
+			<Footer />
+		</div>);
+
+}
+
+		nav.tsx: import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Waveform } from '@/components/Waveform';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { Container } from '@/components/ui';
+
+const LINKS = [
+{ to: '/how-it-works', label: 'How It Works' },
+{ to: '/pricing', label: 'Pricing' },
+{ to: '/for-developers', label: 'For Developers' }];
+
+
+export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <header data-ev-id="ev_ee071682dc"
+    className="fixed inset-x-0 top-0 z-50 transition-all duration-500"
+    style={{
+      background: scrolled || open ? 'var(--theme-surface)' : 'transparent',
+      boxShadow: scrolled ? 'var(--theme-shadow)' : 'none',
+      borderBottom: scrolled || open ? '1px solid var(--theme-border)' : '1px solid transparent'
+    }}>
+
+			<Container className="flex h-20 items-center justify-between gap-8">
+				<Link data-ev-id="ev_973d59057b" to="/" className="flex items-center gap-3">
+					<Waveform state="idle" height={24} barCount={5} barWidth={3} gap={3} label="VoiceAI" />
+					<span data-ev-id="ev_9033ad6599"
+          className="font-display text-xl font-bold"
+          style={{ color: 'var(--theme-fg)' }}>
+
+						VoiceAI
+					</span>
+				</Link>
+
+				<nav data-ev-id="ev_6d71a02e8b" className="hidden items-center gap-10 lg:flex">
+					{LINKS.map((l) =>
+          <NavLink data-ev-id="ev_a0c4d2a6ba"
+          key={l.to}
+          to={l.to}
+          className="relative text-base font-medium transition-colors duration-300"
+          style={({ isActive }) => ({
+            color: isActive ? 'var(--theme-accent)' : 'var(--theme-fg-muted)'
+          })}>
+
+							{l.label}
+						</NavLink>
+          )}
+				</nav>
+
+				<div data-ev-id="ev_aeeb96ab5e" className="hidden items-center gap-4 lg:flex">
+					<ThemeToggle />
+					<Link data-ev-id="ev_bd37d89b2f"
+          to="/login"
+          className="text-base font-medium transition-colors duration-300"
+          style={{ color: 'var(--theme-fg-muted)' }}>
+
+						Log In
+					</Link>
+					<Link data-ev-id="ev_3cce5e03b4"
+          to="/get-started"
+          className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
+          style={{
+            background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+            boxShadow: '0 4px 20px rgba(255,107,0,0.25)'
+          }}>
+
+						Get Started →
+					</Link>
+				</div>
+
+				<div data-ev-id="ev_7874b5cb47" className="flex items-center gap-3 lg:hidden">
+					<ThemeToggle />
+					<button data-ev-id="ev_d546d22997"
+          type="button"
+          style={{ color: 'var(--theme-fg)' }}
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}>
+
+						{open ? <X size={24} /> : <Menu size={24} />}
+					</button>
+				</div>
+			</Container>
+
+			<AnimatePresence>
+				{open &&
+        <motion.div data-ev-id="ev_6d59f92ff8"
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden lg:hidden"
+        style={{
+          background: 'var(--theme-surface)',
+          borderTop: '1px solid var(--theme-border)'
+        }}>
+
+						<Container className="flex flex-col gap-4 py-6">
+							{LINKS.map((l) =>
+            <Link data-ev-id="ev_d8561f146a"
+            key={l.to}
+            to={l.to}
+            onClick={() => setOpen(false)}
+            className="text-lg font-medium"
+            style={{ color: 'var(--theme-fg-muted)' }}>
+
+									{l.label}
+								</Link>
+            )}
+							<Link data-ev-id="ev_eeabd5814f"
+            to="/login"
+            onClick={() => setOpen(false)}
+            className="text-lg font-medium"
+            style={{ color: 'var(--theme-fg-muted)' }}>
+
+								Log In
+							</Link>
+							<Link data-ev-id="ev_8e0829357b"
+            to="/get-started"
+            onClick={() => setOpen(false)}
+            className="mt-2 inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-base font-semibold text-white"
+            style={{
+              background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)'
+            }}>
+
+								Get Started →
+							</Link>
+						</Container>
+					</motion.div>
+        }
+			</AnimatePresence>
+		</header>);
+
+}
+
+		reveal.tsx: import type { ReactNode } from 'react';
+import { motion } from 'motion/react';
+
+interface RevealProps {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}
+
+export function Reveal({ children, delay = 0, className = '' }: RevealProps) {
+  return (
+    <motion.div data-ev-id="ev_a030fc3530"
+    className={className}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-80px' }}
+    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}>
+
+			{children}
+		</motion.div>);
+
+}
+
+		theme.toggle.tsx: import { motion } from 'motion/react';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
+
+export function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
+
+  return (
+    <button data-ev-id="ev_3081e5d73c"
+    type="button"
+    onClick={toggleTheme}
+    className="relative flex h-9 w-16 items-center rounded-full p-1 transition-colors duration-300"
+    style={{
+      backgroundColor: isDark ? 'var(--theme-surface-2)' : 'var(--theme-border)'
+    }}
+    aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}>
+
+			<motion.div data-ev-id="ev_362812a319"
+      className="flex h-7 w-7 items-center justify-center rounded-full shadow-sm"
+      style={{ backgroundColor: 'var(--theme-surface)' }}
+      animate={{ x: isDark ? 28 : 0 }}
+      transition={{ type: 'spring', stiffness: 500, damping: 30 }}>
+
+				<motion.div data-ev-id="ev_508abd65b2"
+        initial={false}
+        animate={{ rotate: isDark ? 0 : 180, scale: 1 }}
+        transition={{ duration: 0.3 }}>
+
+					{isDark ?
+          <Moon size={14} style={{ color: 'var(--theme-fg)' }} /> :
+
+          <Sun size={14} style={{ color: 'var(--theme-accent)' }} />
+          }
+				</motion.div>
+			</motion.div>
+		</button>);
+
+}
+		ui.tsx: import type { ReactNode } from 'react';
+import { Link } from 'react-router';
+import { motion } from 'motion/react';
+
+type Variant = 'primary' | 'outline' | 'ghost';
+
+const base =
+'inline-flex items-center justify-center gap-2 rounded-full font-semibold text-base leading-none transition-all duration-300 ease-out';
+
+export function BtnLink({
+  to,
+  children,
+  variant = 'primary',
+  className = ''
+
+
+
+
+
+}: {to: string;children: ReactNode;variant?: Variant;className?: string;}) {
+  const styles: Record<Variant, React.CSSProperties> = {
+    primary: {
+      background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+      color: '#fff',
+      padding: '16px 32px',
+      boxShadow: '0 4px 20px rgba(255,107,0,0.25)'
+    },
+    outline: {
+      background: 'var(--theme-surface)',
+      color: 'var(--theme-fg)',
+      padding: '16px 32px',
+      border: '1px solid var(--theme-border)',
+      boxShadow: 'var(--theme-shadow)'
+    },
+    ghost: {
+      background: 'transparent',
+      color: 'var(--theme-fg-muted)',
+      padding: '16px 24px'
+    }
+  };
+
+  return (
+    <Link data-ev-id="ev_ba3753a392"
+    to={to}
+    className={`${base} hover:-translate-y-0.5 hover:shadow-lg ${className}`}
+    style={styles[variant]}>
+
+			{children}
+		</Link>);
+
+}
+
+export function Btn({
+  children,
+  variant = 'primary',
+  className = '',
+  onClick,
+  type = 'button',
+  disabled
+
+
+
+
+
+
+
+}: {children: ReactNode;variant?: Variant;className?: string;onClick?: () => void;type?: 'button' | 'submit';disabled?: boolean;}) {
+  const styles: Record<Variant, React.CSSProperties> = {
+    primary: {
+      background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+      color: '#fff',
+      padding: '16px 32px',
+      boxShadow: '0 4px 20px rgba(255,107,0,0.25)'
+    },
+    outline: {
+      background: 'var(--theme-surface)',
+      color: 'var(--theme-fg)',
+      padding: '16px 32px',
+      border: '1px solid var(--theme-border)',
+      boxShadow: 'var(--theme-shadow)'
+    },
+    ghost: {
+      background: 'transparent',
+      color: 'var(--theme-fg-muted)',
+      padding: '16px 24px'
+    }
+  };
+
+  return (
+    <button data-ev-id="ev_29cc648ddd"
+    type={type}
+    onClick={onClick}
+    disabled={disabled}
+    className={`${base} hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:cursor-not-allowed ${className}`}
+    style={styles[variant]}>
+
+			{children}
+		</button>);
+
+}
+
+export function Container({ children, className = '' }: {children: ReactNode;className?: string;}) {
+  return <div data-ev-id="ev_1c50096098" className={`mx-auto w-full max-w-[1200px] px-6 ${className}`}>{children}</div>;
+}
+
+export function Section({
+  children,
+  className = '',
+  id,
+  style
+}: {children: ReactNode;className?: string;id?: string;style?: React.CSSProperties;}) {
+  return (
+    <section data-ev-id="ev_f36dbc7b4b" id={id} className={`py-20 lg:py-32 ${className}`} style={style}>
+			<Container>{children}</Container>
+		</section>);
+
+}
+
+export function Eyebrow({ children }: {children: ReactNode;}) {
+  return (
+    <motion.p data-ev-id="ev_bf11f05b57"
+    className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium tracking-wide"
+    style={{
+      background: 'var(--theme-accent-soft)',
+      color: 'var(--theme-accent)'
+    }}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}>
+
+			{children}
+		</motion.p>);
+
+}
+
+export function H1({ children, className = '' }: {children: ReactNode;className?: string;}) {
+  return (
+    <h1 data-ev-id="ev_ae267f9c26"
+    className={`font-display text-[2.5rem] font-bold lg:text-[4rem] ${className}`}
+    style={{
+      lineHeight: 1.05,
+      letterSpacing: '-0.03em',
+      color: 'var(--theme-fg)'
+    }}>
+
+			{children}
+		</h1>);
+
+}
+
+export function H2({ children, className = '' }: {children: ReactNode;className?: string;}) {
+  return (
+    <h2 data-ev-id="ev_b5422cd812"
+    className={`font-display text-[1.75rem] font-semibold lg:text-[2.75rem] ${className}`}
+    style={{
+      lineHeight: 1.15,
+      letterSpacing: '-0.02em',
+      color: 'var(--theme-fg)'
+    }}>
+
+			{children}
+		</h2>);
+
+}
+
+export function H3({ children, className = '', style }: {children: ReactNode;className?: string;style?: React.CSSProperties;}) {
+  return (
+    <h3 data-ev-id="ev_cbf7841181"
+    className={`font-display text-[1.25rem] font-semibold lg:text-[1.5rem] ${className}`}
+    style={{ lineHeight: 1.3, color: 'var(--theme-fg)', ...style }}>
+
+			{children}
+		</h3>);
+
+}
+
+export function Lead({ children, className = '' }: {children: ReactNode;className?: string;}) {
+  return (
+    <p data-ev-id="ev_849d4596be"
+    className={`text-lg lg:text-xl ${className}`}
+    style={{ lineHeight: 1.7, color: 'var(--theme-fg-muted)' }}>
+
+			{children}
+		</p>);
+
+}
+
+export function GlassCard({
+  children,
+  className = '',
+  hover = true
+
+
+
+
+}: {children: ReactNode;className?: string;hover?: boolean;}) {
+  return (
+    <motion.div data-ev-id="ev_8307561c50"
+    className={`rounded-[24px] p-8 lg:p-10 ${className}`}
+    style={{
+      background: 'var(--theme-surface)',
+      border: '1px solid var(--theme-border)',
+      boxShadow: 'var(--theme-shadow)'
+    }}
+    whileHover={hover ? { y: -4, boxShadow: 'var(--theme-shadow-lg)' } : undefined}
+    transition={{ duration: 0.3 }}>
+
+			{children}
+		</motion.div>);
+
+}
+
+export function GradientText({ children, className = '' }: {children: ReactNode;className?: string;}) {
+  return (
+    <span data-ev-id="ev_46bc394dee"
+    className={className}
+    style={{
+      background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 50%, var(--theme-accent) 100%)',
+      backgroundSize: '200% 200%',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      animation: 'gradient-shift 4s ease infinite'
+    }}>
+
+			{children}
+		</span>);
+
+}
+
+		waveform.tsx: import { useEffect, useMemo, useRef, useState } from 'react';
+import { useTheme } from '@/hooks/useTheme';
+
+export type WaveState = 'idle' | 'listening' | 'thinking' | 'speaking';
+
+interface WaveformProps {
+  state: WaveState;
+  height?: number;
+  barCount?: number;
+  barWidth?: number;
+  gap?: number;
+  className?: string;
+  label?: string;
+}
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduced(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  return reduced;
+}
+
+const STATE_LABEL: Record<WaveState, string> = {
+  idle: 'Waveform idle',
+  listening: 'Waveform listening',
+  thinking: 'Waveform thinking',
+  speaking: 'Waveform speaking'
+};
+
+export function Waveform({
+  state,
+  height = 80,
+  barCount = 9,
+  barWidth = 6,
+  gap = 6,
+  className = '',
+  label
+}: WaveformProps) {
+  const { theme } = useTheme();
+  const reduced = usePrefersReducedMotion();
+  const [levels, setLevels] = useState<number[]>(() => Array(barCount).fill(0.4));
+  const timerRef = useRef<number | null>(null);
+
+  const accentColor = theme === 'dark' ? '#FF7A1A' : '#FF6B00';
+  const accentHover = theme === 'dark' ? '#FF8F3D' : '#FF8534';
+  const successColor = theme === 'dark' ? '#2DD4BF' : '#10B981';
+
+  useEffect(() => {
+    if (state !== 'listening' || reduced) {
+      if (timerRef.current) {
+        window.clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+      return;
+    }
+
+    const tick = () =>
+    setLevels(Array.from({ length: barCount }, () => 0.2 + Math.random() * 0.7));
+
+    tick();
+    timerRef.current = window.setInterval(tick, 150);
+
+    return () => {
+      if (timerRef.current) {
+        window.clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [state, barCount, reduced]);
+
+  const bars = useMemo(() => Array.from({ length: barCount }, (_, i) => i), [barCount]);
+
+  const isThinking = state === 'thinking';
+  const dotSize = Math.max(6, Math.round(height * 0.15));
+  const width = barCount * barWidth + (barCount - 1) * gap;
+
+  return (
+    <div data-ev-id="ev_1fa8bd9d9d"
+    className={`relative flex items-center justify-center ${className}`}
+    style={{ height, width }}
+    role="img"
+    aria-label={label ?? STATE_LABEL[state]}>
+
+			<div data-ev-id="ev_be95981d11"
+      className="flex items-center justify-center transition-opacity duration-300"
+      style={{ gap, height, opacity: isThinking ? 0 : 1 }}
+      aria-hidden="true">
+
+				{bars.map((i) => {
+          const style: React.CSSProperties = {
+            width: barWidth,
+            height: '100%',
+            borderRadius: Math.min(4, barWidth / 2),
+            transformOrigin: 'center',
+            backgroundColor: state === 'listening' ? accentHover : accentColor,
+            transition: 'background-color 300ms ease-out, transform 150ms ease-out'
+          };
+
+          if (reduced) {
+            style.transform = `scaleY(${state === 'idle' ? 0.2 : 0.6})`;
+          } else if (state === 'listening') {
+            style.transform = `scaleY(${levels[i] ?? 0.3})`;
+          } else if (state === 'speaking') {
+            style.animation = `speaking-wave 1.2s ease-in-out ${(-(i * 1.2) / barCount).toFixed(3)}s infinite`;
+          } else {
+            style.animation = `idle-breathe 3s ease-in-out ${(i * 0.1).toFixed(2)}s infinite`;
+          }
+
+          return <span data-ev-id="ev_e2fdf9f734" key={i} style={style} />;
+        })}
+			</div>
+
+			<span data-ev-id="ev_66f1be4cf0"
+      aria-hidden="true"
+      className="absolute transition-opacity duration-300"
+      style={{
+        width: dotSize,
+        height: dotSize,
+        borderRadius: 999,
+        backgroundColor: successColor,
+        opacity: isThinking ? 1 : 0,
+        animation: isThinking && !reduced ? 'thinking-pulse 0.8s ease-in-out infinite' : undefined
+      }} />
+
+		</div>);
+
+}
+
+		context
+			theme-context.tsx: import { createContext } from 'react';
+
+export type Theme = 'light' | 'dark';
+
+export interface ThemeContextValue {
+	theme: Theme;
+	toggleTheme: () => void;
+	setTheme: (theme: Theme) => void;
+}
+
+export const ThemeContext = createContext<ThemeContextValue | null>(null);
+
+
+		theme-provicer.tsx: import { useEffect, useState, type ReactNode } from 'react';
+import { ThemeContext, type Theme } from '@/context/theme-context';
+
+const STORAGE_KEY = 'voiceai-theme';
+
+export function ThemeProvider({ children }: { children: ReactNode }) {
+	const [theme, setThemeState] = useState<Theme>('light');
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const initial = stored ?? (prefersDark ? 'dark' : 'light');
+		setThemeState(initial);
+		document.documentElement.setAttribute('data-theme', initial);
+		setMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (!mounted) return;
+		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem(STORAGE_KEY, theme);
+	}, [theme, mounted]);
+
+	const toggleTheme = () => setThemeState((t) => (t === 'light' ? 'dark' : 'light'));
+	const setTheme = (t: Theme) => setThemeState(t);
+
+	return (
+		<ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+			{children}
+		</ThemeContext.Provider>
+	);
+}
+
+		hooks
+			usetheme.tsx: import { useContext } from 'react';
+import { ThemeContext, type ThemeContextValue } from '@/context/theme-context';
+
+export function useTheme(): ThemeContextValue {
+	const ctx = useContext(ThemeContext);
+	if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
+	return ctx;
+}
+
+		pages
+			about.tsx: import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, Lead, Section } from '@/components/ui';
+
+export default function About() {
+  return (
+    <>
+			<section data-ev-id="ev_99bcdb6b5d"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_388938a72c" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_a70bd418e8"
+          className="absolute right-1/4 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_25f7121d63" className="flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_462527698a" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>About us</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_47cd19a0fb" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								We got tired of AI that
+								<br data-ev-id="ev_59d589104f" />
+								<GradientText>talks over people.</GradientText>
+							</H1>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_62cf64628f" className="mx-auto max-w-3xl">
+					<Reveal>
+						<div data-ev-id="ev_19c4a03046" className="flex flex-col gap-8">
+							<Lead>
+								Most voice AI products are three different companies’ tools duct-taped together. One turns voice to text, another writes the reply, a third reads it back. Every hand-off adds delay — and none are built to be interrupted.
+							</Lead>
+							<Lead>
+								That’s why they feel slow and why talking over them gets you nowhere.
+							</Lead>
+							<Lead>
+								VoiceAI was built as one single system from the ground up specifically to solve that.
+							</Lead>
+						</div>
+					</Reveal>
+
+					<Reveal className="mt-16">
+						<blockquote data-ev-id="ev_00b5d0fa6c"
+            className="rounded-[24px] p-8 lg:p-12"
+            style={{
+              background: 'linear-gradient(135deg, var(--theme-gradient-start) 0%, var(--theme-surface) 100%)',
+              border: '1px solid var(--theme-border)'
+            }}>
+
+							<p data-ev-id="ev_00dfc27f7c"
+              className="font-display text-2xl font-semibold lg:text-3xl"
+              style={{ color: 'var(--theme-fg)', lineHeight: 1.3 }}>
+
+								“We think talking to a computer shouldn’t feel like talking to a computer.”
+							</p>
+						</blockquote>
+					</Reveal>
+				</div>
+			</Section>
+
+			<Section>
+				<Reveal>
+					<GlassCard className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
+						<H2 className="max-w-lg">Hear the difference for yourself.</H2>
+						<div data-ev-id="ev_39552af139" className="flex flex-col gap-4 sm:flex-row">
+							<BtnLink to="/get-started">Get Started Free →</BtnLink>
+							<BtnLink to="/contact" variant="outline">Talk to Our Team</BtnLink>
+						</div>
+					</GlassCard>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+
+		contact.tsx: import { useState } from 'react';
+import { Check } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Btn, Container, Eyebrow, GradientText, H1, Lead, Section } from '@/components/ui';
+
+export default function Contact() {
+  const [sent, setSent] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const submit = () => {
+    if (!name.trim() || !email.trim() || !message.trim()) return;
+    setSent(true);
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    borderRadius: '12px',
+    border: '1px solid var(--theme-border)',
+    background: 'var(--theme-surface)',
+    padding: '16px',
+    fontSize: '1rem',
+    color: 'var(--theme-fg)',
+    transition: 'border-color 0.3s, box-shadow 0.3s'
+  };
+
+  return (
+    <>
+			<section data-ev-id="ev_789fb1876d"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_a2f9d23d6c" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_aad5f7177e"
+          className="absolute left-1/4 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-10 pt-24 lg:pb-16 lg:pt-32">
+					<div data-ev-id="ev_8b3960aee0" className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+						<motion.div data-ev-id="ev_9b925b4374" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Contact</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_e931a9a207" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								Tell us what you’re
+								<br data-ev-id="ev_964696d99b" />
+								<GradientText>trying to do.</GradientText>
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_8429251160" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>A real person reads every message. Usually replies within one business day.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<motion.div data-ev-id="ev_32c005230b"
+        className="mx-auto max-w-xl rounded-[28px] p-8 lg:p-10"
+        style={{
+          background: 'var(--theme-surface)',
+          border: '1px solid var(--theme-border)',
+          boxShadow: 'var(--theme-shadow-lg)'
+        }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}>
+
+					{sent ?
+          <div data-ev-id="ev_cc73cd4eeb" className="flex flex-col items-center gap-4 py-8 text-center">
+							<div data-ev-id="ev_6ced78cbbc"
+            className="flex h-16 w-16 items-center justify-center rounded-full"
+            style={{ background: 'var(--theme-accent-soft)', color: 'var(--theme-success)' }}>
+
+								<Check size={28} />
+							</div>
+							<p data-ev-id="ev_103cf816da" className="font-display text-2xl font-semibold" style={{ color: 'var(--theme-fg)' }}>
+								Message received.
+							</p>
+							<p data-ev-id="ev_178403847c" className="text-base" style={{ color: 'var(--theme-fg-muted)' }}>
+								We’ll get back to you at {email}.
+							</p>
+						</div> :
+
+          <form data-ev-id="ev_210bf20cc9"
+          className="flex flex-col gap-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            submit();
+          }}>
+
+							<div data-ev-id="ev_4731e92fe7" className="flex flex-col gap-2">
+								<label data-ev-id="ev_f4baf34e4e" htmlFor="name" className="text-sm font-medium" style={{ color: 'var(--theme-fg)' }}>
+									Your name
+								</label>
+								<input data-ev-id="ev_2e32d4b896"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              style={inputStyle}
+              placeholder="Alex Carter"
+              required />
+
+							</div>
+
+							<div data-ev-id="ev_7124e4da08" className="flex flex-col gap-2">
+								<label data-ev-id="ev_74b535621c" htmlFor="email" className="text-sm font-medium" style={{ color: 'var(--theme-fg)' }}>
+									Work email
+								</label>
+								<input data-ev-id="ev_2c0365f32d"
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={inputStyle}
+              placeholder="alex@company.com"
+              required />
+
+							</div>
+
+							<div data-ev-id="ev_419430998e" className="flex flex-col gap-2">
+								<label data-ev-id="ev_d58d2fb882" htmlFor="message" className="text-sm font-medium" style={{ color: 'var(--theme-fg)' }}>
+									What do you need?
+								</label>
+								<textarea data-ev-id="ev_9c293c88cd"
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={5}
+              style={{ ...inputStyle, resize: 'none' }}
+              placeholder="We take about 400 calls a week and want to stop missing them."
+              required />
+
+							</div>
+
+							<Btn type="submit" className="w-full">
+								Send message →
+							</Btn>
+						</form>
+          }
+				</motion.div>
+			</Section>
+		</>);
+
+}
+
+		enterprise.tsx: import { Headphones, Lock, PhoneCall, Server } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, H3, Lead, Section } from '@/components/ui';
+
+const CARDS = [
+{
+  icon: Lock,
+  title: 'Healthcare & finance ready',
+  body: 'Sensitive details never leave our systems. Never sent to outside AI services.'
+},
+{
+  icon: Server,
+  title: 'Self-hosted option',
+  body: 'Deploy inside your own environment when regulations require it.'
+},
+{
+  icon: PhoneCall,
+  title: 'SIP integration',
+  body: 'Plugs into existing call center infrastructure without ripping anything out.'
+},
+{
+  icon: Headphones,
+  title: 'Dedicated support',
+  body: 'A named contact who knows your setup, plus guaranteed response times.'
+}];
+
+
+export default function Enterprise() {
+  return (
+    <>
+			<section data-ev-id="ev_aadbc40b97"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_273814e3a5" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_0f40630922"
+          className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_5c745d3827" className="flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_22b8d5e937" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Enterprise</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_b90c2ce7a0" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								Built for businesses that
+								<br data-ev-id="ev_9b677f5e25" />
+								<GradientText>can’t afford to fail.</GradientText>
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_a7b3c4fd6c" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>Higher volume, stricter rules, dedicated team.</Lead>
+						</motion.div>
+						<motion.div data-ev-id="ev_7306418059" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
+							<BtnLink to="/contact">Talk to Our Team →</BtnLink>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_44e1296c7c" className="flex flex-col gap-6 lg:flex-row lg:flex-wrap">
+					{CARDS.map((c, i) =>
+          <Reveal key={c.title} delay={i * 0.1} className="flex-1 lg:basis-[calc(50%-12px)]">
+							<GlassCard className="flex h-full items-start gap-5">
+								<div data-ev-id="ev_ef156169b5"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
+              style={{ background: 'var(--theme-accent-soft)', color: 'var(--theme-accent)' }}>
+
+									<c.icon size={22} />
+								</div>
+								<div data-ev-id="ev_8d7e8534f7">
+									<H3>{c.title}</H3>
+									<p data-ev-id="ev_14c22fc891" className="mt-2 text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+										{c.body}
+									</p>
+								</div>
+							</GlassCard>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			<Section>
+				<Reveal>
+					<GlassCard className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
+						<H2 className="max-w-lg">Let’s scope it together.</H2>
+						<BtnLink to="/contact">Talk to Our Team →</BtnLink>
+					</GlassCard>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+
+		for develelopers.tsx: import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, H3, Lead, Section } from '@/components/ui';
+
+const SNIPPET = `import { VoiceAI } from '@voiceai/sdk';
+
+const client = new VoiceAI({ apiKey: process.env.VOICEAI_KEY });
+
+const session = await client.sessions.create({
+  voice: 'aria',
+  language: 'en',
+  interruptible: true,
+  onTranscript: (chunk) => console.log(chunk.text),
+});
+
+await session.connect();`;
+
+const CAPABILITIES = [
+{ title: 'Streaming sessions', body: 'Bidirectional audio over WebSocket or WebRTC with server-side barge-in.' },
+{ title: 'Tool calls', body: 'Register typed functions the assistant can invoke mid-call — booking, lookups, transfers.' },
+{ title: 'Per-call telemetry', body: 'Latency, interruption counts, and transcripts streamed to your observability stack.' },
+{ title: 'Webhooks', body: 'Signed events for call start, transfer, and completion.' }];
+
+
+export default function ForDevelopers() {
+  return (
+    <>
+			<section data-ev-id="ev_ef10bf174e"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_4b6739cb39" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_caf2d56d2a"
+          className="absolute -left-32 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_9ef5df3f55" className="flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_7ce3caf399" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>For developers</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_ee57417e8f" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								Want more <GradientText>control?</GradientText>
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_b11af01416" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>Full SDK access to build your own experience.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_10050eac4f" className="flex flex-col items-start gap-16 lg:flex-row">
+					<Reveal className="flex-1">
+						<H2>Start a call in nine lines.</H2>
+						<p data-ev-id="ev_8a909233bc" className="mt-4 text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+							One SDK, one session object. Interruption handling is on by default.
+						</p>
+					</Reveal>
+					<Reveal delay={0.1} className="flex-1">
+						<pre data-ev-id="ev_e7beed6c76"
+            className="overflow-x-auto rounded-[20px] p-8"
+            style={{
+              background: 'var(--theme-surface)',
+              border: '1px solid var(--theme-border)',
+              boxShadow: 'var(--theme-shadow)'
+            }}>
+
+							<code data-ev-id="ev_a3841f4a31" className="font-mono text-sm" style={{ color: 'var(--theme-fg-muted)' }}>
+								{SNIPPET}
+							</code>
+						</pre>
+					</Reveal>
+				</div>
+			</Section>
+
+			<Section style={{ background: 'linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-gradient-start) 50%, var(--theme-bg) 100%)' }}>
+				<Reveal className="mb-12">
+					<H2>What’s in the toolkit.</H2>
+				</Reveal>
+				<div data-ev-id="ev_28a5e2a748" className="flex flex-col gap-6 lg:flex-row">
+					{CAPABILITIES.map((c, i) =>
+          <Reveal key={c.title} delay={i * 0.1} className="flex-1">
+							<GlassCard className="flex h-full flex-col gap-4">
+								<H3>{c.title}</H3>
+								<p data-ev-id="ev_3032876c2f" className="text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+									{c.body}
+								</p>
+							</GlassCard>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			<Section>
+				<Reveal>
+					<GlassCard className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
+						<H2 className="max-w-lg">Get an API key and make your first call.</H2>
+						<div data-ev-id="ev_094c4c787a" className="flex flex-col gap-4 sm:flex-row">
+							<BtnLink to="/login">Get an API key →</BtnLink>
+							<BtnLink to="/contact" variant="outline">Talk to an engineer</BtnLink>
+						</div>
+					</GlassCard>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+
+		get started.tsx: import { CalendarClock, Mic2, Phone, UserRound } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, H3, Lead, Section } from '@/components/ui';
+
+const STEPS = [
+{
+  n: '1',
+  icon: UserRound,
+  title: 'Name & personality',
+  body: 'Type a few sentences about your business and how you want it to sound.'
+},
+{
+  n: '2',
+  icon: Mic2,
+  title: 'Choose a voice',
+  body: 'Listen to a handful of voices and pick the one that fits.'
+},
+{
+  n: '3',
+  icon: CalendarClock,
+  title: 'Set your hours',
+  body: 'When to answer, when to take a message, when to transfer.'
+},
+{
+  n: '4',
+  icon: Phone,
+  title: 'Connect your number',
+  body: 'Keep your current number or get a new one. First call happens right after.'
+}];
+
+
+export default function GetStarted() {
+  return (
+    <>
+			<section data-ev-id="ev_e814a03334"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_33686c6bc9" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_928c6cc1b8"
+          className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_f637b365a4" className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+						<motion.div data-ev-id="ev_ca679c3cb6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Get started</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_ee6883e422" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								Fill out a form,
+								<br data-ev-id="ev_24305587de" />
+								<GradientText>not a codebase.</GradientText>
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_d4fc1b43a4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>Four steps, about five minutes.</Lead>
+						</motion.div>
+						<motion.div data-ev-id="ev_a8a445d656"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col gap-4 sm:flex-row">
+
+							<BtnLink to="/login">Create your account →</BtnLink>
+							<BtnLink to="/contact" variant="outline">Get help setting up</BtnLink>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_bfae1eb831" className="relative mx-auto max-w-2xl">
+					{/* Vertical line */}
+					<div data-ev-id="ev_8fa3cc4fd8"
+          className="absolute left-7 top-0 hidden h-full w-px lg:block"
+          style={{ background: 'var(--theme-border)' }} />
+
+					{STEPS.map((s, i) =>
+          <Reveal key={s.n} delay={i * 0.1}>
+							<div data-ev-id="ev_19a0c84ef6" className="flex gap-8 pb-12">
+								<div data-ev-id="ev_3c40b36c04"
+              className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full"
+              style={{
+                background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+                boxShadow: '0 4px 20px rgba(255,107,0,0.25)'
+              }}>
+
+									<s.icon size={24} color="#fff" />
+								</div>
+								<div data-ev-id="ev_f04a4931df" className="flex flex-col gap-2 pt-2">
+									<H3>{s.title}</H3>
+									<p data-ev-id="ev_d829169536" className="text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+										{s.body}
+									</p>
+								</div>
+							</div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			<Section>
+				<Reveal>
+					<GlassCard className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
+						<H2 className="max-w-lg">Nothing to install. Nothing to configure.</H2>
+						<BtnLink to="/login">Get Started Free →</BtnLink>
+					</GlassCard>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+
+		how it works.tsx import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, H3, Lead, Section } from '@/components/ui';
+
+const STEPS = [
+{
+  n: '01',
+  title: 'Someone calls your business',
+  body: 'The call comes in on your existing number. VoiceAI picks up straight away — no menus, no “press 1 for sales”.'
+},
+{
+  n: '02',
+  title: 'It listens while they talk',
+  body: 'It follows the conversation as it happens, so the caller can ramble, correct themselves, or change the subject.'
+},
+{
+  n: '03',
+  title: 'It answers in under a second',
+  body: 'No awkward pause. And if the caller talks over it, it stops and listens — exactly like a person would.'
+},
+{
+  n: '04',
+  title: 'It gets things done',
+  body: 'Books the appointment, checks your calendar, takes a message, or hands the call to a person on your team.'
+}];
+
+
+export default function HowItWorks() {
+  return (
+    <>
+			<section data-ev-id="ev_278e0df410"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_faab19d740" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_5bd1b5165f"
+          className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_7196964483" className="flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_0144b2ee11" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>How it works</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_fa3e4763c9" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								A real <GradientText>conversation</GradientText>,<br data-ev-id="ev_2e6db19826" />not a phone menu.
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_febc14b4b8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>From the moment someone calls — in plain language, start to finish.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_ec09e45242" className="mx-auto max-w-3xl">
+					{STEPS.map((s, i) =>
+          <Reveal key={s.n} delay={i * 0.1}>
+							<div data-ev-id="ev_2328734a17"
+            className="flex gap-8 py-12"
+            style={{ borderBottom: i < STEPS.length - 1 ? '1px solid var(--theme-border)' : 'none' }}>
+
+								<div data-ev-id="ev_08c3dd383d"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-lg font-bold"
+              style={{
+                background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+                color: '#fff',
+                boxShadow: '0 4px 20px rgba(255,107,0,0.25)'
+              }}>
+
+									{s.n}
+								</div>
+								<div data-ev-id="ev_afb97f5579" className="flex flex-col gap-3">
+									<H3>{s.title}</H3>
+									<p data-ev-id="ev_0ceab66b13" className="text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+										{s.body}
+									</p>
+								</div>
+							</div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			<Section>
+				<Reveal>
+					<GlassCard className="flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-left">
+						<H2 className="max-w-lg">It takes about five minutes to set up.</H2>
+						<BtnLink to="/get-started">Get Started Free →</BtnLink>
+					</GlassCard>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+
+		index.tsx: import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
+import { Link } from 'react-router';
+import {
+  CalendarCheck,
+  Languages,
+  MessageCircle,
+  Minus,
+  Phone,
+  Plus,
+  ShieldCheck,
+  Zap } from
+'lucide-react';
+import { Waveform, type WaveState } from '@/components/Waveform';
+import { InteractiveDemo } from '@/components/InteractiveDemo';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GlassCard, GradientText, H1, H2, H3, Lead, Section } from '@/components/ui';
+
+const CYCLE: {state: WaveState;ms: number;}[] = [
+{ state: 'idle', ms: 2500 },
+{ state: 'listening', ms: 2500 },
+{ state: 'thinking', ms: 800 },
+{ state: 'speaking', ms: 2200 }];
+
+
+const STATS = [
+{ value: '<500ms', label: 'Response time' },
+{ value: '99.9%', label: 'Uptime with auto-failover' },
+{ value: '4', label: 'Languages supported' },
+{ value: '0', label: 'Data sold or shared' }];
+
+
+const PATHS = [
+{
+  title: 'I just want it to work',
+  body: 'Set up a voice assistant in about 5 minutes. Pick a voice, write a few sentences, connect your phone.',
+  cta: 'Get Started Free →',
+  to: '/get-started'
+},
+{
+  title: "I'm a developer",
+  body: 'Full SDK access, code samples, live docs, and real-time performance telemetry on every call.',
+  cta: 'See Developer Docs →',
+  to: '/for-developers'
+},
+{
+  title: 'I run a larger business',
+  body: 'Custom setups for healthcare, finance, and high-volume operations with dedicated support.',
+  cta: 'Talk to Our Team →',
+  to: '/enterprise'
+}];
+
+
+const BENEFITS = [
+{
+  icon: MessageCircle,
+  title: 'Real conversations',
+  body: 'No waiting for scripts. Talk over it, change topics — it keeps up.'
+},
+{
+  icon: Zap,
+  title: 'Always on',
+  body: 'Auto-failover keeps calls going even if something hiccups.'
+},
+{
+  icon: Languages,
+  title: 'Natural multilingual',
+  body: 'English, Urdu, Arabic, Malay — natural pacing, not robotic.'
+},
+{
+  icon: CalendarCheck,
+  title: 'Takes action',
+  body: 'Books appointments, checks calendars, syncs to your systems.'
+}];
+
+
+const TRUST = [
+'No-recording mode available',
+'Sensitive data stays internal',
+'Never sold, never used for training',
+'All messages cryptographically verified'];
+
+
+const FAQS = [
+{ q: 'Will it sound robotic?', a: 'No — sub-second responses, natural conversation flow, not a phone menu.' },
+{ q: 'How long to set up?', a: 'About 5 minutes with our guided setup. No coding required.' },
+{ q: 'Keep my number?', a: 'Yes. Connect existing or get a new one in clicks.' },
+{ q: 'Developer control?', a: 'Full SDK with streaming, tool calls, and real-time telemetry.' },
+{ q: 'HIPAA/PCI safe?', a: 'Yes — special mode keeps sensitive data internal. Contact us.' },
+{ q: 'Pricing?', a: 'Pay-as-you-go from $29/mo. Enterprise custom quotes available.' }];
+
+
+function FaqItem({ q, a }: {q: string;a: string;}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div data-ev-id="ev_d9a7fdeeee" style={{ borderBottom: '1px solid var(--theme-border)' }}>
+			<button data-ev-id="ev_127f9817cc"
+      type="button"
+      onClick={() => setOpen((v) => !v)}
+      aria-expanded={open}
+      className="flex w-full items-center justify-between gap-6 py-6 text-left">
+
+				<span data-ev-id="ev_55cc238246" className="font-display text-lg font-semibold" style={{ color: 'var(--theme-fg)' }}>
+					{q}
+				</span>
+				<span data-ev-id="ev_91a096397b" style={{ color: 'var(--theme-accent)' }}>
+					{open ? <Minus size={20} aria-hidden /> : <Plus size={20} aria-hidden />}
+				</span>
+			</button>
+			<motion.div data-ev-id="ev_c36803f330"
+      initial={false}
+      animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className="overflow-hidden">
+
+				<p data-ev-id="ev_1839aad2f5" className="pb-6 text-base" style={{ color: 'var(--theme-fg-muted)' }}>{a}</p>
+			</motion.div>
+		</div>);
+
+}
+
+export default function Index() {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const t = window.setTimeout(() => setStep((v) => (v + 1) % CYCLE.length), CYCLE[step].ms);
+    return () => window.clearTimeout(t);
+  }, [step]);
+
+  return (
+    <>
+			{/* Hero */}
+			<section data-ev-id="ev_1cd994dea7"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-gradient-mid) 50%, var(--theme-bg) 100%)'
+      }}>
+
+				{/* Abstract shapes */}
+				<div data-ev-id="ev_ec996963aa" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_d3f4edb5cd"
+          className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+					<div data-ev-id="ev_3588637e9a"
+          className="absolute -bottom-48 -left-48 h-[600px] w-[600px] rounded-full opacity-20"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(100px)'
+          }} />
+
+				</div>
+
+				<Container className="relative z-10 pb-32 pt-24 lg:pb-40 lg:pt-32">
+					<div data-ev-id="ev_4617f1789a" className="mx-auto flex max-w-4xl flex-col items-center gap-8 text-center">
+						<motion.div data-ev-id="ev_cf74814f35"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}>
+
+							<Eyebrow>Always listening. Never robotic.</Eyebrow>
+						</motion.div>
+
+						<motion.div data-ev-id="ev_d514bb6a11"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}>
+
+							<H1>
+								Meet the voice AI that
+								<br data-ev-id="ev_f23a62e009" />
+								<GradientText>actually lets you talk.</GradientText>
+							</H1>
+						</motion.div>
+
+						<motion.div data-ev-id="ev_f71294648a"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}>
+
+							<Lead className="max-w-2xl">
+								Interrupt it, ask something different, change your mind mid-sentence — it keeps up, just like a real person would.
+							</Lead>
+						</motion.div>
+
+						<motion.div data-ev-id="ev_1fab745ede"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+            className="flex flex-col gap-4 sm:flex-row">
+
+							<BtnLink to="/get-started">Get Started Free →</BtnLink>
+							<BtnLink to="/how-it-works" variant="outline">See How It Works</BtnLink>
+						</motion.div>
+
+						<motion.div data-ev-id="ev_b7be4c16e2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+            className="mt-8 flex flex-col items-center gap-4 rounded-[32px] p-8"
+            style={{
+              background: 'var(--theme-surface)',
+              boxShadow: 'var(--theme-shadow-lg)',
+              border: '1px solid var(--theme-border)'
+            }}>
+
+							<div data-ev-id="ev_943dca6897"
+              className="flex items-center justify-center rounded-full p-6"
+              style={{
+                background: 'var(--theme-accent-soft)',
+                boxShadow: 'var(--theme-glow)'
+              }}>
+
+								<Waveform state={CYCLE[step].state} height={60} barWidth={8} gap={8} />
+							</div>
+							<p data-ev-id="ev_90595ad645" className="text-sm font-medium" style={{ color: 'var(--theme-fg-muted)' }}>
+								{CYCLE[step].state === 'idle' && 'Waiting for a caller'}
+								{CYCLE[step].state === 'listening' && 'Listening to the caller'}
+								{CYCLE[step].state === 'thinking' && 'Working out the answer'}
+								{CYCLE[step].state === 'speaking' && 'Speaking back — interruptible'}
+							</p>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			{/* Stats */}
+			<Section>
+				<div data-ev-id="ev_c3a4a89f5d" className="flex flex-wrap justify-center gap-8 lg:gap-16">
+					{STATS.map((s, i) =>
+          <Reveal key={s.label} delay={i * 0.1}>
+							<div data-ev-id="ev_39b5652cb1" className="flex flex-col items-center gap-2 text-center">
+								<span data-ev-id="ev_ae2dcc9b33"
+              className="font-display text-4xl font-bold lg:text-5xl"
+              style={{ color: 'var(--theme-accent)' }}>
+
+									{s.value}
+								</span>
+								<span data-ev-id="ev_eb1175f050" className="text-sm font-medium" style={{ color: 'var(--theme-fg-muted)' }}>
+									{s.label}
+								</span>
+							</div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			{/* Demo */}
+			<Section>
+				<Reveal className="mb-12 text-center">
+					<H2>Try interrupting it yourself.</H2>
+					<Lead className="mx-auto mt-4 max-w-xl">No sign-up needed. Click the button and talk over it.</Lead>
+				</Reveal>
+				<InteractiveDemo />
+			</Section>
+
+			{/* Paths */}
+			<Section
+        style={{
+          background: 'linear-gradient(180deg, var(--theme-bg) 0%, var(--theme-gradient-start) 50%, var(--theme-bg) 100%)'
+        }}>
+
+				<Reveal className="mb-12 text-center">
+					<H2>Start your way.</H2>
+					<Lead className="mx-auto mt-4 max-w-xl">Three paths. Same powerful AI.</Lead>
+				</Reveal>
+				<div data-ev-id="ev_6c24145642" className="flex flex-col gap-6 lg:flex-row">
+					{PATHS.map((p, i) =>
+          <Reveal key={p.title} delay={i * 0.1} className="flex-1">
+							<GlassCard className="flex h-full flex-col gap-5">
+								<H3>{p.title}</H3>
+								<p data-ev-id="ev_88ed25630f" className="flex-1 text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+									{p.body}
+								</p>
+								<Link data-ev-id="ev_46452c0a0d"
+              to={p.to}
+              className="text-base font-semibold transition-colors duration-300"
+              style={{ color: 'var(--theme-accent)' }}>
+
+									{p.cta}
+								</Link>
+							</GlassCard>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+
+			{/* Benefits */}
+			<Section>
+				<div data-ev-id="ev_224dc73201" className="flex flex-col items-center gap-16 lg:flex-row lg:items-start lg:gap-24">
+					<Reveal className="flex-1 lg:sticky lg:top-32">
+						<H2>What it’s actually like.</H2>
+						<Lead className="mt-4 max-w-md">No compromises on conversation quality.</Lead>
+					</Reveal>
+					<div data-ev-id="ev_94c027656a" className="flex flex-1 flex-col gap-6">
+						{BENEFITS.map((b, i) =>
+            <Reveal key={b.title} delay={i * 0.1}>
+								<GlassCard className="flex items-start gap-5">
+									<div data-ev-id="ev_d1256030ef"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
+                style={{ background: 'var(--theme-accent-soft)', color: 'var(--theme-accent)' }}>
+
+										<b.icon size={22} />
+									</div>
+									<div data-ev-id="ev_0ec462eb9b">
+										<H3>{b.title}</H3>
+										<p data-ev-id="ev_960ddddc59" className="mt-2 text-base" style={{ color: 'var(--theme-fg-muted)' }}>
+											{b.body}
+										</p>
+									</div>
+								</GlassCard>
+							</Reveal>
+            )}
+					</div>
+				</div>
+			</Section>
+
+			{/* Phone */}
+			<Section>
+				<Reveal>
+					<motion.div data-ev-id="ev_c748e954e0"
+          className="flex flex-col items-center gap-8 rounded-[32px] p-10 text-center lg:p-16"
+          style={{
+            background: 'linear-gradient(135deg, var(--theme-gradient-start) 0%, var(--theme-surface) 100%)',
+            border: '1px solid var(--theme-border)',
+            boxShadow: 'var(--theme-shadow)'
+          }}>
+
+						<div data-ev-id="ev_1476f8d51b"
+            className="flex h-16 w-16 items-center justify-center rounded-full"
+            style={{ background: 'var(--theme-accent-soft)', color: 'var(--theme-accent)' }}>
+
+							<Phone size={28} />
+						</div>
+						<H2>Works with your number.</H2>
+						<Lead className="max-w-2xl">
+							Keep your current number or get a new one. If your provider has an outage, calls auto-route to a backup. Your business stays reachable.
+						</Lead>
+					</motion.div>
+				</Reveal>
+			</Section>
+
+			{/* Trust */}
+			<Section>
+				<div data-ev-id="ev_5dd17fb311" className="flex flex-col items-center gap-16 lg:flex-row lg:gap-24">
+					<Reveal className="flex flex-1 flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+						<div data-ev-id="ev_84be19d36b"
+            className="flex h-14 w-14 items-center justify-center rounded-full"
+            style={{ background: 'var(--theme-accent-soft)', color: 'var(--theme-success)' }}>
+
+							<ShieldCheck size={26} />
+						</div>
+						<H2>Private. Period.</H2>
+					</Reveal>
+					<div data-ev-id="ev_27892f3fcb" className="flex flex-1 flex-col gap-4">
+						{TRUST.map((t, i) =>
+            <Reveal key={t} delay={i * 0.08}>
+								<GlassCard hover={false}>
+									<p data-ev-id="ev_b9eef5ad33" className="text-base font-medium" style={{ color: 'var(--theme-fg)' }}>{t}</p>
+								</GlassCard>
+							</Reveal>
+            )}
+					</div>
+				</div>
+			</Section>
+
+			{/* FAQ */}
+			<Section>
+				<div data-ev-id="ev_e871e0008b" className="mx-auto max-w-3xl">
+					<Reveal className="mb-12 text-center">
+						<H2>Questions.</H2>
+					</Reveal>
+					<div data-ev-id="ev_6653921a02">
+						{FAQS.map((f) =>
+            <FaqItem key={f.q} q={f.q} a={f.a} />
+            )}
+					</div>
+				</div>
+			</Section>
+
+			{/* CTA */}
+			<Section>
+				<Reveal>
+					<motion.div data-ev-id="ev_2cf94977ae"
+          className="flex flex-col items-center gap-8 rounded-[32px] p-10 text-center lg:p-20"
+          style={{
+            background: 'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)',
+            boxShadow: '0 20px 60px rgba(255,107,0,0.3)'
+          }}>
+
+						<h2 data-ev-id="ev_c4c7fbe263"
+            className="font-display text-[1.75rem] font-bold text-white lg:text-[3rem]"
+            style={{ lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+
+							Ready for a voice assistant that listens?
+						</h2>
+						<div data-ev-id="ev_859dfa93de" className="flex flex-col gap-4 sm:flex-row">
+							<Link data-ev-id="ev_c4cd808783"
+              to="/get-started"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold transition-all duration-300 hover:-translate-y-0.5"
+              style={{ color: 'var(--theme-accent)' }}>
+
+								Get Started Free →
+							</Link>
+							<Link data-ev-id="ev_b526923f03"
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60">
+
+								Talk to Our Team
+							</Link>
+						</div>
+					</motion.div>
+				</Reveal>
+			</Section>
+		</>);
+
+}
+		LOGIN.TSX: import { Link } from 'react-router';
+import { motion } from 'motion/react';
+import { Btn, Container, H1 } from '@/components/ui';
+import { Waveform } from '@/components/Waveform';
+
+export default function Login() {
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    borderRadius: '12px',
+    border: '1px solid var(--theme-border)',
+    background: 'var(--theme-surface-2)',
+    padding: '16px',
+    fontSize: '1rem',
+    color: 'var(--theme-fg)',
+    transition: 'border-color 0.3s'
+  };
+
+  return (
+    <section data-ev-id="ev_1cd32d26fc"
+    className="relative min-h-screen overflow-hidden"
+    style={{
+      background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+    }}>
+
+			<div data-ev-id="ev_e6ea02826d" className="pointer-events-none absolute inset-0 overflow-hidden">
+				<div data-ev-id="ev_c419771bc3"
+        className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full opacity-30"
+        style={{
+          background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+          filter: 'blur(80px)'
+        }} />
+
+			</div>
+			<Container className="relative z-10 flex min-h-screen items-center justify-center py-20">
+				<motion.div data-ev-id="ev_29dfeee1ff"
+        className="flex w-full max-w-[440px] flex-col gap-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}>
+
+					<div data-ev-id="ev_5e42cb41fc" className="flex flex-col items-center gap-4">
+						<div data-ev-id="ev_34a16cf8d3"
+            className="flex items-center justify-center rounded-full p-4"
+            style={{ background: 'var(--theme-accent-soft)', boxShadow: 'var(--theme-glow)' }}>
+
+							<Waveform state="idle" height={40} barCount={7} barWidth={4} gap={4} />
+						</div>
+						<H1 className="text-center">Welcome back.</H1>
+					</div>
+
+					<div data-ev-id="ev_c4c4f4c454"
+          className="flex flex-col gap-6 rounded-[28px] p-8"
+          style={{
+            background: 'var(--theme-surface)',
+            border: '1px solid var(--theme-border)',
+            boxShadow: 'var(--theme-shadow-lg)'
+          }}>
+
+						<div data-ev-id="ev_145e1e9c88" className="flex flex-col gap-2">
+							<label data-ev-id="ev_9c9c99b37a" htmlFor="login-email" className="text-sm font-medium" style={{ color: 'var(--theme-fg)' }}>
+								Email
+							</label>
+							<input data-ev-id="ev_7fb9eb396c"
+              id="login-email"
+              type="email"
+              style={inputStyle}
+              placeholder="you@company.com" />
+
+						</div>
+
+						<div data-ev-id="ev_b91201d045" className="flex flex-col gap-2">
+							<label data-ev-id="ev_3d61e0e6f8" htmlFor="login-password" className="text-sm font-medium" style={{ color: 'var(--theme-fg)' }}>
+								Password
+							</label>
+							<input data-ev-id="ev_19d50e33c9"
+              id="login-password"
+              type="password"
+              style={inputStyle}
+              placeholder="••••••••" />
+
+						</div>
+
+						<Btn className="w-full">Log in →</Btn>
+
+						<p data-ev-id="ev_1569d38468" className="text-center text-sm" style={{ color: 'var(--theme-fg-muted)' }}>
+							Accounts aren’t live in this preview yet.{' '}
+							<Link data-ev-id="ev_b25e8ec6e0"
+              to="/contact"
+              className="transition-colors duration-300"
+              style={{ color: 'var(--theme-accent)' }}>
+
+								Get in touch
+							</Link>{' '}
+							and we’ll set you up.
+						</p>
+					</div>
+				</motion.div>
+			</Container>
+		</section>);
+
+}
+
+		pricing.tsx: import { Check } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { BtnLink, Container, Eyebrow, GradientText, H1, H3, Lead, Section } from '@/components/ui';
+
+const PLANS = [
+{
+  name: 'Starter',
+  price: '$29',
+  suffix: '/mo + usage',
+  for: 'Small businesses',
+  features: ['One assistant', 'Keep your number', 'Pay per minute', 'Booking built in', 'Email support'],
+  cta: 'Get Started Free →',
+  to: '/get-started',
+  highlight: false
+},
+{
+  name: 'Growth',
+  price: '$149',
+  suffix: '/mo + usage',
+  for: 'Busy teams',
+  features: ['Up to 10 assistants', 'All 4 languages', 'Lower per-minute', 'CRM integration', 'Call transfers', 'Priority support'],
+  cta: 'Get Started Free →',
+  to: '/get-started',
+  highlight: true
+},
+{
+  name: 'Enterprise',
+  price: 'Custom',
+  suffix: 'talk to us',
+  for: 'Larger orgs',
+  features: ['Unlimited volume', 'Healthcare/finance mode', 'Self-hosted option', 'SIP integration', 'Dedicated support'],
+  cta: 'Talk to Sales →',
+  to: '/contact',
+  highlight: false
+}];
+
+
+export default function Pricing() {
+  return (
+    <>
+			<section data-ev-id="ev_a41d2a28b8"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<div data-ev-id="ev_fec12b2957" className="pointer-events-none absolute inset-0 overflow-hidden">
+					<div data-ev-id="ev_954ff770bb"
+          className="absolute -left-32 top-0 h-[400px] w-[400px] rounded-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 70%)',
+            filter: 'blur(80px)'
+          }} />
+
+				</div>
+				<Container className="relative z-10 pb-20 pt-24 lg:pb-32 lg:pt-32">
+					<div data-ev-id="ev_4008b5e13c" className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+						<motion.div data-ev-id="ev_64d12c73fd" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Pricing</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_7ece9c9574" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								Pay for what you <GradientText>use.</GradientText>
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_5ec3928555" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>Start free. No setup fees, no contracts.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_e4060fee13" className="flex flex-col gap-8 lg:flex-row">
+					{PLANS.map((p, i) =>
+          <Reveal key={p.name} delay={i * 0.1} className="flex-1">
+							<motion.div data-ev-id="ev_642b3fdedb"
+            className="flex h-full flex-col gap-6 rounded-[28px] p-8 lg:p-10"
+            style={{
+              background: p.highlight ?
+              'linear-gradient(135deg, var(--theme-accent) 0%, #FF8534 100%)' :
+              'var(--theme-surface)',
+              border: p.highlight ? 'none' : '1px solid var(--theme-border)',
+              boxShadow: p.highlight ? '0 20px 60px rgba(255,107,0,0.3)' : 'var(--theme-shadow)'
+            }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}>
+
+								<div data-ev-id="ev_0584eb40b6">
+									<p data-ev-id="ev_5e141e2b73"
+                className="text-sm font-medium"
+                style={{ color: p.highlight ? 'rgba(255,255,255,0.8)' : 'var(--theme-fg-muted)' }}>
+
+										{p.for}
+									</p>
+									<H3 style={{ color: p.highlight ? '#fff' : 'var(--theme-fg)' }}>{p.name}</H3>
+								</div>
+
+								<div data-ev-id="ev_8a3456d1bb" className="flex items-baseline gap-2">
+									<span data-ev-id="ev_a312a09ed8"
+                className="font-display text-[3rem] font-bold"
+                style={{ color: p.highlight ? '#fff' : 'var(--theme-fg)' }}>
+
+										{p.price}
+									</span>
+									<span data-ev-id="ev_412ec3b8c0"
+                className="text-sm"
+                style={{ color: p.highlight ? 'rgba(255,255,255,0.7)' : 'var(--theme-fg-muted)' }}>
+
+										{p.suffix}
+									</span>
+								</div>
+
+								<ul data-ev-id="ev_47ffaa3fa6" className="flex flex-1 flex-col gap-3">
+									{p.features.map((f) =>
+                <li data-ev-id="ev_d30fd86db5"
+                key={f}
+                className="flex items-start gap-3 text-base"
+                style={{ color: p.highlight ? 'rgba(255,255,255,0.9)' : 'var(--theme-fg-muted)' }}>
+
+											<Check
+                    size={18}
+                    className="mt-0.5 shrink-0"
+                    style={{ color: p.highlight ? '#fff' : 'var(--theme-success)' }} />
+
+											{f}
+										</li>
+                )}
+								</ul>
+
+								{p.highlight ?
+              <BtnLink
+                to={p.to}
+                className="w-full justify-center"
+                variant="outline">
+
+										{p.cta}
+									</BtnLink> :
+
+              <BtnLink to={p.to} className="w-full justify-center">
+										{p.cta}
+									</BtnLink>
+              }
+							</motion.div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+		</>);
+
+}
+
+		privacy.tsx: import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { Container, Eyebrow, GradientText, H1, H3, Lead, Section } from '@/components/ui';
+
+const SECTIONS = [
+{ title: 'What we collect', body: 'Account details, assistant settings, call metadata. No-recording mode means audio and transcripts are never stored.' },
+{ title: 'What we never do', body: 'We never sell your data, and we never use your calls to train other AI systems.' },
+{ title: 'Sensitive information', body: 'For healthcare and finance, sensitive data stays entirely inside our systems — never sent outside.' },
+{ title: 'Your choices', body: 'Export or delete your data anytime from your account settings or by contacting us.' }];
+
+
+export default function Privacy() {
+  return (
+    <>
+			<section data-ev-id="ev_5568555bc4"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<Container className="relative z-10 pb-16 pt-24 lg:pb-24 lg:pt-32">
+					<div data-ev-id="ev_d654448d4a" className="mx-auto flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_774974b59e" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Legal</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_e2be1c89e1" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								<GradientText>Privacy</GradientText> Policy
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_7c3716dfca" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>A plain-language summary of how VoiceAI handles your data.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_f46c22940d" className="mx-auto max-w-3xl">
+					{SECTIONS.map((s, i) =>
+          <Reveal key={s.title} delay={i * 0.08}>
+							<div data-ev-id="ev_f17a044762"
+            className="flex flex-col gap-3 py-8"
+            style={{ borderBottom: i < SECTIONS.length - 1 ? '1px solid var(--theme-border)' : 'none' }}>
+
+								<H3>{s.title}</H3>
+								<p data-ev-id="ev_107f4924c8" className="text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+									{s.body}
+								</p>
+							</div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+		</>);
+
+}
+
+		terms.tsx: import { motion } from 'motion/react';
+import { Reveal } from '@/components/Reveal';
+import { Container, Eyebrow, GradientText, H1, H3, Lead, Section } from '@/components/ui';
+
+const SECTIONS = [
+{ title: 'Using the service', body: 'You may use VoiceAI to answer calls for a business you own or are authorised to represent. You are responsible for what your assistant says.' },
+{ title: 'Billing', body: 'Plans are billed monthly, plus usage. Cancel any time and keep access until the period ends.' },
+{ title: 'Availability', body: 'We run redundant systems and auto-failover, but don’t guarantee uninterrupted service except under enterprise agreements.' },
+{ title: 'Changes', body: 'If we change these terms meaningfully, we’ll email you before the change takes effect.' }];
+
+
+export default function Terms() {
+  return (
+    <>
+			<section data-ev-id="ev_89caf7c50d"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, var(--theme-gradient-start) 0%, var(--theme-bg) 100%)'
+      }}>
+
+				<Container className="relative z-10 pb-16 pt-24 lg:pb-24 lg:pt-32">
+					<div data-ev-id="ev_6ae59d9761" className="mx-auto flex max-w-3xl flex-col gap-6">
+						<motion.div data-ev-id="ev_6916f2b6b7" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+							<Eyebrow>Legal</Eyebrow>
+						</motion.div>
+						<motion.div data-ev-id="ev_ca90f17418" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+							<H1>
+								<GradientText>Terms</GradientText> of Service
+							</H1>
+						</motion.div>
+						<motion.div data-ev-id="ev_bf56275231" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+							<Lead>The short version of what you agree to when you use VoiceAI.</Lead>
+						</motion.div>
+					</div>
+				</Container>
+			</section>
+
+			<Section>
+				<div data-ev-id="ev_e49847ca04" className="mx-auto max-w-3xl">
+					{SECTIONS.map((s, i) =>
+          <Reveal key={s.title} delay={i * 0.08}>
+							<div data-ev-id="ev_c0727fb903"
+            className="flex flex-col gap-3 py-8"
+            style={{ borderBottom: i < SECTIONS.length - 1 ? '1px solid var(--theme-border)' : 'none' }}>
+
+								<H3>{s.title}</H3>
+								<p data-ev-id="ev_bf458e0032" className="text-base" style={{ color: 'var(--theme-fg-muted)', lineHeight: 1.7 }}>
+									{s.body}
+								</p>
+							</div>
+						</Reveal>
+          )}
+				</div>
+			</Section>
+		</>);
+
+}
+
+
+app.tsx: /**
+ * ⚠️ ROUTING RULES:
+ * - Router is in main.tsx. Do NOT add another <BrowserRouter> here or anywhere.
+ * - Use <Routes> + <Route> components ONLY. Do NOT use useRoutes().
+ * - STATIC IMPORTS ONLY — no React.lazy() or dynamic import().
+ * - Import from 'react-router' — NOT 'react-router-dom' (does not exist).
+ */
+import { Routes, Route } from 'react-router';
+import { MotionConfig } from 'motion/react';
+import { Layout } from '@/components/Layout';
+import Index from '@/pages/Index';
+import HowItWorks from '@/pages/HowItWorks';
+import Pricing from '@/pages/Pricing';
+import About from '@/pages/About';
+import GetStarted from '@/pages/GetStarted';
+import ForDevelopers from '@/pages/ForDevelopers';
+import Enterprise from '@/pages/Enterprise';
+import Contact from '@/pages/Contact';
+import Login from '@/pages/Login';
+import Privacy from '@/pages/Privacy';
+import Terms from '@/pages/Terms';
+
+export default function App() {
+	return (
+		<MotionConfig reducedMotion="user">
+			<Layout>
+				<Routes>
+					<Route path="/" element={<Index />} />
+					<Route path="/how-it-works" element={<HowItWorks />} />
+					<Route path="/pricing" element={<Pricing />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/get-started" element={<GetStarted />} />
+					<Route path="/for-developers" element={<ForDevelopers />} />
+					<Route path="/enterprise" element={<Enterprise />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/privacy" element={<Privacy />} />
+					<Route path="/terms" element={<Terms />} />
+				</Routes>
+			</Layout>
+		</MotionConfig>
+	);
+}
+
+index.css: @layer theme, base, components, utilities;
+
+@import 'tailwindcss';
+
+@import './theme.css' layer(theme);
+
+
+provider.tsx: import type { ReactNode } from 'react';
+import { ThemeProvider } from '@/context/ThemeProvider';
+
+/**
+ * ⚠️ App-wide providers. Add new providers here — they'll be available in all routes.
+ * Do NOT add another router anywhere. The single BrowserRouter lives in main.tsx.
+ */
+export function AppProviders({ children }: { children: ReactNode }) {
+	return (
+		<ThemeProvider>
+			{children}
+		</ThemeProvider>
+	);
+}
+
+theme.tsx: /**
+ * ⚠️ THEME CONFIGURATION — Tailwind v4
+ * VoiceAI design system. Light mode default with dark mode toggle.
+ */
+@theme {
+	/* Light mode (default) */
+	--color-bg: #FAFAF9;
+	--color-surface: #FFFFFF;
+	--color-surface-2: #F5F5F4;
+	--color-border: #E7E5E4;
+	--color-input: #E7E5E4;
+
+	/* Accent */
+	--color-accent: #FF6B00;
+	--color-accent-hover: #FF8534;
+	--color-accent-soft: #FF6B0012;
+	--color-ring: #FF6B00;
+
+	/* Status */
+	--color-success: #10B981;
+	--color-warning: #EF4444;
+
+	/* Text */
+	--color-fg: #1C1917;
+	--color-fg-muted: #78716C;
+
+	/* Gradients */
+	--color-gradient-start: #FFF7ED;
+	--color-gradient-mid: #FEF3C7;
+	--color-gradient-end: #FAFAF9;
+
+	/* Fonts */
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+	/* Radius */
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 24px;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--theme-bg, #FAFAF9);
+	color: var(--theme-fg, #1C1917);
+	font-family: 'Inter', system-ui, sans-serif;
+	line-height: 1.6;
+	transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* CSS Custom Properties for theming */
+:root {
+	--theme-bg: #FAFAF9;
+	--theme-surface: #FFFFFF;
+	--theme-surface-2: #F5F5F4;
+	--theme-border: #E7E5E4;
+	--theme-fg: #1C1917;
+	--theme-fg-muted: #78716C;
+	--theme-gradient-start: #FFF7ED;
+	--theme-gradient-mid: #FEF3C7;
+	--theme-gradient-end: #FAFAF9;
+	--theme-accent: #FF6B00;
+	--theme-accent-hover: #FF8534;
+	--theme-accent-soft: #FF6B0012;
+	--theme-success: #10B981;
+	--theme-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+	--theme-shadow-lg: 0 4px 24px rgba(0,0,0,0.06), 0 12px 48px rgba(0,0,0,0.04);
+	--theme-glow: 0 0 60px rgba(255,107,0,0.15);
+}
+
+[data-theme="dark"] {
+	--theme-bg: #0A0B0D;
+	--theme-surface: #14161A;
+	--theme-surface-2: #1C1E23;
+	--theme-border: #232529;
+	--theme-fg: #F4F3EF;
+	--theme-fg-muted: #9A9CA3;
+	--theme-gradient-start: #1a1412;
+	--theme-gradient-mid: #161310;
+	--theme-gradient-end: #0A0B0D;
+	--theme-accent: #FF7A1A;
+	--theme-accent-hover: #FF8F3D;
+	--theme-accent-soft: #FF7A1A1A;
+	--theme-success: #2DD4BF;
+	--theme-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+	--theme-shadow-lg: 0 4px 24px rgba(0,0,0,0.4), 0 12px 48px rgba(0,0,0,0.3);
+	--theme-glow: 0 0 80px rgba(255,122,26,0.2);
+}
+
+*:focus-visible {
+	outline: 2px solid var(--theme-accent);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+@keyframes idle-breathe {
+	0%, 100% { transform: scaleY(0.15); }
+	50% { transform: scaleY(0.22); }
+}
+
+@keyframes speaking-wave {
+	0% { transform: scaleY(0.3); }
+	50% { transform: scaleY(0.9); }
+	100% { transform: scaleY(0.3); }
+}
+
+@keyframes thinking-pulse {
+	0%, 100% { transform: scale(1); opacity: 0.7; }
+	50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes caret-blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+	0% { background-position: -200% 0; }
+	100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+	0%, 100% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.styleintrx.json: {
+	"rules": {}
+}
