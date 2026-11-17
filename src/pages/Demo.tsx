@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { useTitle } from '@/components/ui';
 import { Wordmark } from '@/components/Wordmark';
@@ -6,373 +6,536 @@ import { SIGN_UP_URL } from '@/config';
 import { AGENTS, AUDIT, CONVERSATIONS, DETAILS, KNOWLEDGE, KPIS, LEDGER, LEDGER_GLOSS, USAGE } from '@/demo/sample';
 
 /**
- * /demo — a preview of what Studio looks like, in pure C2 "Ripple Paper".
- * Every value on this page is SAMPLE DATA and is labelled as such: a
- * persistent banner, the masthead pill and a footnote under every panel.
- * Nothing here talks to the engine.
+ * /demo — a REPORT about a Wavia workspace, not the dashboard itself.
+ *
+ * The real product surface is Studio (the Agent Studio app in the engine
+ * repo). This page is the public, read-only preview for website visitors:
+ * a clean sample report — contents rail, summary, then one section per
+ * area of the workspace. Every value is SAMPLE DATA and is labelled as
+ * such. Nothing here talks to the engine.
  */
-
-const TABS = ['Overview', 'Agents', 'Conversations', 'Knowledge', 'Usage', 'Audit log'] as const;
-type Tab = (typeof TABS)[number];
 
 const WAVE = Array.from({ length: 34 }, (_, i) => {
 	const h = Math.abs(Math.sin(i * 0.9) * 0.6 + Math.sin(i * 0.37) * 0.4);
 	return Math.max(0.06, Math.min(1, h));
 });
 
-function Footnote() {
-	return <p className="label dash__note">Sample data · illustrative, not from the engine</p>;
+const CONTENTS = [
+	{ no: '01', id: 'summary', label: 'Summary' },
+	{ no: '02', id: 'live-turn', label: 'A live turn' },
+	{ no: '03', id: 'agents', label: 'Agents' },
+	{ no: '04', id: 'conversations', label: 'Conversations' },
+	{ no: '05', id: 'knowledge', label: 'Knowledge' },
+	{ no: '06', id: 'usage', label: 'Usage' },
+	{ no: '07', id: 'audit', label: 'Audit log' },
+] as const;
+
+function SampleNote() {
+	return <p className="report__note">Sample data · illustrative, not from the engine</p>;
 }
 
-function Overview() {
+function SectionHead({ no, title, intro }: { no: string; title: string; intro: string }) {
 	return (
-		<div className="dash__grid">
-			<div className="dash__kpis">
-				{KPIS.map((k) => (
-					<div className="dash__kpi" key={k.label}>
-						<p className="label">{k.label}</p>
-						<p className="dash__num">{k.value}</p>
-					</div>
-				))}
-				<Footnote />
-			</div>
-
-			<div className="dash__centre">
-				<p className="label">Now speaking · service desk demo</p>
-				<p className="dash__quote">
-					“What time do <span className="hl">you close</span> today?”
-				</p>
-				<p className="dash__reply">We close at 6 p.m. today.</p>
-				<svg className="dash__wave" viewBox="0 0 680 90" preserveAspectRatio="none" role="img" aria-label="Illustrative waveform, not real audio">
-					{WAVE.map((h, i) => (
-						<line key={i} x1={10 + i * 20} x2={10 + i * 20} y1={45 - h * 40} y2={45 + h * 40} />
-					))}
-				</svg>
-				<Footnote />
-			</div>
-
-			<div className="dash__right">
-				<p className="label">Turn · stages in order</p>
-				<div className="dash__bar" aria-label="Stages of a turn: VAD, speech-to-text, language model, text-to-speech" role="img">
-					<span style={{ background: 'var(--c-lilac)' }} />
-					<span style={{ background: 'var(--c-lime)' }} />
-					<span style={{ background: 'var(--c-aubergine)' }} />
-					<span style={{ background: 'var(--c-lilac-deep)' }} />
-				</div>
-				<div className="dash__bar-labels" aria-hidden="true">
-					<span><strong>VAD</strong> hears</span>
-					<span><strong>STT</strong> transcribes</span>
-					<span><strong>LLM</strong> decides</span>
-					<span><strong>TTS</strong> speaks</span>
-				</div>
-				<p className="label">One spoken turn, left to right — widths not to scale</p>
-
-				<p className="label" style={{ marginTop: 22 }}>
-					Event ledger · protocol v1
-				</p>
-				<ol className="dash__ledger" role="list">
-					{LEDGER.map((e, i) => (
-						<li key={e}>
-							<span className="dash__chip">#{String(i + 1).padStart(2, '0')}</span>
-							<span className="dash__event">{e}</span>
-							<span className="dash__gloss">{LEDGER_GLOSS[e]}</span>
-						</li>
-					))}
-				</ol>
-				<Footnote />
+		<div className="report__section-head">
+			<span className="report__section-no" aria-hidden="true">
+				{no}
+			</span>
+			<div>
+				<h2>{title}</h2>
+				<p>{intro}</p>
 			</div>
 		</div>
 	);
 }
 
-function Table({ caption, head, rows }: { caption: string; head: string[]; rows: ReactNode[][] }) {
+function Chip({ kind, children }: { kind: 'live' | 'warn' | 'plain'; children: ReactNode }) {
 	return (
-		<div className="table-wrap">
-			<table className="table">
-				<caption className="label">{caption}</caption>
-				<thead>
-					<tr>
-						{head.map((h) => (
-							<th scope="col" key={h}>
-								{h}
-							</th>
-						))}
-					</tr>
-				</thead>
-				<tbody>
-					{rows.map((r, i) => (
-						<tr key={i}>
-							{r.map((c, j) => (
-								<td key={j}>{c}</td>
-							))}
-						</tr>
+		<span className="report-chip" data-kind={kind}>
+			{children}
+		</span>
+	);
+}
+
+function Summary() {
+	return (
+		<section className="report__section" id="summary" aria-label="Summary">
+			<SectionHead
+				no="01"
+				title="Summary"
+				intro="What a workspace did today, in one page. The sections after this one show the evidence behind each line."
+			/>
+			<div className="report__cols">
+				<div>
+					<h3 className="report__h3">What this report shows</h3>
+					<ul className="report__bullets">
+						<li>
+							<strong>48 conversations</strong> ran across two live agents — clinic bookings on the phone line and
+							service questions in the browser.
+						</li>
+						<li>
+							<strong>12 interruptions</strong> were handled: callers talked over the agent mid-reply and the
+							conversation carried on from what was actually heard.
+						</li>
+						<li>
+							<strong>One draft cannot publish.</strong> The After-hours line has only one voice route, and an agent
+							needs two at every stage so a call survives a provider failing.
+						</li>
+						<li>
+							<strong>Usage is at 41% of the session allowance</strong> for this period, with every meter inside its
+							limit.
+						</li>
+					</ul>
+				</div>
+				<div className="report__aside-card">
+					<h3 className="report__h3">How to read this report</h3>
+					<p>
+						This is a <strong>report</strong>, not the product. The working dashboard is Wavia Studio, where these
+						agents are built and these calls happen live. This page restates one sample workspace as a document so a
+						visitor can follow it end to end.
+					</p>
+					<p>
+						Where a table shows <strong>routes</strong> as three numbers, they are the providers wired for
+						speech-to-text, the language model and text-to-speech, in that order.
+					</p>
+				</div>
+			</div>
+		</section>
+	);
+}
+
+function LiveTurn() {
+	return (
+		<section className="report__section" id="live-turn" aria-label="A live turn">
+			<SectionHead
+				no="02"
+				title="A live turn"
+				intro="One spoken exchange, slowed down. A caller asks a question; the agent answers from the knowledge base."
+			/>
+			<div className="report__card">
+				<div className="report__card-head">
+					<span className="report__live-dot" aria-hidden="true" />
+					<span>Service desk · Web session · Sample</span>
+					<span className="report__card-head-right">Outcome · Opening hours answered</span>
+				</div>
+				<p className="report__caller">“What time do you close today?”</p>
+				<p className="report__reply">We close at 6 p.m. today.</p>
+				<svg className="report__wave" viewBox="0 0 680 90" preserveAspectRatio="none" role="img" aria-label="Illustrative waveform, not real audio">
+					{WAVE.map((h, i) => (
+						<line key={i} x1={10 + i * 20} x2={10 + i * 20} y1={45 - h * 40} y2={45 + h * 40} />
 					))}
-				</tbody>
-			</table>
-		</div>
+				</svg>
+				<dl className="report__meta">
+					<div>
+						<dt>Agent</dt>
+						<dd>Service desk</dd>
+					</div>
+					<div>
+						<dt>Channel</dt>
+						<dd>Web · SDK</dd>
+					</div>
+					<div>
+						<dt>Length</dt>
+						<dd>0:58</dd>
+					</div>
+					<div>
+						<dt>Record</dt>
+						<dd>Conversation C-1047</dd>
+					</div>
+				</dl>
+			</div>
+
+			<h3 className="report__h3 report__h3--spaced">How one turn moves</h3>
+			<ol className="report__steps" role="list">
+				<li>
+					<span className="report__step-no">1</span>
+					<div>
+						<strong>Listen</strong>
+						<p>Voice activity detection hears the caller start and stop speaking.</p>
+					</div>
+				</li>
+				<li>
+					<span className="report__step-no">2</span>
+					<div>
+						<strong>Transcribe</strong>
+						<p>Speech-to-text turns the audio into words, live, as they are spoken.</p>
+					</div>
+				</li>
+				<li>
+					<span className="report__step-no">3</span>
+					<div>
+						<strong>Decide</strong>
+						<p>The language model reads the words and picks the answer or the action.</p>
+					</div>
+				</li>
+				<li>
+					<span className="report__step-no">4</span>
+					<div>
+						<strong>Speak</strong>
+						<p>Text-to-speech streams the reply back as audio, interruptible at any word.</p>
+					</div>
+				</li>
+			</ol>
+
+			<h3 className="report__h3 report__h3--spaced">What the engine recorded</h3>
+			<p className="report__section-sub">
+				Every turn writes an event ledger. The protocol names are technical; the right-hand column is what each one
+				means.
+			</p>
+			<div className="report__table-wrap">
+				<table className="report__table">
+					<thead>
+						<tr>
+							<th scope="col" className="report__th-num">#</th>
+							<th scope="col">Event</th>
+							<th scope="col">What it means</th>
+						</tr>
+					</thead>
+					<tbody>
+						{LEDGER.map((e, i) => (
+							<tr key={e}>
+								<td className="report__td-num">{String(i + 1).padStart(2, '0')}</td>
+								<td>
+									<code>{e}</code>
+								</td>
+								<td>{LEDGER_GLOSS[e]}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<SampleNote />
+		</section>
 	);
 }
 
 function Agents() {
 	return (
-		<>
-			<Table
-				caption="Agents · sample data"
-				head={['Agent', 'Version', 'Languages', 'Routes STT · LLM · TTS', 'Status']}
-				rows={AGENTS.map((a) => [
-					a.name,
-					a.version,
-					a.language,
-					a.routes,
-					a.status === 'Live' ? <span className="hl label">Live</span> : a.status,
-				])}
+		<section className="report__section" id="agents" aria-label="Agents">
+			<SectionHead
+				no="03"
+				title="Agents"
+				intro="The voice agents in this workspace — what each one does, where it runs, and whether it is ready to take calls."
 			/>
-			<p className="dash__aside">
-				<strong>How to read the routes column:</strong> the three numbers are the providers wired for speech-to-text,
-				the language model, and text-to-speech. An agent needs <strong>2 at every stage</strong> so a call survives one
-				provider failing — that is why the After-hours line (2 · 2 · 1) cannot publish yet. Published versions are
+			<div className="report__table-wrap">
+				<table className="report__table">
+					<thead>
+						<tr>
+							<th scope="col">Agent</th>
+							<th scope="col">Status</th>
+							<th scope="col">Version</th>
+							<th scope="col">Languages</th>
+							<th scope="col">Channel</th>
+							<th scope="col">Routes · STT / LLM / TTS</th>
+						</tr>
+					</thead>
+					<tbody>
+						{AGENTS.map((a) => (
+							<tr key={a.name}>
+								<td>
+									<strong className="report__cell-title">{a.name}</strong>
+									<span className="report__cell-sub">{a.description}</span>
+								</td>
+								<td>{a.status === 'Live' ? <Chip kind="live">Live</Chip> : <Chip kind="warn">{a.status}</Chip>}</td>
+								<td>{a.version}</td>
+								<td>{a.language}</td>
+								<td>{a.channel}</td>
+								<td className="report__td-mono">{a.routes}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p className="report__para">
+				An agent needs <strong>2 routes at every stage</strong> so a call survives one provider failing. The
+				After-hours line is at 2 · 2 · 1 — one voice route short — so it stays a draft. Published versions are
 				immutable; edits ship as a new version.
 			</p>
-		</>
+			<SampleNote />
+		</section>
 	);
 }
 
 function Conversations() {
 	const [selectedId, setSelectedId] = useState('C-1048');
 	const detail = DETAILS[selectedId];
+	const selected = CONVERSATIONS.find((c) => c.id === selectedId) ?? CONVERSATIONS[0];
 	return (
-		<div className="dash__split">
-			<div>
-				<div className="table-wrap">
-					<table className="table table--pick">
-						<caption className="label">Conversations · sample data — select a call to read it</caption>
-						<thead>
-							<tr>
-								{['ID', 'Agent', 'Channel', 'Outcome', 'Length'].map((h) => (
-									<th scope="col" key={h}>{h}</th>
-								))}
+		<section className="report__section" id="conversations" aria-label="Conversations">
+			<SectionHead
+				no="04"
+				title="Conversations"
+				intro="Every call and browser session, written down. Select a conversation to read its record — transcript, summary and the fields the agent extracted."
+			/>
+			<div className="report__table-wrap">
+				<table className="report__table report__table--pick">
+					<thead>
+						<tr>
+							<th scope="col">Time</th>
+							<th scope="col">ID</th>
+							<th scope="col">Agent</th>
+							<th scope="col">Channel</th>
+							<th scope="col">Outcome</th>
+							<th scope="col">Length</th>
+							<th scope="col">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						{CONVERSATIONS.map((c) => (
+							<tr key={c.id} data-selected={c.id === selectedId} onClick={() => setSelectedId(c.id)}>
+								<td className="report__td-mono">{c.time}</td>
+								<td className="report__td-mono">{c.id}</td>
+								<td>{c.agent}</td>
+								<td>{c.channel}</td>
+								<td>{c.outcome}</td>
+								<td className="report__td-mono">{c.minutes}</td>
+								<td>
+									<Chip kind={c.status === 'Test' ? 'plain' : 'live'}>{c.status}</Chip>
+								</td>
 							</tr>
-						</thead>
-						<tbody>
-							{CONVERSATIONS.map((c) => (
-								<tr key={c.id} data-selected={c.id === selectedId} onClick={() => setSelectedId(c.id)}>
-									<td>{c.id}</td>
-									<td>{c.agent}</td>
-									<td>{c.channel}</td>
-									<td>{c.outcome}</td>
-									<td>{c.minutes}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<div className="report__record">
+				<div className="report__record-head">
+					<h3 className="report__h3">
+						Record · {selected.id} — {selected.outcome}
+					</h3>
+					<span className="report__record-meta">
+						{selected.agent} · {selected.channel} · {selected.minutes}
+					</span>
 				</div>
-				<p className="dash__aside">Select any call — its transcript, summary and extracted fields appear on the right.</p>
+				<div className="report__record-grid">
+					<div>
+						<h4 className="report__h4">Transcript</h4>
+						<ol className="report__transcript" role="list">
+							{detail.transcript.map((t, i) => (
+								<li key={i} data-who={t.who}>
+									<span className="report__who">{t.who}</span>
+									<p>
+										{t.text}
+										{t.cut ? (
+											<>
+												<s>{t.cut}</s>
+												<Chip kind="warn">Barge-in</Chip>
+											</>
+										) : null}
+									</p>
+								</li>
+							))}
+						</ol>
+					</div>
+					<div>
+						<h4 className="report__h4">Post-call summary</h4>
+						<p className="report__summary">{detail.summary}</p>
+						<h4 className="report__h4">Extracted fields</h4>
+						<dl className="report__fields">
+							{detail.fields.map(([k, v]) => (
+								<div key={k}>
+									<dt>{k.replace(/_/g, ' ')}</dt>
+									<dd>{v}</dd>
+								</div>
+							))}
+						</dl>
+					</div>
+				</div>
 			</div>
-			<div className="dash__detail">
-				<p className="label">{selectedId} · transcript</p>
-				<ol className="dash__transcript" role="list">
-					{detail.transcript.map((t, i) => (
-						<li key={i} data-who={t.who}>
-							<span className="label">{t.who}</span>
-							<p>
-								{t.text}
-								{t.cut ? (
-									<>
-										<s>{t.cut}</s>
-										<span className="label hl" style={{ marginLeft: 8 }}>
-											Barge-in
-										</span>
-									</>
-								) : null}
-							</p>
-						</li>
-					))}
-				</ol>
-				<p className="label" style={{ marginTop: 16 }}>
-					Post-call summary
-				</p>
-				<p className="dash__summary">{detail.summary}</p>
-				<dl className="facts">
-					{detail.fields.map(([k, v]) => (
-						<div key={k} style={{ display: 'contents' }}>
-							<dt className="label">{k.replace(/_/g, ' ')}</dt>
-							<dd>{v}</dd>
-						</div>
-					))}
-				</dl>
-			</div>
-		</div>
+			<SampleNote />
+		</section>
 	);
 }
 
 function Knowledge() {
 	return (
-		<div className="dash__split">
-			<Table
-				caption="Knowledge base · sample data"
-				head={['Source', 'Kind', 'Updated']}
-				rows={KNOWLEDGE.map((k) => [k.name, k.kind, k.updated])}
+		<section className="report__section" id="knowledge" aria-label="Knowledge">
+			<SectionHead
+				no="05"
+				title="Knowledge"
+				intro="The facts the agents answer from — FAQs and documents. Answers cite the source they used, so a reply can always be checked."
 			/>
-			<div className="dash__detail">
-				<p className="label">Preview answer</p>
-				<p className="dash__quote dash__quote--small">“Are you open on Fridays?”</p>
-				<p className="dash__reply dash__reply--small">We are open on Fridays from nine until one.</p>
-				<p className="label" style={{ marginTop: 10 }}>
-					Cited · Opening hours · FAQ 4
-				</p>
+			<div className="report__table-wrap">
+				<table className="report__table">
+					<thead>
+						<tr>
+							<th scope="col">Source</th>
+							<th scope="col">Kind</th>
+							<th scope="col">Contents</th>
+							<th scope="col">Updated</th>
+							<th scope="col">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						{KNOWLEDGE.map((k) => (
+							<tr key={k.name}>
+								<td>
+									<strong className="report__cell-title">{k.name}</strong>
+								</td>
+								<td>{k.kind}</td>
+								<td>{k.entries}</td>
+								<td>{k.updated}</td>
+								<td>
+									<Chip kind="live">{k.status}</Chip>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
 			</div>
-		</div>
+			<div className="report__card report__card--answer">
+				<p className="report__card-label">Answer preview · cited</p>
+				<p className="report__caller report__caller--small">“Are you open on Fridays?”</p>
+				<p className="report__reply report__reply--small">We are open on Fridays from nine until one.</p>
+				<p className="report__cite">Cited · Opening hours · FAQ 4</p>
+			</div>
+			<SampleNote />
+		</section>
 	);
 }
 
 function Usage() {
 	return (
-		<div>
-			<ul className="dash__meters" role="list">
+		<section className="report__section" id="usage" aria-label="Usage">
+			<SectionHead
+				no="06"
+				title="Usage"
+				intro="What this workspace has used this period, meter by meter, against its plan limits."
+			/>
+			<ul className="report__meters" role="list">
 				{USAGE.map((u) => {
 					const pct = Math.round((u.used / u.limit) * 100);
 					return (
-						<li key={u.meter}>
-							<div className="dash__meter-head">
-								<span className="label">{u.meter}</span>
-								<span>
+						<li key={u.meter} className="report__meter">
+							<div className="report__meter-main">
+								<span className="report__meter-name">{u.meter}</span>
+								<span className="report__meter-plain">{u.plain}</span>
+							</div>
+							<div className="report__meter-side">
+								<span className="report__meter-value">
 									{u.used}
 									{u.unit ? ` ${u.unit}` : ''} of {u.limit}
-									{u.unit ? ` ${u.unit}` : ''} · <strong>{pct}%</strong> · {u.plain}
+									{u.unit ? ` ${u.unit}` : ''}
 								</span>
+								<span className="report__meter-pct">{pct}%</span>
 							</div>
 							<div
-								className="dash__meter"
+								className="report__meter-bar"
 								role="meter"
 								aria-label={`${u.meter}, sample`}
 								aria-valuemin={0}
 								aria-valuemax={100}
 								aria-valuenow={pct}
 							>
-								<span style={{ transform: `scaleX(${pct / 100})` }} />
+								<span style={{ width: `${pct}%` }} />
 							</div>
 						</li>
 					);
 				})}
 			</ul>
-			<p className="dash__aside">These are the five usage meters in the product. The amounts and limits are samples.</p>
-		</div>
+			<p className="report__para">Every meter is inside its limit. The amounts and limits on this page are samples.</p>
+			<SampleNote />
+		</section>
 	);
 }
 
 function Audit() {
 	return (
-		<Table
-			caption="Audit log · sample data"
-			head={['When', 'Role', 'Action', 'Detail']}
-			rows={AUDIT.map((a) => [a.when, a.who, a.what, a.detail])}
-		/>
+		<section className="report__section" id="audit" aria-label="Audit log">
+			<SectionHead
+				no="07"
+				title="Audit log"
+				intro="Who did what, and when. Every publish, invite, hold and key is written here — nothing in a workspace changes silently."
+			/>
+			<div className="report__table-wrap">
+				<table className="report__table">
+					<thead>
+						<tr>
+							<th scope="col">When</th>
+							<th scope="col">Category</th>
+							<th scope="col">Role</th>
+							<th scope="col">Action</th>
+							<th scope="col">Detail</th>
+						</tr>
+					</thead>
+					<tbody>
+						{AUDIT.map((a) => (
+							<tr key={a.when + a.what}>
+								<td className="report__td-mono">{a.when}</td>
+								<td>
+									<Chip kind="plain">{a.category}</Chip>
+								</td>
+								<td>{a.who}</td>
+								<td>
+									<strong className="report__cell-title">{a.what}</strong>
+								</td>
+								<td>{a.detail}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<SampleNote />
+		</section>
 	);
 }
 
-const TAB_INTRO: Record<Tab, string> = {
-	Overview: 'Today at a glance: how many conversations happened, what a live turn looks like, and the events the engine recorded.',
-	Agents: 'Every voice agent in this workspace — its version, languages, provider routes and whether it is live.',
-	Conversations: 'Every call and browser session, written down. Select one to read its transcript and the record it produced.',
-	Knowledge: 'The facts your agents answer from — FAQs and documents. Answers cite the source they used.',
-	Usage: 'What this workspace has used this period, meter by meter, against its limits.',
-	'Audit log': 'Who did what, and when. Every publish, invite, hold and key is written here.',
-};
-
-const PANELS: Record<Tab, () => ReactNode> = {
-	Overview,
-	Agents,
-	Conversations,
-	Knowledge,
-	Usage,
-	'Audit log': Audit,
-};
-
 export default function Demo() {
-	useTitle('Demo dashboard · sample data');
-	const [tab, setTab] = useState<Tab>('Overview');
-	const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+	useTitle('Workspace report · sample data');
 
 	useEffect(() => window.scrollTo(0, 0), []);
-
-	const onKey = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
-		let next = -1;
-		if (e.key === 'ArrowRight') next = (i + 1) % TABS.length;
-		else if (e.key === 'ArrowLeft') next = (i - 1 + TABS.length) % TABS.length;
-		else if (e.key === 'Home') next = 0;
-		else if (e.key === 'End') next = TABS.length - 1;
-		if (next < 0) return;
-		e.preventDefault();
-		setTab(TABS[next]);
-		tabRefs.current[next]?.focus();
-	};
-
-	const Panel = PANELS[tab];
-	const slug = (t: string) => t.toLowerCase().replace(/\s+/g, '-');
 
 	return (
 		<>
 			<a className="skip-link" href="#main">
 				Skip to content
 			</a>
-			<div className="dash-banner" role="note">
+			<div className="report-banner" role="note">
 				<p>
-					<span className="label label--bold">Sample data</span> This is a preview of Studio built on illustrative values.
-					No live calls, no real customers, nothing is sent to the engine.
+					<span className="report-banner__tag">Sample data</span>
+					This page is a <strong>report about a sample workspace</strong> — not the live dashboard. No real calls, no
+					real customers, nothing here talks to the engine.
 				</p>
-				<Link className="label" to="/">
-					Back to the site
-				</Link>
+				<Link to="/">Back to the site</Link>
 			</div>
-			<div className="dash">
-				<header className="dash__mast">
-					<Wordmark />
-					<p className="label dash__title">Studio · workspace report</p>
-					<p className="label dash__pill">Sample data</p>
-				</header>
-				<div className="dash__tabs" role="tablist" aria-label="Studio sections">
-					{TABS.map((t, i) => (
-						<button
-							key={t}
-							type="button"
-							role="tab"
-							id={`tab-${slug(t)}`}
-							aria-selected={tab === t}
-							aria-controls={`panel-${slug(t)}`}
-							tabIndex={tab === t ? 0 : -1}
-							ref={(el) => {
-								tabRefs.current[i] = el;
-							}}
-							onClick={() => setTab(t)}
-							onKeyDown={(e) => onKey(e, i)}
-						>
-							{t}
-						</button>
-					))}
-				</div>
-				<div className="dash__intro">
-					<h1 className="dash__h1">This is what a Wavia workspace looks like.</h1>
-					<p>
-						Studio is where you build a voice agent, watch its calls and read what it wrote down. This preview runs on
-						sample data — work through the tabs; start with <strong>Conversations</strong> and select a call.
-					</p>
-				</div>
-				<main id="main" tabIndex={-1}>
-					<section
-						role="tabpanel"
-						id={`panel-${slug(tab)}`}
-						aria-labelledby={`tab-${slug(tab)}`}
-						tabIndex={0}
-						className="dash__panel"
-					>
-						<h2 className="visually-hidden">{tab}</h2>
-						<p className="dash__tab-intro">{TAB_INTRO[tab]}</p>
-						<Panel />
-					</section>
-				</main>
-				<footer className="dash__foot">
-					<p className="label">Everything above is sample data. Real workspaces live in Studio.</p>
-					<div className="btn-row">
+
+			<div className="report">
+				<aside className="report__rail">
+					<div className="report__rail-brand">
+						<Wordmark />
+						<p className="report__rail-doc">Studio · Workspace report</p>
+					</div>
+					<dl className="report__rail-meta">
+						<div>
+							<dt>Workspace</dt>
+							<dd>Demo workspace</dd>
+						</div>
+						<div>
+							<dt>Data</dt>
+							<dd>Sample data only</dd>
+						</div>
+						<div>
+							<dt>Period</dt>
+							<dd>Today · sample</dd>
+						</div>
+						<div>
+							<dt>Product</dt>
+							<dd>Wavia Studio</dd>
+						</div>
+					</dl>
+					<nav className="report__toc" aria-label="Report contents">
+						<p className="report__toc-title">Contents</p>
+						<ul role="list">
+							{CONTENTS.map((c) => (
+								<li key={c.id}>
+									<a href={`#${c.id}`}>
+										<span className="report__toc-no">{c.no}</span>
+										{c.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+					<div className="report__rail-actions">
 						<a className="btn btn--lime" href={SIGN_UP_URL}>
 							Sign up for Studio
 						</a>
@@ -380,7 +543,60 @@ export default function Demo() {
 							Studio tour
 						</Link>
 					</div>
-				</footer>
+					<p className="report__rail-note">
+						The working dashboard lives in Studio. This report is the read-only preview for visitors.
+					</p>
+				</aside>
+
+				<main className="report__main" id="main" tabIndex={-1}>
+					<header className="report__cover">
+						<p className="report__kicker">Wavia Studio · Sample workspace report</p>
+						<h1 className="report__title">One day in a Wavia workspace.</h1>
+						<p className="report__lead">
+							A voice agent answered the phone, handled interruptions, wrote down what happened and stayed inside
+							its usage limits. This report walks through that day in order — what ran, what it recorded, and the
+							one thing that needs fixing.
+						</p>
+						<div className="report__kpis">
+							{KPIS.map((k) => (
+								<div className="report__kpi" key={k.label}>
+									<span className="report__kpi-value">{k.value}</span>
+									<span className="report__kpi-label">{k.label}</span>
+									<span className="report__kpi-detail">{k.detail}</span>
+								</div>
+							))}
+							<div className="report__kpi">
+								<span className="report__kpi-value">412</span>
+								<span className="report__kpi-label">Sessions this period</span>
+								<span className="report__kpi-detail">41% of the 1,000 allowance</span>
+							</div>
+						</div>
+					</header>
+
+					<Summary />
+					<LiveTurn />
+					<Agents />
+					<Conversations />
+					<Knowledge />
+					<Usage />
+					<Audit />
+
+					<footer className="report__closing">
+						<h2>End of report</h2>
+						<p>
+							Everything above is sample data, written as a report so the shape of a workspace is easy to follow.
+							Real workspaces — live agents, real calls, real records — live in Studio.
+						</p>
+						<div className="btn-row">
+							<a className="btn btn--lime" href={SIGN_UP_URL}>
+								Sign up for Studio
+							</a>
+							<Link className="btn btn--ghost" to="/studio">
+								Studio tour
+							</Link>
+						</div>
+					</footer>
+				</main>
 			</div>
 		</>
 	);

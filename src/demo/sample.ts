@@ -6,9 +6,9 @@
  */
 
 export const KPIS = [
-	{ label: 'Conversations today', value: '48' },
-	{ label: 'Interruptions handled', value: '12' },
-	{ label: 'Active sessions', value: '3' },
+	{ label: 'Conversations today', value: '48', detail: 'Across 2 live agents' },
+	{ label: 'Interruptions handled', value: '12', detail: 'Callers changed direction mid-reply' },
+	{ label: 'Active sessions', value: '3', detail: 'Phone and browser sessions' },
 ];
 
 /** Real realtime-protocol v1 event names, in a plausible order; sequence numbers only. */
@@ -37,16 +37,40 @@ export const LEDGER = [
 ];
 
 export const AGENTS = [
-	{ name: 'Clinic reception', version: 'v3 · published', language: 'English, Urdu', routes: '2 · 2 · 2', status: 'Live' },
-	{ name: 'Service desk', version: 'v5 · published', language: 'English, Arabic', routes: '2 · 2 · 2', status: 'Live' },
-	{ name: 'After-hours line', version: 'v1 · draft', language: 'Malay', routes: '2 · 2 · 1', status: 'Needs a second TTS route' },
+	{
+		name: 'Clinic reception',
+		version: 'v3 · published',
+		language: 'English, Urdu',
+		routes: '2 · 2 · 2',
+		status: 'Live',
+		channel: 'Telnyx · inbound',
+		description: 'Answers the clinic phone line, books appointments and takes messages.',
+	},
+	{
+		name: 'Service desk',
+		version: 'v5 · published',
+		language: 'English, Arabic',
+		routes: '2 · 2 · 2',
+		status: 'Live',
+		channel: 'Web · SDK',
+		description: 'Answers service questions in the browser and uses the knowledge base.',
+	},
+	{
+		name: 'After-hours line',
+		version: 'v1 · draft',
+		language: 'Malay',
+		routes: '2 · 2 · 1',
+		status: 'Needs a second TTS route',
+		channel: 'Not assigned',
+		description: 'Draft cover for calls outside opening hours. It cannot publish yet.',
+	},
 ];
 
 export const CONVERSATIONS = [
-	{ id: 'C-1048', agent: 'Clinic reception', channel: 'Telnyx · inbound', outcome: 'Appointment requested', minutes: '2:41' },
-	{ id: 'C-1047', agent: 'Service desk', channel: 'Web · SDK', outcome: 'Opening hours answered', minutes: '0:58' },
-	{ id: 'C-1046', agent: 'Clinic reception', channel: 'Telnyx · inbound', outcome: 'Message taken', minutes: '1:37' },
-	{ id: 'C-1045', agent: 'Service desk', channel: 'Browser test', outcome: 'Test call', minutes: '0:44' },
+	{ id: 'C-1048', time: '09:41', agent: 'Clinic reception', channel: 'Telnyx · inbound', outcome: 'Appointment requested', minutes: '2:41', status: 'Completed' },
+	{ id: 'C-1047', time: '09:12', agent: 'Service desk', channel: 'Web · SDK', outcome: 'Opening hours answered', minutes: '0:58', status: 'Completed' },
+	{ id: 'C-1046', time: '08:56', agent: 'Clinic reception', channel: 'Telnyx · inbound', outcome: 'Message taken', minutes: '1:37', status: 'Completed' },
+	{ id: 'C-1045', time: '08:31', agent: 'Service desk', channel: 'Browser test', outcome: 'Test call', minutes: '0:44', status: 'Test' },
 ];
 
 export const DETAILS: Record<string, { transcript: { who: string; text: string; cut?: string }[]; summary: string; fields: [string, string][] }> = {
@@ -112,9 +136,9 @@ export const DETAILS: Record<string, { transcript: { who: string; text: string; 
 };
 
 export const KNOWLEDGE = [
-	{ name: 'Opening hours', kind: 'FAQ · 12 entries', updated: '14 Nov 2026' },
-	{ name: 'clinic-services.pdf', kind: 'Document', updated: '11 Nov 2026' },
-	{ name: 'Booking policy', kind: 'FAQ · 7 entries', updated: '9 Nov 2026' },
+	{ name: 'Opening hours', kind: 'FAQ', entries: '12 entries', updated: '14 Nov 2026', status: 'Indexed' },
+	{ name: 'clinic-services.pdf', kind: 'Document', entries: '18 pages', updated: '11 Nov 2026', status: 'Indexed' },
+	{ name: 'Booking policy', kind: 'FAQ', entries: '7 entries', updated: '9 Nov 2026', status: 'Indexed' },
 ];
 
 export const USAGE = [
@@ -126,9 +150,9 @@ export const USAGE = [
 ];
 
 export const AUDIT = [
-	{ when: 'Today · 09:41', who: 'Editor', what: 'Published Clinic reception v3', detail: 'Version 3 replaced v2 on the inbound number' },
-	{ when: 'Today · 09:12', who: 'Administrator', what: 'Invited a read-only operator', detail: 'Invite sent; access is view-only until accepted' },
-	{ when: 'Yesterday · 16:03', who: 'Compliance administrator', what: 'Placed a legal hold on 2 conversations', detail: 'C-1039 and C-1041 are exempt from retention deletion' },
-	{ when: 'Yesterday · 11:27', who: 'Developer', what: 'Created an API key (session:mint scope)', detail: 'Key shown once at creation; only its hash is stored' },
-	{ when: 'Monday · 10:05', who: 'Administrator', what: 'Set conversation retention for the workspace', detail: 'Recordings and transcripts kept for 90 days' },
+	{ when: 'Today · 09:41', who: 'Editor', what: 'Published Clinic reception v3', detail: 'Version 3 replaced v2 on the inbound number', category: 'Publishing' },
+	{ when: 'Today · 09:12', who: 'Administrator', what: 'Invited a read-only operator', detail: 'Invite sent; access is view-only until accepted', category: 'Access' },
+	{ when: 'Yesterday · 16:03', who: 'Compliance administrator', what: 'Placed a legal hold on 2 conversations', detail: 'C-1039 and C-1041 are exempt from retention deletion', category: 'Retention' },
+	{ when: 'Yesterday · 11:27', who: 'Developer', what: 'Created an API key (session:mint scope)', detail: 'Key shown once at creation; only its hash is stored', category: 'Security' },
+	{ when: 'Monday · 10:05', who: 'Administrator', what: 'Set conversation retention for the workspace', detail: 'Recordings and transcripts kept for 90 days', category: 'Settings' },
 ];
